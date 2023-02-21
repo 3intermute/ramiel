@@ -1,0 +1,13 @@
+[2J[01;01H[=3h[2J[01;01H[2J[01;01H[=3h[2J[01;01H[2J[01;01H[=3h[2J[01;01H[ramiel]: nic found @ DevicePath: PciRoot(0x0)/Pci(0x4,0x0)
+[ramiel]: print_var_info - max_var_storage -> 262044 B
+[ramiel]: print_var_info - remaining_var_storage -> 53936 B
+[ramiel]: print_var_info - max_var_size -> 33732 B
+[ramiel]: DriverStart - vendor id, device id -> 8086, 10D3
+[ramiel]: DriverStart - xrombar -> 0
+[ramiel]: DriverStart - command register -> 7
+[ramiel]: patch_sb - patching secureboot check from -> 7EF94DBD to 7EF94EAB...
+[ramiel]: patch_sb - completed
+[ramiel]: nvram_chainload - guid 77D80101-2A57-4237-9A65-0CCF2CBFAFE1
+[ramiel]: nvram_chainload - LoadImage of target completed
+helloworld !! : D
+[ramiel]: nvram_chainload - StartImage completed

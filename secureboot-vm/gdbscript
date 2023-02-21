@@ -1,0 +1,3 @@
+source gdbscript_/gdbscript_OVMF_offsets
+source gdbscript_/gdbscript_MdeModule_offsets
+target remote localhost:1234

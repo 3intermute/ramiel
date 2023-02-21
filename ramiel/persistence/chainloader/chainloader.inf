@@ -1,0 +1,37 @@
+[Defines]
+    INF_VERSION = 1.25
+    BASE_NAME = chainloader
+    FILE_GUID = 13089cbe-704b-4f35-a443-ef751fa0bc5d
+    MODULE_TYPE = UEFI_DRIVER
+    VERSION_STRING = 1.0
+    ENTRY_POINT = DriverEntry
+
+[Sources]
+    chainloader.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+    DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+    UefiDriverEntryPoint
+    UefiLib
+    BaseLib
+    DebugLib
+    PrintLib
+    MemoryAllocationLib
+    BaseMemoryLib
+    UefiBootServicesTableLib
+    DevicePathLib
+
+[Guids]
+
+[Ppis]
+
+[Protocols]
+    gEfiPciIoProtocolGuid
+
+[FeaturePcd]
+
+[FixedPcd]

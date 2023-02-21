@@ -1,0 +1,34 @@
+[Defines]
+  INF_VERSION = 1.25
+  BASE_NAME = helloworld_driver
+  FILE_GUID = a947fe05-a628-4d32-9ac7-1bd74c6c91ce
+  MODULE_TYPE = UEFI_DRIVER
+  VERSION_STRING = 1.0
+  ENTRY_POINT = DriverEntry
+
+[Sources]
+  helloworld_driver.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiLib
+  BaseLib
+  DebugLib
+  PrintLib
+  MemoryAllocationLib
+  BaseMemoryLib
+  UefiBootServicesTableLib
+
+[Guids]
+
+[Ppis]
+
+[Protocols]
+
+[FeaturePcd]
+
+[FixedPcd]

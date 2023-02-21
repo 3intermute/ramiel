@@ -1,0 +1,1911 @@
+Dump of assembler code for function CoreLoadImage:
+   0x000000007ef7b86d <+0>:	57	push   %rdi
+   0x000000007ef7b86e <+1>:	4d 89 ca	mov    %r9,%r10
+   0x000000007ef7b871 <+4>:	0f b6 f9	movzbl %cl,%edi
+   0x000000007ef7b874 <+7>:	56	push   %rsi
+   0x000000007ef7b875 <+8>:	48 89 d6	mov    %rdx,%rsi
+   0x000000007ef7b878 <+11>:	4c 89 c2	mov    %r8,%rdx
+   0x000000007ef7b87b <+14>:	4c 89 d1	mov    %r10,%rcx
+   0x000000007ef7b87e <+17>:	50	push   %rax
+   0x000000007ef7b87f <+18>:	4c 8b 4c 24 48	mov    0x48(%rsp),%r9
+   0x000000007ef7b884 <+23>:	4c 8b 44 24 40	mov    0x40(%rsp),%r8
+   0x000000007ef7b889 <+28>:	e8 8e 8a 01 00	call   0x7ef9431c <CoreLoadImageCommon.constprop.0>
+   0x000000007ef7b88e <+33>:	5a	pop    %rdx
+   0x000000007ef7b88f <+34>:	5e	pop    %rsi
+   0x000000007ef7b890 <+35>:	5f	pop    %rdi
+   0x000000007ef7b891 <+36>:	c3	ret
+End of assembler dump.
+Dump of assembler code for function CoreLoadImageCommon.constprop.0:
+   0x000000007ef9431c <+0>:	41 57	push   %r15
+   0x000000007ef9431e <+2>:	41 56	push   %r14
+   0x000000007ef94320 <+4>:	41 55	push   %r13
+   0x000000007ef94322 <+6>:	49 89 cd	mov    %rcx,%r13
+   0x000000007ef94325 <+9>:	41 54	push   %r12
+   0x000000007ef94327 <+11>:	55	push   %rbp
+   0x000000007ef94328 <+12>:	53	push   %rbx
+   0x000000007ef94329 <+13>:	4c 89 c3	mov    %r8,%rbx
+   0x000000007ef9432c <+16>:	48 81 ec e8 01 00 00	sub    $0x1e8,%rsp
+   0x000000007ef94333 <+23>:	48 83 3d 25 bb 00 00 0f	cmpq   $0xf,0xbb25(%rip)        # 0x7ef9fe60
+   0x000000007ef9433b <+31>:	89 7c 24 28	mov    %edi,0x28(%rsp)
+   0x000000007ef9433f <+35>:	48 89 74 24 30	mov    %rsi,0x30(%rsp)
+   0x000000007ef94344 <+40>:	48 89 54 24 10	mov    %rdx,0x10(%rsp)
+   0x000000007ef94349 <+45>:	4c 89 4c 24 38	mov    %r9,0x38(%rsp)
+   0x000000007ef9434e <+50>:	76 20	jbe    0x7ef94370 <CoreLoadImageCommon.constprop.0+84>
+   0x000000007ef94350 <+52>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94354 <+56>:	4c 8d 05 9a a9 00 00	lea    0xa99a(%rip),%r8        # 0x7ef9ecf5
+   0x000000007ef9435b <+63>:	ba 8f 04 00 00	mov    $0x48f,%edx
+   0x000000007ef94360 <+68>:	48 8d 0d 72 5a 00 00	lea    0x5a72(%rip),%rcx        # 0x7ef99dd9 <AsmVectorNumFixup+81>
+   0x000000007ef94367 <+75>:	e8 5a 8a ff ff	call   0x7ef8cdc6 <DebugAssert>
+   0x000000007ef9436c <+80>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94370 <+84>:	48 83 7c 24 38 00	cmpq   $0x0,0x38(%rsp)
+   0x000000007ef94376 <+90>:	74 41	je     0x7ef943b9 <CoreLoadImageCommon.constprop.0+157>
+   0x000000007ef94378 <+92>:	48 83 7c 24 30 00	cmpq   $0x0,0x30(%rsp)
+   0x000000007ef9437e <+98>:	74 39	je     0x7ef943b9 <CoreLoadImageCommon.constprop.0+157>
+   0x000000007ef94380 <+100>:	48 8b 7c 24 30	mov    0x30(%rsp),%rdi
+   0x000000007ef94385 <+105>:	e8 5a cc fe ff	call   0x7ef80fe4 <CoreLoadedImageInfo>
+   0x000000007ef9438a <+110>:	48 85 c0	test   %rax,%rax
+   0x000000007ef9438d <+113>:	75 39	jne    0x7ef943c8 <CoreLoadImageCommon.constprop.0+172>
+   0x000000007ef9438f <+115>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94393 <+119>:	e8 11 bb ff ff	call   0x7ef8fea9 <DebugPrintEnabled>
+   0x000000007ef94398 <+124>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef9439c <+128>:	84 c0	test   %al,%al
+   0x000000007ef9439e <+130>:	74 19	je     0x7ef943b9 <CoreLoadImageCommon.constprop.0+157>
+   0x000000007ef943a0 <+132>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef943a4 <+136>:	48 8d 15 5e a9 00 00	lea    0xa95e(%rip),%rdx        # 0x7ef9ed09
+   0x000000007ef943ab <+143>:	b9 04 00 00 80	mov    $0x80000004,%ecx
+   0x000000007ef943b0 <+148>:	e8 90 ad ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef943b5 <+153>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef943b9 <+157>:	49 bc 02 00 00 00 00 00 00 80	movabs $0x8000000000000002,%r12
+   0x000000007ef943c3 <+167>:	e9 f6 20 00 00	jmp    0x7ef964be <CoreLoadImageCommon.constprop.0+8610>
+   0x000000007ef943c8 <+172>:	48 8d 8c 24 c0 00 00 00	lea    0xc0(%rsp),%rcx
+   0x000000007ef943d0 <+180>:	ba 20 00 00 00	mov    $0x20,%edx
+   0x000000007ef943d5 <+185>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef943d9 <+189>:	e8 d5 9a ff ff	call   0x7ef8deb3 <ZeroMem>
+   0x000000007ef943de <+194>:	48 8b 44 24 30	mov    0x30(%rsp),%rax
+   0x000000007ef943e3 <+199>:	48 c7 84 24 e0 00 00 00 69 6d 67 66	movq   $0x66676d69,0xe0(%rsp)
+   0x000000007ef943ef <+211>:	48 c7 84 24 88 00 00 00 00 00 00 00	movq   $0x0,0x88(%rsp)
+   0x000000007ef943fb <+223>:	48 89 84 24 90 00 00 00	mov    %rax,0x90(%rsp)
+   0x000000007ef94403 <+231>:	c7 84 24 80 00 00 00 00 00 00 00	movl   $0x0,0x80(%rsp)
+   0x000000007ef9440e <+242>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94412 <+246>:	4d 85 ed	test   %r13,%r13
+   0x000000007ef94415 <+249>:	74 65	je     0x7ef9447c <CoreLoadImageCommon.constprop.0+352>
+   0x000000007ef94417 <+251>:	4c 89 ac 24 d0 00 00 00	mov    %r13,0xd0(%rsp)
+   0x000000007ef9441f <+259>:	48 8d 54 24 70	lea    0x70(%rsp),%rdx
+   0x000000007ef94424 <+264>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94428 <+268>:	48 8d 0d 81 b8 00 00	lea    0xb881(%rip),%rcx        # 0x7ef9fcb0
+   0x000000007ef9442f <+275>:	48 89 9c 24 f8 00 00 00	mov    %rbx,0xf8(%rsp)
+   0x000000007ef94437 <+283>:	4c 8d 84 24 88 00 00 00	lea    0x88(%rsp),%r8
+   0x000000007ef9443f <+291>:	e8 70 d4 fe ff	call   0x7ef818b4 <CoreLocateDevicePath>
+   0x000000007ef94444 <+296>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94448 <+300>:	48 85 c0	test   %rax,%rax
+   0x000000007ef9444b <+303>:	79 09	jns    0x7ef94456 <CoreLoadImageCommon.constprop.0+314>
+   0x000000007ef9444d <+305>:	48 c7 44 24 68 00 00 00 00	movq   $0x0,0x68(%rsp)
+   0x000000007ef94456 <+314>:	49 bc 01 00 00 00 00 00 00 80	movabs $0x8000000000000001,%r12
+   0x000000007ef94460 <+324>:	48 8b 44 24 10	mov    0x10(%rsp),%rax
+   0x000000007ef94465 <+329>:	48 89 04 24	mov    %rax,(%rsp)
+   0x000000007ef94469 <+333>:	48 85 db	test   %rbx,%rbx
+   0x000000007ef9446c <+336>:	0f 84 be 0d 00 00	je     0x7ef95230 <CoreLoadImageCommon.constprop.0+3860>
+   0x000000007ef94472 <+342>:	c6 44 24 18 00	movb   $0x0,0x18(%rsp)
+   0x000000007ef94477 <+347>:	e9 41 09 00 00	jmp    0x7ef94dbd <CoreLoadImageCommon.constprop.0+2721>
+   0x000000007ef9447c <+352>:	48 83 7c 24 10 00	cmpq   $0x0,0x10(%rsp)
+   0x000000007ef94482 <+358>:	0f 84 31 ff ff ff	je     0x7ef943b9 <CoreLoadImageCommon.constprop.0+157>
+   0x000000007ef94488 <+364>:	48 8d 5c 24 68	lea    0x68(%rsp),%rbx
+   0x000000007ef9448d <+369>:	4c 8d 74 24 70	lea    0x70(%rsp),%r14
+   0x000000007ef94492 <+374>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94496 <+378>:	49 89 d8	mov    %rbx,%r8
+   0x000000007ef94499 <+381>:	4c 89 f2	mov    %r14,%rdx
+   0x000000007ef9449c <+384>:	48 8d 0d dd b8 00 00	lea    0xb8dd(%rip),%rcx        # 0x7ef9fd80
+   0x000000007ef944a3 <+391>:	e8 0c d4 fe ff	call   0x7ef818b4 <CoreLocateDevicePath>
+   0x000000007ef944a8 <+396>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef944ac <+400>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef944af <+403>:	48 85 c0	test   %rax,%rax
+   0x000000007ef944b2 <+406>:	0f 89 b3 00 00 00	jns    0x7ef9456b <CoreLoadImageCommon.constprop.0+591>
+   0x000000007ef944b8 <+412>:	48 8b 44 24 10	mov    0x10(%rsp),%rax
+   0x000000007ef944bd <+417>:	49 89 d8	mov    %rbx,%r8
+   0x000000007ef944c0 <+420>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef944c4 <+424>:	4c 89 f2	mov    %r14,%rdx
+   0x000000007ef944c7 <+427>:	48 8d 0d 22 c9 00 00	lea    0xc922(%rip),%rcx        # 0x7efa0df0
+   0x000000007ef944ce <+434>:	48 89 84 24 90 00 00 00	mov    %rax,0x90(%rsp)
+   0x000000007ef944d6 <+442>:	e8 d9 d3 fe ff	call   0x7ef818b4 <CoreLocateDevicePath>
+   0x000000007ef944db <+447>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef944df <+451>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef944e2 <+454>:	48 85 c0	test   %rax,%rax
+   0x000000007ef944e5 <+457>:	0f 89 8f 00 00 00	jns    0x7ef9457a <CoreLoadImageCommon.constprop.0+606>
+   0x000000007ef944eb <+463>:	80 7c 24 28 00	cmpb   $0x0,0x28(%rsp)
+   0x000000007ef944f0 <+468>:	74 3b	je     0x7ef9452d <CoreLoadImageCommon.constprop.0+529>
+   0x000000007ef944f2 <+470>:	48 8b 44 24 10	mov    0x10(%rsp),%rax
+   0x000000007ef944f7 <+475>:	49 89 d8	mov    %rbx,%r8
+   0x000000007ef944fa <+478>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef944fe <+482>:	4c 89 f2	mov    %r14,%rdx
+   0x000000007ef94501 <+485>:	48 8d 0d c8 c8 00 00	lea    0xc8c8(%rip),%rcx        # 0x7efa0dd0
+   0x000000007ef94508 <+492>:	48 89 84 24 90 00 00 00	mov    %rax,0x90(%rsp)
+   0x000000007ef94510 <+500>:	e8 9f d3 fe ff	call   0x7ef818b4 <CoreLocateDevicePath>
+   0x000000007ef94515 <+505>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94519 <+509>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef9451c <+512>:	48 85 c0	test   %rax,%rax
+   0x000000007ef9451f <+515>:	78 59	js     0x7ef9457a <CoreLoadImageCommon.constprop.0+606>
+   0x000000007ef94521 <+517>:	c6 44 24 08 01	movb   $0x1,0x8(%rsp)
+   0x000000007ef94526 <+522>:	4c 8b 74 24 70	mov    0x70(%rsp),%r14
+   0x000000007ef9452b <+527>:	eb 55	jmp    0x7ef94582 <CoreLoadImageCommon.constprop.0+614>
+   0x000000007ef9452d <+529>:	48 8b 44 24 10	mov    0x10(%rsp),%rax
+   0x000000007ef94532 <+534>:	49 89 d8	mov    %rbx,%r8
+   0x000000007ef94535 <+537>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94539 <+541>:	4c 89 f2	mov    %r14,%rdx
+   0x000000007ef9453c <+544>:	48 8d 0d 9d c8 00 00	lea    0xc89d(%rip),%rcx        # 0x7efa0de0
+   0x000000007ef94543 <+551>:	48 89 84 24 90 00 00 00	mov    %rax,0x90(%rsp)
+   0x000000007ef9454b <+559>:	e8 64 d3 fe ff	call   0x7ef818b4 <CoreLocateDevicePath>
+   0x000000007ef94550 <+564>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94554 <+568>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef94557 <+571>:	48 85 c0	test   %rax,%rax
+   0x000000007ef9455a <+574>:	78 96	js     0x7ef944f2 <CoreLoadImageCommon.constprop.0+470>
+   0x000000007ef9455c <+576>:	c6 44 24 08 00	movb   $0x0,0x8(%rsp)
+   0x000000007ef94561 <+581>:	45 31 f6	xor    %r14d,%r14d
+   0x000000007ef94564 <+584>:	c6 44 24 18 00	movb   $0x0,0x18(%rsp)
+   0x000000007ef94569 <+589>:	eb 1c	jmp    0x7ef94587 <CoreLoadImageCommon.constprop.0+619>
+   0x000000007ef9456b <+591>:	c6 44 24 08 00	movb   $0x0,0x8(%rsp)
+   0x000000007ef94570 <+596>:	45 31 f6	xor    %r14d,%r14d
+   0x000000007ef94573 <+599>:	c6 44 24 18 01	movb   $0x1,0x18(%rsp)
+   0x000000007ef94578 <+604>:	eb 0d	jmp    0x7ef94587 <CoreLoadImageCommon.constprop.0+619>
+   0x000000007ef9457a <+606>:	c6 44 24 08 00	movb   $0x0,0x8(%rsp)
+   0x000000007ef9457f <+611>:	45 31 f6	xor    %r14d,%r14d
+   0x000000007ef94582 <+614>:	c6 44 24 18 00	movb   $0x0,0x18(%rsp)
+   0x000000007ef94587 <+619>:	48 c7 84 24 a8 00 00 00 00 00 00 00	movq   $0x0,0xa8(%rsp)
+   0x000000007ef94593 <+631>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94597 <+635>:	48 c7 84 24 b0 00 00 00 00 00 00 00	movq   $0x0,0xb0(%rsp)
+   0x000000007ef945a3 <+647>:	48 c7 84 24 b8 00 00 00 00 00 00 00	movq   $0x0,0xb8(%rsp)
+   0x000000007ef945af <+659>:	c7 84 24 80 00 00 00 00 00 00 00	movl   $0x0,0x80(%rsp)
+   0x000000007ef945ba <+670>:	48 8b 4c 24 30	mov    0x30(%rsp),%rcx
+   0x000000007ef945bf <+675>:	e8 b0 c6 ff ff	call   0x7ef90c74 <UefiDevicePathLibDuplicateDevicePath>
+   0x000000007ef945c4 <+680>:	48 89 44 24 20	mov    %rax,0x20(%rsp)
+   0x000000007ef945c9 <+685>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef945cd <+689>:	48 85 c0	test   %rax,%rax
+   0x000000007ef945d0 <+692>:	75 11	jne    0x7ef945e3 <CoreLoadImageCommon.constprop.0+711>
+   0x000000007ef945d2 <+694>:	48 c7 84 24 d0 00 00 00 00 00 00 00	movq   $0x0,0xd0(%rsp)
+   0x000000007ef945de <+706>:	e9 b9 07 00 00	jmp    0x7ef94d9c <CoreLoadImageCommon.constprop.0+2688>
+   0x000000007ef945e3 <+711>:	48 8b 04 24	mov    (%rsp),%rax
+   0x000000007ef945e7 <+715>:	48 8d 54 24 78	lea    0x78(%rsp),%rdx
+   0x000000007ef945ec <+720>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef945f0 <+724>:	48 8d 0d 89 b7 00 00	lea    0xb789(%rip),%rcx        # 0x7ef9fd80
+   0x000000007ef945f7 <+731>:	48 89 84 24 98 00 00 00	mov    %rax,0x98(%rsp)
+   0x000000007ef945ff <+739>:	48 8b 05 52 db 00 00	mov    0xdb52(%rip),%rax        # 0x7efa2158
+   0x000000007ef94606 <+746>:	4c 8d 84 24 a0 00 00 00	lea    0xa0(%rsp),%r8
+   0x000000007ef9460e <+754>:	ff 90 b8 00 00 00	call   *0xb8(%rax)
+   0x000000007ef94614 <+760>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94618 <+764>:	48 85 c0	test   %rax,%rax
+   0x000000007ef9461b <+767>:	79 43	jns    0x7ef94660 <CoreLoadImageCommon.constprop.0+836>
+   0x000000007ef9461d <+769>:	48 8b 04 24	mov    (%rsp),%rax
+   0x000000007ef94621 <+773>:	48 8d 54 24 78	lea    0x78(%rsp),%rdx
+   0x000000007ef94626 <+778>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef9462a <+782>:	48 8d 0d bf c7 00 00	lea    0xc7bf(%rip),%rcx        # 0x7efa0df0
+   0x000000007ef94631 <+789>:	48 89 84 24 98 00 00 00	mov    %rax,0x98(%rsp)
+   0x000000007ef94639 <+797>:	48 8b 05 18 db 00 00	mov    0xdb18(%rip),%rax        # 0x7efa2158
+   0x000000007ef94640 <+804>:	4c 8d 84 24 a0 00 00 00	lea    0xa0(%rsp),%r8
+   0x000000007ef94648 <+812>:	ff 90 b8 00 00 00	call   *0xb8(%rax)
+   0x000000007ef9464e <+818>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94652 <+822>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94655 <+825>:	0f 89 18 01 00 00	jns    0x7ef94773 <CoreLoadImageCommon.constprop.0+1111>
+   0x000000007ef9465b <+831>:	e9 44 01 00 00	jmp    0x7ef947a4 <CoreLoadImageCommon.constprop.0+1160>
+   0x000000007ef94660 <+836>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94664 <+840>:	48 8b 8c 24 98 00 00 00	mov    0x98(%rsp),%rcx
+   0x000000007ef9466c <+848>:	e8 bc c6 ff ff	call   0x7ef90d2d <EfiGetNameGuidFromFwVolDevicePathNode>
+   0x000000007ef94671 <+853>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94675 <+857>:	49 89 c7	mov    %rax,%r15
+   0x000000007ef94678 <+860>:	48 85 c0	test   %rax,%rax
+   0x000000007ef9467b <+863>:	74 a0	je     0x7ef9461d <CoreLoadImageCommon.constprop.0+769>
+   0x000000007ef9467d <+865>:	48 8b 05 d4 da 00 00	mov    0xdad4(%rip),%rax        # 0x7efa2158
+   0x000000007ef94684 <+872>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94688 <+876>:	48 8d 15 f1 b6 00 00	lea    0xb6f1(%rip),%rdx        # 0x7ef9fd80
+   0x000000007ef9468f <+883>:	48 8b 8c 24 a0 00 00 00	mov    0xa0(%rsp),%rcx
+   0x000000007ef94697 <+891>:	4c 8d 84 24 a8 00 00 00	lea    0xa8(%rsp),%r8
+   0x000000007ef9469f <+899>:	ff 90 98 00 00 00	call   *0x98(%rax)
+   0x000000007ef946a5 <+905>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef946a9 <+909>:	48 85 c0	test   %rax,%rax
+   0x000000007ef946ac <+912>:	0f 88 6b ff ff ff	js     0x7ef9461d <CoreLoadImageCommon.constprop.0+769>
+   0x000000007ef946b2 <+918>:	48 8b 84 24 88 00 00 00	mov    0x88(%rsp),%rax
+   0x000000007ef946ba <+926>:	45 31 c9	xor    %r9d,%r9d
+   0x000000007ef946bd <+929>:	41 b8 10 00 00 00	mov    $0x10,%r8d
+   0x000000007ef946c3 <+935>:	48 c7 84 24 90 00 00 00 00 00 00 00	movq   $0x0,0x90(%rsp)
+   0x000000007ef946cf <+947>:	51	push   %rcx
+   0x000000007ef946d0 <+948>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef946d3 <+951>:	48 8d 54 24 68	lea    0x68(%rsp),%rdx
+   0x000000007ef946d8 <+956>:	52	push   %rdx
+   0x000000007ef946d9 <+957>:	4c 89 fa	mov    %r15,%rdx
+   0x000000007ef946dc <+960>:	48 8d ac 24 a8 00 00 00	lea    0xa8(%rsp),%rbp
+   0x000000007ef946e4 <+968>:	55	push   %rbp
+   0x000000007ef946e5 <+969>:	48 8d 9c 24 a8 00 00 00	lea    0xa8(%rsp),%rbx
+   0x000000007ef946ed <+977>:	53	push   %rbx
+   0x000000007ef946ee <+978>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef946f2 <+982>:	ff 50 18	call   *0x18(%rax)
+   0x000000007ef946f5 <+985>:	48 83 c4 40	add    $0x40,%rsp
+   0x000000007ef946f9 <+989>:	48 85 c0	test   %rax,%rax
+   0x000000007ef946fc <+992>:	0f 89 bd 05 00 00	jns    0x7ef94cbf <CoreLoadImageCommon.constprop.0+2467>
+   0x000000007ef94702 <+998>:	48 8b 8c 24 90 00 00 00	mov    0x90(%rsp),%rcx
+   0x000000007ef9470a <+1006>:	48 85 c9	test   %rcx,%rcx
+   0x000000007ef9470d <+1009>:	74 18	je     0x7ef94727 <CoreLoadImageCommon.constprop.0+1035>
+   0x000000007ef9470f <+1011>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94713 <+1015>:	e8 04 b9 ff ff	call   0x7ef9001c <FreePool>
+   0x000000007ef94718 <+1020>:	c7 84 24 80 00 00 00 00 00 00 00	movl   $0x0,0x80(%rsp)
+   0x000000007ef94723 <+1031>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94727 <+1035>:	48 8b 84 24 88 00 00 00	mov    0x88(%rsp),%rax
+   0x000000007ef9472f <+1043>:	49 89 e9	mov    %rbp,%r9
+   0x000000007ef94732 <+1046>:	49 89 d8	mov    %rbx,%r8
+   0x000000007ef94735 <+1049>:	48 c7 84 24 90 00 00 00 00 00 00 00	movq   $0x0,0x90(%rsp)
+   0x000000007ef94741 <+1061>:	52	push   %rdx
+   0x000000007ef94742 <+1062>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef94745 <+1065>:	48 8d 54 24 68	lea    0x68(%rsp),%rdx
+   0x000000007ef9474a <+1070>:	52	push   %rdx
+   0x000000007ef9474b <+1071>:	48 8d 54 24 74	lea    0x74(%rsp),%rdx
+   0x000000007ef94750 <+1076>:	52	push   %rdx
+   0x000000007ef94751 <+1077>:	48 8d 54 24 77	lea    0x77(%rsp),%rdx
+   0x000000007ef94756 <+1082>:	52	push   %rdx
+   0x000000007ef94757 <+1083>:	4c 89 fa	mov    %r15,%rdx
+   0x000000007ef9475a <+1086>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef9475e <+1090>:	ff 50 10	call   *0x10(%rax)
+   0x000000007ef94761 <+1093>:	48 83 c4 40	add    $0x40,%rsp
+   0x000000007ef94765 <+1097>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94768 <+1100>:	0f 88 af fe ff ff	js     0x7ef9461d <CoreLoadImageCommon.constprop.0+769>
+   0x000000007ef9476e <+1106>:	e9 4c 05 00 00	jmp    0x7ef94cbf <CoreLoadImageCommon.constprop.0+2467>
+   0x000000007ef94773 <+1111>:	48 8b 05 de d9 00 00	mov    0xd9de(%rip),%rax        # 0x7efa2158
+   0x000000007ef9477a <+1118>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef9477e <+1122>:	48 8d 15 6b c6 00 00	lea    0xc66b(%rip),%rdx        # 0x7efa0df0
+   0x000000007ef94785 <+1129>:	48 8b 8c 24 a0 00 00 00	mov    0xa0(%rsp),%rcx
+   0x000000007ef9478d <+1137>:	4c 8d 84 24 c0 00 00 00	lea    0xc0(%rsp),%r8
+   0x000000007ef94795 <+1145>:	ff 90 98 00 00 00	call   *0x98(%rax)
+   0x000000007ef9479b <+1151>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef9479f <+1155>:	48 85 c0	test   %rax,%rax
+   0x000000007ef947a2 <+1158>:	79 10	jns    0x7ef947b4 <CoreLoadImageCommon.constprop.0+1176>
+   0x000000007ef947a4 <+1160>:	80 7c 24 28 00	cmpb   $0x0,0x28(%rsp)
+   0x000000007ef947a9 <+1165>:	0f 84 9d 02 00 00	je     0x7ef94a4c <CoreLoadImageCommon.constprop.0+1840>
+   0x000000007ef947af <+1171>:	e9 d2 02 00 00	jmp    0x7ef94a86 <CoreLoadImageCommon.constprop.0+1898>
+   0x000000007ef947b4 <+1176>:	48 8b 84 24 a0 00 00 00	mov    0xa0(%rsp),%rax
+   0x000000007ef947bc <+1184>:	48 8d 94 24 a8 00 00 00	lea    0xa8(%rsp),%rdx
+   0x000000007ef947c4 <+1192>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef947c8 <+1196>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef947cb <+1199>:	ff 50 08	call   *0x8(%rax)
+   0x000000007ef947ce <+1202>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef947d2 <+1206>:	49 89 c7	mov    %rax,%r15
+   0x000000007ef947d5 <+1209>:	48 85 c0	test   %rax,%rax
+   0x000000007ef947d8 <+1212>:	78 ca	js     0x7ef947a4 <CoreLoadImageCommon.constprop.0+1160>
+   0x000000007ef947da <+1214>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef947de <+1218>:	48 8b 8c 24 98 00 00 00	mov    0x98(%rsp),%rcx
+   0x000000007ef947e6 <+1226>:	e8 89 c4 ff ff	call   0x7ef90c74 <UefiDevicePathLibDuplicateDevicePath>
+   0x000000007ef947eb <+1231>:	48 89 44 24 40	mov    %rax,0x40(%rsp)
+   0x000000007ef947f0 <+1236>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef947f4 <+1240>:	48 85 c0	test   %rax,%rax
+   0x000000007ef947f7 <+1243>:	75 20	jne    0x7ef94819 <CoreLoadImageCommon.constprop.0+1277>
+   0x000000007ef947f9 <+1245>:	48 8b 84 24 a8 00 00 00	mov    0xa8(%rsp),%rax
+   0x000000007ef94801 <+1253>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94805 <+1257>:	49 bf 09 00 00 00 00 00 00 80	movabs $0x8000000000000009,%r15
+   0x000000007ef9480f <+1267>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef94812 <+1270>:	ff 50 10	call   *0x10(%rax)
+   0x000000007ef94815 <+1273>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94819 <+1277>:	48 8b 44 24 20	mov    0x20(%rsp),%rax
+   0x000000007ef9481e <+1282>:	48 8d 9c 24 a8 00 00 00	lea    0xa8(%rsp),%rbx
+   0x000000007ef94826 <+1290>:	48 89 44 24 78	mov    %rax,0x78(%rsp)
+   0x000000007ef9482b <+1295>:	4d 85 ff	test   %r15,%r15
+   0x000000007ef9482e <+1298>:	0f 88 d5 01 00 00	js     0x7ef94a09 <CoreLoadImageCommon.constprop.0+1773>
+   0x000000007ef94834 <+1304>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94838 <+1308>:	48 8b 8c 24 98 00 00 00	mov    0x98(%rsp),%rcx
+   0x000000007ef94840 <+1316>:	e8 e2 c2 ff ff	call   0x7ef90b27 <IsDevicePathEnd>
+   0x000000007ef94845 <+1321>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94849 <+1325>:	84 c0	test   %al,%al
+   0x000000007ef9484b <+1327>:	0f 85 a2 00 00 00	jne    0x7ef948f3 <CoreLoadImageCommon.constprop.0+1495>
+   0x000000007ef94851 <+1333>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94855 <+1337>:	48 8b 8c 24 98 00 00 00	mov    0x98(%rsp),%rcx
+   0x000000007ef9485d <+1345>:	e8 60 a9 ff ff	call   0x7ef8f1c2 <DevicePathType>
+   0x000000007ef94862 <+1350>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94866 <+1354>:	3c 04	cmp    $0x4,%al
+   0x000000007ef94868 <+1356>:	74 0f	je     0x7ef94879 <CoreLoadImageCommon.constprop.0+1373>
+   0x000000007ef9486a <+1358>:	49 bf 03 00 00 00 00 00 00 80	movabs $0x8000000000000003,%r15
+   0x000000007ef94874 <+1368>:	e9 90 01 00 00	jmp    0x7ef94a09 <CoreLoadImageCommon.constprop.0+1773>
+   0x000000007ef94879 <+1373>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef9487d <+1377>:	48 8b 8c 24 98 00 00 00	mov    0x98(%rsp),%rcx
+   0x000000007ef94885 <+1385>:	e8 c8 c1 ff ff	call   0x7ef90a52 <DevicePathSubType>
+   0x000000007ef9488a <+1390>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef9488e <+1394>:	3c 04	cmp    $0x4,%al
+   0x000000007ef94890 <+1396>:	75 d8	jne    0x7ef9486a <CoreLoadImageCommon.constprop.0+1358>
+   0x000000007ef94892 <+1398>:	48 8b ac 24 a8 00 00 00	mov    0xa8(%rsp),%rbp
+   0x000000007ef9489a <+1406>:	41 b9 01 00 00 00	mov    $0x1,%r9d
+   0x000000007ef948a0 <+1412>:	48 89 da	mov    %rbx,%rdx
+   0x000000007ef948a3 <+1415>:	48 c7 84 24 a8 00 00 00 00 00 00 00	movq   $0x0,0xa8(%rsp)
+   0x000000007ef948af <+1427>:	41 52	push   %r10
+   0x000000007ef948b1 <+1429>:	6a 00	push   $0x0
+   0x000000007ef948b3 <+1431>:	48 89 e9	mov    %rbp,%rcx
+   0x000000007ef948b6 <+1434>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef948ba <+1438>:	48 8b 84 24 a8 00 00 00	mov    0xa8(%rsp),%rax
+   0x000000007ef948c2 <+1446>:	4c 8d 40 04	lea    0x4(%rax),%r8
+   0x000000007ef948c6 <+1450>:	ff 55 08	call   *0x8(%rbp)
+   0x000000007ef948c9 <+1453>:	41 5b	pop    %r11
+   0x000000007ef948cb <+1455>:	48 89 e9	mov    %rbp,%rcx
+   0x000000007ef948ce <+1458>:	49 89 c7	mov    %rax,%r15
+   0x000000007ef948d1 <+1461>:	58	pop    %rax
+   0x000000007ef948d2 <+1462>:	ff 55 10	call   *0x10(%rbp)
+   0x000000007ef948d5 <+1465>:	48 8b 8c 24 98 00 00 00	mov    0x98(%rsp),%rcx
+   0x000000007ef948dd <+1473>:	e8 d5 c1 ff ff	call   0x7ef90ab7 <NextDevicePathNode>
+   0x000000007ef948e2 <+1478>:	48 89 84 24 98 00 00 00	mov    %rax,0x98(%rsp)
+   0x000000007ef948ea <+1486>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef948ee <+1490>:	e9 38 ff ff ff	jmp    0x7ef9482b <CoreLoadImageCommon.constprop.0+1295>
+   0x000000007ef948f3 <+1495>:	48 8b 84 24 a8 00 00 00	mov    0xa8(%rsp),%rax
+   0x000000007ef948fb <+1503>:	48 8d 9c 24 b0 00 00 00	lea    0xb0(%rsp),%rbx
+   0x000000007ef94903 <+1511>:	45 31 c9	xor    %r9d,%r9d
+   0x000000007ef94906 <+1514>:	48 c7 84 24 b0 00 00 00 00 00 00 00	movq   $0x0,0xb0(%rsp)
+   0x000000007ef94912 <+1526>:	49 89 d8	mov    %rbx,%r8
+   0x000000007ef94915 <+1529>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94919 <+1533>:	48 8d 15 a0 c4 00 00	lea    0xc4a0(%rip),%rdx        # 0x7efa0dc0
+   0x000000007ef94920 <+1540>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef94923 <+1543>:	ff 50 40	call   *0x40(%rax)
+   0x000000007ef94926 <+1546>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef9492a <+1550>:	49 89 c7	mov    %rax,%r15
+   0x000000007ef9492d <+1553>:	48 b8 05 00 00 00 00 00 00 80	movabs $0x8000000000000005,%rax
+   0x000000007ef94937 <+1563>:	49 39 c7	cmp    %rax,%r15
+   0x000000007ef9493a <+1566>:	75 4d	jne    0x7ef94989 <CoreLoadImageCommon.constprop.0+1645>
+   0x000000007ef9493c <+1568>:	49 bf 09 00 00 00 00 00 00 80	movabs $0x8000000000000009,%r15
+   0x000000007ef94946 <+1578>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef9494a <+1582>:	48 8b 8c 24 d0 00 00 00	mov    0xd0(%rsp),%rcx
+   0x000000007ef94952 <+1590>:	e8 e8 83 ff ff	call   0x7ef8cd3f <AllocatePool>
+   0x000000007ef94957 <+1595>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef9495b <+1599>:	49 89 c5	mov    %rax,%r13
+   0x000000007ef9495e <+1602>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94961 <+1605>:	74 26	je     0x7ef94989 <CoreLoadImageCommon.constprop.0+1645>
+   0x000000007ef94963 <+1607>:	48 8b 84 24 a8 00 00 00	mov    0xa8(%rsp),%rax
+   0x000000007ef9496b <+1615>:	4d 89 e9	mov    %r13,%r9
+   0x000000007ef9496e <+1618>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94972 <+1622>:	49 89 d8	mov    %rbx,%r8
+   0x000000007ef94975 <+1625>:	48 8d 15 44 c4 00 00	lea    0xc444(%rip),%rdx        # 0x7efa0dc0
+   0x000000007ef9497c <+1632>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef9497f <+1635>:	ff 50 40	call   *0x40(%rax)
+   0x000000007ef94982 <+1638>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94986 <+1642>:	49 89 c7	mov    %rax,%r15
+   0x000000007ef94989 <+1645>:	4d 85 ff	test   %r15,%r15
+   0x000000007ef9498c <+1648>:	78 66	js     0x7ef949f4 <CoreLoadImageCommon.constprop.0+1752>
+   0x000000007ef9498e <+1650>:	4d 85 ed	test   %r13,%r13
+   0x000000007ef94991 <+1653>:	74 76	je     0x7ef94a09 <CoreLoadImageCommon.constprop.0+1773>
+   0x000000007ef94993 <+1655>:	41 f6 45 48 10	testb  $0x10,0x48(%r13)
+   0x000000007ef94998 <+1660>:	75 5f	jne    0x7ef949f9 <CoreLoadImageCommon.constprop.0+1757>
+   0x000000007ef9499a <+1662>:	49 8b 4d 08	mov    0x8(%r13),%rcx
+   0x000000007ef9499e <+1666>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef949a2 <+1670>:	49 bf 09 00 00 00 00 00 00 80	movabs $0x8000000000000009,%r15
+   0x000000007ef949ac <+1680>:	e8 8e 83 ff ff	call   0x7ef8cd3f <AllocatePool>
+   0x000000007ef949b1 <+1685>:	48 89 84 24 b0 00 00 00	mov    %rax,0xb0(%rsp)
+   0x000000007ef949b9 <+1693>:	49 89 c0	mov    %rax,%r8
+   0x000000007ef949bc <+1696>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef949c0 <+1700>:	48 85 c0	test   %rax,%rax
+   0x000000007ef949c3 <+1703>:	74 34	je     0x7ef949f9 <CoreLoadImageCommon.constprop.0+1757>
+   0x000000007ef949c5 <+1705>:	49 8b 45 08	mov    0x8(%r13),%rax
+   0x000000007ef949c9 <+1709>:	48 8d 94 24 98 00 00 00	lea    0x98(%rsp),%rdx
+   0x000000007ef949d1 <+1717>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef949d5 <+1721>:	48 89 84 24 b8 00 00 00	mov    %rax,0xb8(%rsp)
+   0x000000007ef949dd <+1729>:	48 8b 84 24 c8 00 00 00	mov    0xc8(%rsp),%rax
+   0x000000007ef949e5 <+1737>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef949e8 <+1740>:	ff 50 20	call   *0x20(%rax)
+   0x000000007ef949eb <+1743>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef949ef <+1747>:	49 89 c7	mov    %rax,%r15
+   0x000000007ef949f2 <+1750>:	eb 05	jmp    0x7ef949f9 <CoreLoadImageCommon.constprop.0+1757>
+   0x000000007ef949f4 <+1752>:	4d 85 ed	test   %r13,%r13
+   0x000000007ef949f7 <+1755>:	74 10	je     0x7ef94a09 <CoreLoadImageCommon.constprop.0+1773>
+   0x000000007ef949f9 <+1757>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef949fd <+1761>:	4c 89 e9	mov    %r13,%rcx
+   0x000000007ef94a00 <+1764>:	e8 17 b6 ff ff	call   0x7ef9001c <FreePool>
+   0x000000007ef94a05 <+1769>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94a09 <+1773>:	48 8b 84 24 a8 00 00 00	mov    0xa8(%rsp),%rax
+   0x000000007ef94a11 <+1781>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94a14 <+1784>:	74 0e	je     0x7ef94a24 <CoreLoadImageCommon.constprop.0+1800>
+   0x000000007ef94a16 <+1786>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94a1a <+1790>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef94a1d <+1793>:	ff 50 10	call   *0x10(%rax)
+   0x000000007ef94a20 <+1796>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94a24 <+1800>:	48 83 7c 24 20 00	cmpq   $0x0,0x20(%rsp)
+   0x000000007ef94a2a <+1806>:	74 12	je     0x7ef94a3e <CoreLoadImageCommon.constprop.0+1826>
+   0x000000007ef94a2c <+1808>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94a30 <+1812>:	48 8b 4c 24 40	mov    0x40(%rsp),%rcx
+   0x000000007ef94a35 <+1817>:	e8 e2 b5 ff ff	call   0x7ef9001c <FreePool>
+   0x000000007ef94a3a <+1822>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94a3e <+1826>:	4d 85 ff	test   %r15,%r15
+   0x000000007ef94a41 <+1829>:	0f 89 78 02 00 00	jns    0x7ef94cbf <CoreLoadImageCommon.constprop.0+2467>
+   0x000000007ef94a47 <+1835>:	e9 58 fd ff ff	jmp    0x7ef947a4 <CoreLoadImageCommon.constprop.0+1160>
+   0x000000007ef94a4c <+1840>:	48 8b 04 24	mov    (%rsp),%rax
+   0x000000007ef94a50 <+1844>:	48 8d 54 24 78	lea    0x78(%rsp),%rdx
+   0x000000007ef94a55 <+1849>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94a59 <+1853>:	48 8d 0d 80 c3 00 00	lea    0xc380(%rip),%rcx        # 0x7efa0de0
+   0x000000007ef94a60 <+1860>:	48 89 84 24 98 00 00 00	mov    %rax,0x98(%rsp)
+   0x000000007ef94a68 <+1868>:	48 8b 05 e9 d6 00 00	mov    0xd6e9(%rip),%rax        # 0x7efa2158
+   0x000000007ef94a6f <+1875>:	4c 8d 84 24 a0 00 00 00	lea    0xa0(%rsp),%r8
+   0x000000007ef94a77 <+1883>:	ff 90 b8 00 00 00	call   *0xb8(%rax)
+   0x000000007ef94a7d <+1889>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94a81 <+1893>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94a84 <+1896>:	79 43	jns    0x7ef94ac9 <CoreLoadImageCommon.constprop.0+1965>
+   0x000000007ef94a86 <+1898>:	48 8b 04 24	mov    (%rsp),%rax
+   0x000000007ef94a8a <+1902>:	48 8d 54 24 78	lea    0x78(%rsp),%rdx
+   0x000000007ef94a8f <+1907>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94a93 <+1911>:	48 8d 0d 36 c3 00 00	lea    0xc336(%rip),%rcx        # 0x7efa0dd0
+   0x000000007ef94a9a <+1918>:	48 89 84 24 98 00 00 00	mov    %rax,0x98(%rsp)
+   0x000000007ef94aa2 <+1926>:	48 8b 05 af d6 00 00	mov    0xd6af(%rip),%rax        # 0x7efa2158
+   0x000000007ef94aa9 <+1933>:	4c 8d 84 24 a0 00 00 00	lea    0xa0(%rsp),%r8
+   0x000000007ef94ab1 <+1941>:	ff 90 b8 00 00 00	call   *0xb8(%rax)
+   0x000000007ef94ab7 <+1947>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94abb <+1951>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94abe <+1954>:	0f 89 e9 00 00 00	jns    0x7ef94bad <CoreLoadImageCommon.constprop.0+2193>
+   0x000000007ef94ac4 <+1960>:	e9 c2 01 00 00	jmp    0x7ef94c8b <CoreLoadImageCommon.constprop.0+2415>
+   0x000000007ef94ac9 <+1965>:	48 8b 05 88 d6 00 00	mov    0xd688(%rip),%rax        # 0x7efa2158
+   0x000000007ef94ad0 <+1972>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94ad4 <+1976>:	48 8d 15 05 c3 00 00	lea    0xc305(%rip),%rdx        # 0x7efa0de0
+   0x000000007ef94adb <+1983>:	48 8b 8c 24 a0 00 00 00	mov    0xa0(%rsp),%rcx
+   0x000000007ef94ae3 <+1991>:	4c 8d 84 24 00 01 00 00	lea    0x100(%rsp),%r8
+   0x000000007ef94aeb <+1999>:	ff 90 98 00 00 00	call   *0x98(%rax)
+   0x000000007ef94af1 <+2005>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94af5 <+2009>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94af8 <+2012>:	78 8c	js     0x7ef94a86 <CoreLoadImageCommon.constprop.0+1898>
+   0x000000007ef94afa <+2014>:	48 8b 84 24 e0 00 00 00	mov    0xe0(%rsp),%rax
+   0x000000007ef94b02 <+2022>:	48 8d 9c 24 98 00 00 00	lea    0x98(%rsp),%rbx
+   0x000000007ef94b0a <+2030>:	45 31 c0	xor    %r8d,%r8d
+   0x000000007ef94b0d <+2033>:	48 c7 84 24 98 00 00 00 00 00 00 00	movq   $0x0,0x98(%rsp)
+   0x000000007ef94b19 <+2045>:	48 c7 84 24 90 00 00 00 00 00 00 00	movq   $0x0,0x90(%rsp)
+   0x000000007ef94b25 <+2057>:	41 51	push   %r9
+   0x000000007ef94b27 <+2059>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef94b2a <+2062>:	49 89 d9	mov    %rbx,%r9
+   0x000000007ef94b2d <+2065>:	6a 00	push   $0x0
+   0x000000007ef94b2f <+2067>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94b33 <+2071>:	48 8b 94 24 a8 00 00 00	mov    0xa8(%rsp),%rdx
+   0x000000007ef94b3b <+2079>:	ff 10	call   *(%rax)
+   0x000000007ef94b3d <+2081>:	48 83 c4 30	add    $0x30,%rsp
+   0x000000007ef94b41 <+2085>:	49 89 c7	mov    %rax,%r15
+   0x000000007ef94b44 <+2088>:	48 b8 05 00 00 00 00 00 00 80	movabs $0x8000000000000005,%rax
+   0x000000007ef94b4e <+2098>:	49 39 c7	cmp    %rax,%r15
+   0x000000007ef94b51 <+2101>:	75 4c	jne    0x7ef94b9f <CoreLoadImageCommon.constprop.0+2179>
+   0x000000007ef94b53 <+2103>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94b57 <+2107>:	48 8b 8c 24 b8 00 00 00	mov    0xb8(%rsp),%rcx
+   0x000000007ef94b5f <+2115>:	e8 db 81 ff ff	call   0x7ef8cd3f <AllocatePool>
+   0x000000007ef94b64 <+2120>:	48 89 84 24 b0 00 00 00	mov    %rax,0xb0(%rsp)
+   0x000000007ef94b6c <+2128>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94b70 <+2132>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94b73 <+2135>:	0f 84 0d ff ff ff	je     0x7ef94a86 <CoreLoadImageCommon.constprop.0+1898>
+   0x000000007ef94b79 <+2141>:	48 8b 8c 24 e0 00 00 00	mov    0xe0(%rsp),%rcx
+   0x000000007ef94b81 <+2149>:	41 50	push   %r8
+   0x000000007ef94b83 <+2151>:	49 89 d9	mov    %rbx,%r9
+   0x000000007ef94b86 <+2154>:	45 31 c0	xor    %r8d,%r8d
+   0x000000007ef94b89 <+2157>:	50	push   %rax
+   0x000000007ef94b8a <+2158>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94b8e <+2162>:	48 8b 94 24 a8 00 00 00	mov    0xa8(%rsp),%rdx
+   0x000000007ef94b96 <+2170>:	ff 11	call   *(%rcx)
+   0x000000007ef94b98 <+2172>:	48 83 c4 30	add    $0x30,%rsp
+   0x000000007ef94b9c <+2176>:	49 89 c7	mov    %rax,%r15
+   0x000000007ef94b9f <+2179>:	4d 85 ff	test   %r15,%r15
+   0x000000007ef94ba2 <+2182>:	0f 89 17 01 00 00	jns    0x7ef94cbf <CoreLoadImageCommon.constprop.0+2467>
+   0x000000007ef94ba8 <+2188>:	e9 d9 fe ff ff	jmp    0x7ef94a86 <CoreLoadImageCommon.constprop.0+1898>
+   0x000000007ef94bad <+2193>:	48 8b 05 a4 d5 00 00	mov    0xd5a4(%rip),%rax        # 0x7efa2158
+   0x000000007ef94bb4 <+2200>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94bb8 <+2204>:	48 8d 15 11 c2 00 00	lea    0xc211(%rip),%rdx        # 0x7efa0dd0
+   0x000000007ef94bbf <+2211>:	48 8b 8c 24 a0 00 00 00	mov    0xa0(%rsp),%rcx
+   0x000000007ef94bc7 <+2219>:	4c 8d 84 24 d8 00 00 00	lea    0xd8(%rsp),%r8
+   0x000000007ef94bcf <+2227>:	ff 90 98 00 00 00	call   *0x98(%rax)
+   0x000000007ef94bd5 <+2233>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94bd9 <+2237>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94bdc <+2240>:	0f 88 a9 00 00 00	js     0x7ef94c8b <CoreLoadImageCommon.constprop.0+2415>
+   0x000000007ef94be2 <+2246>:	0f b6 6c 24 28	movzbl 0x28(%rsp),%ebp
+   0x000000007ef94be7 <+2251>:	48 8b 84 24 b8 00 00 00	mov    0xb8(%rsp),%rax
+   0x000000007ef94bef <+2259>:	48 c7 84 24 98 00 00 00 00 00 00 00	movq   $0x0,0x98(%rsp)
+   0x000000007ef94bfb <+2271>:	48 8d 9c 24 98 00 00 00	lea    0x98(%rsp),%rbx
+   0x000000007ef94c03 <+2279>:	48 c7 84 24 90 00 00 00 00 00 00 00	movq   $0x0,0x90(%rsp)
+   0x000000007ef94c0f <+2291>:	49 89 d9	mov    %rbx,%r9
+   0x000000007ef94c12 <+2294>:	57	push   %rdi
+   0x000000007ef94c13 <+2295>:	41 89 e8	mov    %ebp,%r8d
+   0x000000007ef94c16 <+2298>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef94c19 <+2301>:	6a 00	push   $0x0
+   0x000000007ef94c1b <+2303>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94c1f <+2307>:	48 8b 94 24 a8 00 00 00	mov    0xa8(%rsp),%rdx
+   0x000000007ef94c27 <+2315>:	ff 10	call   *(%rax)
+   0x000000007ef94c29 <+2317>:	48 83 c4 30	add    $0x30,%rsp
+   0x000000007ef94c2d <+2321>:	49 89 c7	mov    %rax,%r15
+   0x000000007ef94c30 <+2324>:	48 b8 05 00 00 00 00 00 00 80	movabs $0x8000000000000005,%rax
+   0x000000007ef94c3a <+2334>:	49 39 c7	cmp    %rax,%r15
+   0x000000007ef94c3d <+2337>:	75 47	jne    0x7ef94c86 <CoreLoadImageCommon.constprop.0+2410>
+   0x000000007ef94c3f <+2339>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94c43 <+2343>:	48 8b 8c 24 b8 00 00 00	mov    0xb8(%rsp),%rcx
+   0x000000007ef94c4b <+2351>:	e8 ef 80 ff ff	call   0x7ef8cd3f <AllocatePool>
+   0x000000007ef94c50 <+2356>:	48 89 84 24 b0 00 00 00	mov    %rax,0xb0(%rsp)
+   0x000000007ef94c58 <+2364>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94c5c <+2368>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94c5f <+2371>:	74 2a	je     0x7ef94c8b <CoreLoadImageCommon.constprop.0+2415>
+   0x000000007ef94c61 <+2373>:	48 8b 8c 24 b8 00 00 00	mov    0xb8(%rsp),%rcx
+   0x000000007ef94c69 <+2381>:	56	push   %rsi
+   0x000000007ef94c6a <+2382>:	49 89 d9	mov    %rbx,%r9
+   0x000000007ef94c6d <+2385>:	41 89 e8	mov    %ebp,%r8d
+   0x000000007ef94c70 <+2388>:	50	push   %rax
+   0x000000007ef94c71 <+2389>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94c75 <+2393>:	48 8b 94 24 a8 00 00 00	mov    0xa8(%rsp),%rdx
+   0x000000007ef94c7d <+2401>:	ff 11	call   *(%rcx)
+   0x000000007ef94c7f <+2403>:	48 83 c4 30	add    $0x30,%rsp
+   0x000000007ef94c83 <+2407>:	49 89 c7	mov    %rax,%r15
+   0x000000007ef94c86 <+2410>:	4d 85 ff	test   %r15,%r15
+   0x000000007ef94c89 <+2413>:	79 34	jns    0x7ef94cbf <CoreLoadImageCommon.constprop.0+2467>
+   0x000000007ef94c8b <+2415>:	48 8b 8c 24 90 00 00 00	mov    0x90(%rsp),%rcx
+   0x000000007ef94c93 <+2423>:	48 85 c9	test   %rcx,%rcx
+   0x000000007ef94c96 <+2426>:	74 19	je     0x7ef94cb1 <CoreLoadImageCommon.constprop.0+2453>
+   0x000000007ef94c98 <+2428>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94c9c <+2432>:	e8 7b b3 ff ff	call   0x7ef9001c <FreePool>
+   0x000000007ef94ca1 <+2437>:	48 c7 84 24 b0 00 00 00 00 00 00 00	movq   $0x0,0xb0(%rsp)
+   0x000000007ef94cad <+2449>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94cb1 <+2453>:	48 c7 84 24 d8 00 00 00 00 00 00 00	movq   $0x0,0xd8(%rsp)
+   0x000000007ef94cbd <+2465>:	eb 10	jmp    0x7ef94ccf <CoreLoadImageCommon.constprop.0+2483>
+   0x000000007ef94cbf <+2467>:	48 8b 84 24 98 00 00 00	mov    0x98(%rsp),%rax
+   0x000000007ef94cc7 <+2475>:	48 89 84 24 d8 00 00 00	mov    %rax,0xd8(%rsp)
+   0x000000007ef94ccf <+2483>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94cd3 <+2487>:	48 8b 4c 24 20	mov    0x20(%rsp),%rcx
+   0x000000007ef94cd8 <+2492>:	e8 3f b3 ff ff	call   0x7ef9001c <FreePool>
+   0x000000007ef94cdd <+2497>:	48 8b 84 24 b0 00 00 00	mov    0xb0(%rsp),%rax
+   0x000000007ef94ce5 <+2505>:	48 89 84 24 f0 00 00 00	mov    %rax,0xf0(%rsp)
+   0x000000007ef94ced <+2513>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94cf1 <+2517>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94cf4 <+2520>:	0f 84 a2 00 00 00	je     0x7ef94d9c <CoreLoadImageCommon.constprop.0+2688>
+   0x000000007ef94cfa <+2526>:	48 8b 44 24 10	mov    0x10(%rsp),%rax
+   0x000000007ef94cff <+2531>:	80 7c 24 08 00	cmpb   $0x0,0x8(%rsp)
+   0x000000007ef94d04 <+2536>:	c6 84 24 c8 00 00 00 01	movb   $0x1,0xc8(%rsp)
+   0x000000007ef94d0c <+2544>:	48 89 04 24	mov    %rax,(%rsp)
+   0x000000007ef94d10 <+2548>:	0f 84 9e 00 00 00	je     0x7ef94db4 <CoreLoadImageCommon.constprop.0+2712>
+   0x000000007ef94d16 <+2554>:	48 8b 05 3b d4 00 00	mov    0xd43b(%rip),%rax        # 0x7efa2158
+   0x000000007ef94d1d <+2561>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94d21 <+2565>:	48 8d 15 88 af 00 00	lea    0xaf88(%rip),%rdx        # 0x7ef9fcb0
+   0x000000007ef94d28 <+2572>:	48 8b 8c 24 88 00 00 00	mov    0x88(%rsp),%rcx
+   0x000000007ef94d30 <+2580>:	4c 8d 84 24 00 01 00 00	lea    0x100(%rsp),%r8
+   0x000000007ef94d38 <+2588>:	ff 90 98 00 00 00	call   *0x98(%rax)
+   0x000000007ef94d3e <+2594>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94d42 <+2598>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94d45 <+2601>:	79 0c	jns    0x7ef94d53 <CoreLoadImageCommon.constprop.0+2615>
+   0x000000007ef94d47 <+2603>:	48 c7 84 24 e0 00 00 00 00 00 00 00	movq   $0x0,0xe0(%rsp)
+   0x000000007ef94d53 <+2615>:	48 8b 8c 24 e0 00 00 00	mov    0xe0(%rsp),%rcx
+   0x000000007ef94d5b <+2623>:	48 85 c9	test   %rcx,%rcx
+   0x000000007ef94d5e <+2626>:	75 15	jne    0x7ef94d75 <CoreLoadImageCommon.constprop.0+2649>
+   0x000000007ef94d60 <+2628>:	4d 85 f6	test   %r14,%r14
+   0x000000007ef94d63 <+2631>:	75 07	jne    0x7ef94d6c <CoreLoadImageCommon.constprop.0+2640>
+   0x000000007ef94d65 <+2633>:	4c 8d 35 e0 a4 00 00	lea    0xa4e0(%rip),%r14        # 0x7ef9f24c <mUefiDevicePathLibEndDevicePath>
+   0x000000007ef94d6c <+2640>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94d70 <+2644>:	4c 89 f1	mov    %r14,%rcx
+   0x000000007ef94d73 <+2647>:	eb 09	jmp    0x7ef94d7e <CoreLoadImageCommon.constprop.0+2658>
+   0x000000007ef94d75 <+2649>:	4d 85 f6	test   %r14,%r14
+   0x000000007ef94d78 <+2652>:	75 0b	jne    0x7ef94d85 <CoreLoadImageCommon.constprop.0+2665>
+   0x000000007ef94d7a <+2654>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94d7e <+2658>:	e8 f1 be ff ff	call   0x7ef90c74 <UefiDevicePathLibDuplicateDevicePath>
+   0x000000007ef94d83 <+2663>:	eb 0c	jmp    0x7ef94d91 <CoreLoadImageCommon.constprop.0+2677>
+   0x000000007ef94d85 <+2665>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94d89 <+2669>:	4c 89 f2	mov    %r14,%rdx
+   0x000000007ef94d8c <+2672>:	e8 10 bf ff ff	call   0x7ef90ca1 <UefiDevicePathLibAppendDevicePath>
+   0x000000007ef94d91 <+2677>:	48 89 44 24 20	mov    %rax,0x20(%rsp)
+   0x000000007ef94d96 <+2682>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94d9a <+2686>:	eb 18	jmp    0x7ef94db4 <CoreLoadImageCommon.constprop.0+2712>
+   0x000000007ef94d9c <+2688>:	49 bc 0e 00 00 00 00 00 00 80	movabs $0x800000000000000e,%r12
+   0x000000007ef94da6 <+2698>:	48 8b 44 24 10	mov    0x10(%rsp),%rax
+   0x000000007ef94dab <+2703>:	48 89 04 24	mov    %rax,(%rsp)
+   0x000000007ef94daf <+2707>:	e9 7c 04 00 00	jmp    0x7ef95230 <CoreLoadImageCommon.constprop.0+3860>
+   0x000000007ef94db4 <+2712>:	4d 85 e4	test   %r12,%r12
+   0x000000007ef94db7 <+2715>:	0f 88 73 04 00 00	js     0x7ef95230 <CoreLoadImageCommon.constprop.0+3860>
+   1269
+   0x000000007ef94dbd <+2721>:	48 8b 05 84 d2 00 00	mov    0xd284(%rip),%rax        # 0x7efa2048
+   0x000000007ef94dc4 <+2728>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94dc7 <+2731>:	74 6d	je     0x7ef94e36 <CoreLoadImageCommon.constprop.0+2842>
+   0x000000007ef94dc9 <+2733>:	52	push   %rdx
+   0x000000007ef94dca <+2734>:	0f b6 7c 24 30	movzbl 0x30(%rsp),%edi
+   0x000000007ef94dcf <+2739>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef94dd2 <+2742>:	57	push   %rdi
+   0x000000007ef94dd3 <+2743>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94dd7 <+2747>:	4c 8b 8c 24 08 01 00 00	mov    0x108(%rsp),%r9
+   0x000000007ef94ddf <+2755>:	4c 8b 84 24 00 01 00 00	mov    0x100(%rsp),%r8
+   0x000000007ef94de7 <+2763>:	48 8b 54 24 30	mov    0x30(%rsp),%rdx
+   0x000000007ef94dec <+2768>:	ff 10	call   *(%rax)
+   0x000000007ef94dee <+2770>:	48 89 44 24 38	mov    %rax,0x38(%rsp)
+   0x000000007ef94df3 <+2775>:	48 83 c4 30	add    $0x30,%rsp
+   0x000000007ef94df7 <+2779>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94dfa <+2782>:	78 7e	js     0x7ef94e7a <CoreLoadImageCommon.constprop.0+2910>
+   0x000000007ef94dfc <+2784>:	80 7c 24 18 00	cmpb   $0x0,0x18(%rsp)
+   0x000000007ef94e01 <+2789>:	74 6f	je     0x7ef94e72 <CoreLoadImageCommon.constprop.0+2902>
+   0x000000007ef94e03 <+2791>:	48 83 3d 85 d3 00 00 00	cmpq   $0x0,0xd385(%rip)        # 0x7efa2190
+   0x000000007ef94e0b <+2799>:	75 20	jne    0x7ef94e2d <CoreLoadImageCommon.constprop.0+2833>
+   0x000000007ef94e0d <+2801>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94e11 <+2805>:	4c 8d 05 21 9f 00 00	lea    0x9f21(%rip),%r8        # 0x7ef9ed39
+   0x000000007ef94e18 <+2812>:	ba 04 05 00 00	mov    $0x504,%edx
+   0x000000007ef94e1d <+2817>:	48 8d 0d b5 4f 00 00	lea    0x4fb5(%rip),%rcx        # 0x7ef99dd9 <AsmVectorNumFixup+81>
+   0x000000007ef94e24 <+2824>:	e8 9d 7f ff ff	call   0x7ef8cdc6 <DebugAssert>
+   0x000000007ef94e29 <+2829>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94e2d <+2833>:	48 8b 05 5c d3 00 00	mov    0xd35c(%rip),%rax        # 0x7efa2190
+   0x000000007ef94e34 <+2840>:	eb 13	jmp    0x7ef94e49 <CoreLoadImageCommon.constprop.0+2861>
+   0x000000007ef94e36 <+2842>:	48 8b 05 53 d3 00 00	mov    0xd353(%rip),%rax        # 0x7efa2190
+   0x000000007ef94e3d <+2849>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94e40 <+2852>:	74 27	je     0x7ef94e69 <CoreLoadImageCommon.constprop.0+2893>
+   0x000000007ef94e42 <+2854>:	48 83 3c 24 00	cmpq   $0x0,(%rsp)
+   0x000000007ef94e47 <+2859>:	74 20	je     0x7ef94e69 <CoreLoadImageCommon.constprop.0+2893>
+   0x000000007ef94e49 <+2861>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94e4d <+2865>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef94e50 <+2868>:	4c 8b 44 24 20	mov    0x20(%rsp),%r8
+   0x000000007ef94e55 <+2873>:	8b 94 24 80 00 00 00	mov    0x80(%rsp),%edx
+   0x000000007ef94e5c <+2880>:	ff 10	call   *(%rax)
+   0x000000007ef94e5e <+2882>:	48 89 44 24 28	mov    %rax,0x28(%rsp)
+   0x000000007ef94e63 <+2887>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94e67 <+2891>:	eb 09	jmp    0x7ef94e72 <CoreLoadImageCommon.constprop.0+2902>
+   0x000000007ef94e69 <+2893>:	48 c7 44 24 08 00 00 00 00	movq   $0x0,0x8(%rsp)
+   0x000000007ef94e72 <+2902>:	48 83 7c 24 08 00	cmpq   $0x0,0x8(%rsp)
+   0x000000007ef94e78 <+2908>:	79 31	jns    0x7ef94eab <CoreLoadImageCommon.constprop.0+2959>
+   0x000000007ef94e7a <+2910>:	48 b8 1a 00 00 00 00 00 00 80	movabs $0x800000000000001a,%rax
+   0x000000007ef94e84 <+2920>:	48 39 44 24 08	cmp    %rax,0x8(%rsp)
+   0x000000007ef94e89 <+2925>:	74 20	je     0x7ef94eab <CoreLoadImageCommon.constprop.0+2959>
+   0x000000007ef94e8b <+2927>:	48 83 e8 0b	sub    $0xb,%rax
+   0x000000007ef94e8f <+2931>:	48 39 44 24 08	cmp    %rax,0x8(%rsp)
+   0x000000007ef94e94 <+2936>:	0f 85 a1 03 00 00	jne    0x7ef9523b <CoreLoadImageCommon.constprop.0+3871>
+   0x000000007ef94e9a <+2942>:	48 8b 44 24 38	mov    0x38(%rsp),%rax
+   0x000000007ef94e9f <+2947>:	48 c7 00 00 00 00 00	movq   $0x0,(%rax)
+   0x000000007ef94ea6 <+2954>:	e9 90 03 00 00	jmp    0x7ef9523b <CoreLoadImageCommon.constprop.0+3871>
+   1327
+   0x000000007ef94eab <+2959>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94eaf <+2963>:	b9 88 01 00 00	mov    $0x188,%ecx
+   0x000000007ef94eb4 <+2968>:	49 bc 09 00 00 00 00 00 00 80	movabs $0x8000000000000009,%r12
+   0x000000007ef94ebe <+2978>:	e8 89 90 ff ff	call   0x7ef8df4c <AllocateZeroPool>
+   0x000000007ef94ec3 <+2983>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94ec7 <+2987>:	49 89 c6	mov    %rax,%r14
+   0x000000007ef94eca <+2990>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94ecd <+2993>:	0f 84 70 03 00 00	je     0x7ef95243 <CoreLoadImageCommon.constprop.0+3879>
+   0x000000007ef94ed3 <+2999>:	48 8b 4c 24 68	mov    0x68(%rsp),%rcx
+   0x000000007ef94ed8 <+3004>:	4c 8b 24 24	mov    (%rsp),%r12
+   0x000000007ef94edc <+3008>:	48 85 c9	test   %rcx,%rcx
+   0x000000007ef94edf <+3011>:	74 40	je     0x7ef94f21 <CoreLoadImageCommon.constprop.0+3077>
+   0x000000007ef94ee1 <+3013>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94ee5 <+3017>:	48 8d 15 c4 ad 00 00	lea    0xadc4(%rip),%rdx        # 0x7ef9fcb0
+   0x000000007ef94eec <+3024>:	4c 8d 84 24 90 00 00 00	lea    0x90(%rsp),%r8
+   0x000000007ef94ef4 <+3032>:	e8 f6 bf fe ff	call   0x7ef80eef <CoreHandleProtocol>
+   0x000000007ef94ef9 <+3037>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94efd <+3041>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94f00 <+3044>:	78 1f	js     0x7ef94f21 <CoreLoadImageCommon.constprop.0+3077>
+   0x000000007ef94f02 <+3046>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94f06 <+3050>:	48 8b 8c 24 90 00 00 00	mov    0x90(%rsp),%rcx
+   0x000000007ef94f0e <+3058>:	e8 11 bd ff ff	call   0x7ef90c24 <UefiDevicePathLibGetDevicePathSize>
+   0x000000007ef94f13 <+3063>:	48 8b 7c 24 20	mov    0x20(%rsp),%rdi
+   0x000000007ef94f18 <+3068>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94f1c <+3072>:	4c 8d 64 07 fc	lea    -0x4(%rdi,%rax,1),%r12
+   0x000000007ef94f21 <+3077>:	49 c7 06 6c 64 72 69	movq   $0x6972646c,(%r14)
+   0x000000007ef94f28 <+3084>:	48 8b 05 e1 d1 00 00	mov    0xd1e1(%rip),%rax        # 0x7efa2110
+   0x000000007ef94f2f <+3091>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94f33 <+3095>:	4c 89 e1	mov    %r12,%rcx
+   0x000000007ef94f36 <+3098>:	41 c7 46 28 00 10 00 00	movl   $0x1000,0x28(%r14)
+   0x000000007ef94f3e <+3106>:	49 89 46 38	mov    %rax,0x38(%r14)
+   0x000000007ef94f42 <+3110>:	48 8b 84 24 88 00 00 00	mov    0x88(%rsp),%rax
+   0x000000007ef94f4a <+3118>:	49 89 46 40	mov    %rax,0x40(%r14)
+   0x000000007ef94f4e <+3122>:	e8 21 bd ff ff	call   0x7ef90c74 <UefiDevicePathLibDuplicateDevicePath>
+   0x000000007ef94f53 <+3127>:	31 c9	xor    %ecx,%ecx
+   0x000000007ef94f55 <+3129>:	49 8d 56 28	lea    0x28(%r14),%rdx
+   0x000000007ef94f59 <+3133>:	49 c7 86 90 00 00 00 00 00 00 00	movq   $0x0,0x90(%r14)
+   0x000000007ef94f64 <+3144>:	49 89 46 48	mov    %rax,0x48(%r14)
+   0x000000007ef94f68 <+3148>:	48 8b 44 24 50	mov    0x50(%rsp),%rax
+   0x000000007ef94f6d <+3153>:	48 8d 35 dc ae 00 00	lea    0xaedc(%rip),%rsi        # 0x7ef9fe50
+   0x000000007ef94f74 <+3160>:	49 89 46 30	mov    %rax,0x30(%r14)
+   0x000000007ef94f78 <+3164>:	49 8d 46 28	lea    0x28(%r14),%rax
+   0x000000007ef94f7c <+3168>:	48 89 44 24 40	mov    %rax,0x40(%rsp)
+   0x000000007ef94f81 <+3173>:	49 8d 46 08	lea    0x8(%r14),%rax
+   0x000000007ef94f85 <+3177>:	48 89 44 24 48	mov    %rax,0x48(%rsp)
+   0x000000007ef94f8a <+3182>:	48 89 c7	mov    %rax,%rdi
+   0x000000007ef94f8d <+3185>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94f91 <+3189>:	e8 da d5 fe ff	call   0x7ef82570 <CoreInstallProtocolInterfaceNotify>
+   0x000000007ef94f96 <+3194>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef94f99 <+3197>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94f9c <+3200>:	0f 88 a1 02 00 00	js     0x7ef95243 <CoreLoadImageCommon.constprop.0+3879>
+   0x000000007ef94fa2 <+3206>:	49 8d ae f0 00 00 00	lea    0xf0(%r14),%rbp
+   0x000000007ef94fa9 <+3213>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94fad <+3217>:	ba 90 00 00 00	mov    $0x90,%edx
+   0x000000007ef94fb2 <+3222>:	48 89 e9	mov    %rbp,%rcx
+   0x000000007ef94fb5 <+3225>:	e8 f9 8e ff ff	call   0x7ef8deb3 <ZeroMem>
+   0x000000007ef94fba <+3230>:	48 8d 84 24 e0 00 00 00	lea    0xe0(%rsp),%rax
+   0x000000007ef94fc2 <+3238>:	48 89 e9	mov    %rbp,%rcx
+   0x000000007ef94fc5 <+3241>:	49 89 86 18 01 00 00	mov    %rax,0x118(%r14)
+   0x000000007ef94fcc <+3248>:	48 8d 05 bf 63 fe ff	lea    -0x19c41(%rip),%rax        # 0x7ef7b392 <CoreReadImageFile>
+   0x000000007ef94fd3 <+3255>:	49 89 86 10 01 00 00	mov    %rax,0x110(%r14)
+   0x000000007ef94fda <+3262>:	e8 d0 60 ff ff	call   0x7ef8b0af <PeCoffLoaderGetImageInfo>
+   0x000000007ef94fdf <+3267>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef94fe3 <+3271>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef94fe6 <+3274>:	48 85 c0	test   %rax,%rax
+   0x000000007ef94fe9 <+3277>:	0f 88 54 02 00 00	js     0x7ef95243 <CoreLoadImageCommon.constprop.0+3879>
+   0x000000007ef94fef <+3283>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef94ff3 <+3287>:	48 8d 0d 26 d1 00 00	lea    0xd126(%rip),%rcx        # 0x7efa2120
+   0x000000007ef94ffa <+3294>:	48 8d 1d 1f d1 00 00	lea    0xd11f(%rip),%rbx        # 0x7efa2120
+   0x000000007ef95001 <+3301>:	e8 ff 8a ff ff	call   0x7ef8db05 <GetFirstNode>
+   0x000000007ef95006 <+3306>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef9500a <+3310>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef9500d <+3313>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95011 <+3317>:	4c 89 e2	mov    %r12,%rdx
+   0x000000007ef95014 <+3320>:	48 89 d9	mov    %rbx,%rcx
+   0x000000007ef95017 <+3323>:	e8 82 8b ff ff	call   0x7ef8db9e <IsNull>
+   0x000000007ef9501c <+3328>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95020 <+3332>:	84 c0	test   %al,%al
+   0x000000007ef95022 <+3334>:	75 5a	jne    0x7ef9507e <CoreLoadImageCommon.constprop.0+3426>
+   0x000000007ef95024 <+3336>:	41 8b 86 68 01 00 00	mov    0x168(%r14),%eax
+   0x000000007ef9502b <+3343>:	66 41 39 44 24 18	cmp    %ax,0x18(%r12)
+   0x000000007ef95031 <+3349>:	75 33	jne    0x7ef95066 <CoreLoadImageCommon.constprop.0+3402>
+   0x000000007ef95033 <+3351>:	49 8b 44 24 10	mov    0x10(%r12),%rax
+   0x000000007ef95038 <+3356>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef9503c <+3360>:	41 0f b7 96 6a 01 00 00	movzwl 0x16a(%r14),%edx
+   0x000000007ef95044 <+3368>:	4d 8b 46 48	mov    0x48(%r14),%r8
+   0x000000007ef95048 <+3372>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef9504b <+3375>:	ff 10	call   *(%rax)
+   0x000000007ef9504d <+3377>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95051 <+3381>:	84 c0	test   %al,%al
+   0x000000007ef95053 <+3383>:	74 11	je     0x7ef95066 <CoreLoadImageCommon.constprop.0+3402>
+   0x000000007ef95055 <+3385>:	49 8b 44 24 10	mov    0x10(%r12),%rax
+   0x000000007ef9505a <+3390>:	49 89 86 d8 00 00 00	mov    %rax,0xd8(%r14)
+   0x000000007ef95061 <+3397>:	e9 8b 00 00 00	jmp    0x7ef950f1 <CoreLoadImageCommon.constprop.0+3541>
+   0x000000007ef95066 <+3402>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef9506a <+3406>:	4c 89 e2	mov    %r12,%rdx
+   0x000000007ef9506d <+3409>:	48 89 d9	mov    %rbx,%rcx
+   0x000000007ef95070 <+3412>:	e8 c2 8a ff ff	call   0x7ef8db37 <GetNextNode>
+   0x000000007ef95075 <+3417>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95079 <+3421>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef9507c <+3424>:	eb 8f	jmp    0x7ef9500d <CoreLoadImageCommon.constprop.0+3313>
+   0x000000007ef9507e <+3426>:	41 8b 9e 68 01 00 00	mov    0x168(%r14),%ebx
+   0x000000007ef95085 <+3433>:	66 81 fb 64 86	cmp    $0x8664,%bx
+   0x000000007ef9508a <+3438>:	74 65	je     0x7ef950f1 <CoreLoadImageCommon.constprop.0+3541>
+   0x000000007ef9508c <+3440>:	66 81 fb 4c 01	cmp    $0x14c,%bx
+   0x000000007ef95091 <+3445>:	74 5e	je     0x7ef950f1 <CoreLoadImageCommon.constprop.0+3541>
+   0x000000007ef95093 <+3447>:	49 bc 03 00 00 00 00 00 00 80	movabs $0x8000000000000003,%r12
+   0x000000007ef9509d <+3457>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef950a1 <+3461>:	e8 03 ae ff ff	call   0x7ef8fea9 <DebugPrintEnabled>
+   0x000000007ef950a6 <+3466>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef950aa <+3470>:	84 c0	test   %al,%al
+   0x000000007ef950ac <+3472>:	0f 84 91 01 00 00	je     0x7ef95243 <CoreLoadImageCommon.constprop.0+3879>
+   0x000000007ef950b2 <+3478>:	0f b7 3d 47 d0 00 00	movzwl 0xd047(%rip),%edi        # 0x7efa2100
+   0x000000007ef950b9 <+3485>:	e8 da 73 fe ff	call   0x7ef7c498 <GetMachineTypeName>
+   0x000000007ef950be <+3490>:	0f b7 fb	movzwl %bx,%edi
+   0x000000007ef950c1 <+3493>:	48 89 44 24 18	mov    %rax,0x18(%rsp)
+   0x000000007ef950c6 <+3498>:	e8 cd 73 fe ff	call   0x7ef7c498 <GetMachineTypeName>
+   0x000000007ef950cb <+3503>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef950cf <+3507>:	b9 00 00 00 80	mov    $0x80000000,%ecx
+   0x000000007ef950d4 <+3512>:	48 8d 15 78 9c 00 00	lea    0x9c78(%rip),%rdx        # 0x7ef9ed53
+   0x000000007ef950db <+3519>:	4c 8b 4c 24 38	mov    0x38(%rsp),%r9
+   0x000000007ef950e0 <+3524>:	49 89 c0	mov    %rax,%r8
+   0x000000007ef950e3 <+3527>:	e8 5d a0 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef950e8 <+3532>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef950ec <+3536>:	e9 52 01 00 00	jmp    0x7ef95243 <CoreLoadImageCommon.constprop.0+3879>
+   0x000000007ef950f1 <+3541>:	66 41 8b 86 6a 01 00 00	mov    0x16a(%r14),%ax
+   0x000000007ef950f9 <+3549>:	66 83 f8 0b	cmp    $0xb,%ax
+   0x000000007ef950fd <+3553>:	74 29	je     0x7ef95128 <CoreLoadImageCommon.constprop.0+3596>
+   0x000000007ef950ff <+3555>:	77 12	ja     0x7ef95113 <CoreLoadImageCommon.constprop.0+3575>
+   0x000000007ef95101 <+3557>:	66 83 f8 0a	cmp    $0xa,%ax
+   0x000000007ef95105 <+3561>:	75 4c	jne    0x7ef95153 <CoreLoadImageCommon.constprop.0+3639>
+   0x000000007ef95107 <+3563>:	48 b8 01 00 00 00 02 00 00 00	movabs $0x200000001,%rax
+   0x000000007ef95111 <+3573>:	eb 1f	jmp    0x7ef95132 <CoreLoadImageCommon.constprop.0+3606>
+   0x000000007ef95113 <+3575>:	83 e8 0c	sub    $0xc,%eax
+   0x000000007ef95116 <+3578>:	66 83 f8 01	cmp    $0x1,%ax
+   0x000000007ef9511a <+3582>:	77 37	ja     0x7ef95153 <CoreLoadImageCommon.constprop.0+3639>
+   0x000000007ef9511c <+3584>:	48 b8 05 00 00 00 06 00 00 00	movabs $0x600000005,%rax
+   0x000000007ef95126 <+3594>:	eb 0a	jmp    0x7ef95132 <CoreLoadImageCommon.constprop.0+3606>
+   0x000000007ef95128 <+3596>:	48 b8 03 00 00 00 04 00 00 00	movabs $0x400000003,%rax
+   0x000000007ef95132 <+3606>:	49 89 86 50 01 00 00	mov    %rax,0x150(%r14)
+   0x000000007ef95139 <+3613>:	41 8b 86 28 01 00 00	mov    0x128(%r14),%eax
+   0x000000007ef95140 <+3620>:	4d 8b 86 f8 00 00 00	mov    0xf8(%r14),%r8
+   0x000000007ef95147 <+3627>:	3d 00 10 00 00	cmp    $0x1000,%eax
+   0x000000007ef9514c <+3632>:	76 1f	jbe    0x7ef9516d <CoreLoadImageCommon.constprop.0+3665>
+   0x000000007ef9514e <+3634>:	49 01 c0	add    %rax,%r8
+   0x000000007ef95151 <+3637>:	eb 1a	jmp    0x7ef9516d <CoreLoadImageCommon.constprop.0+3665>
+   0x000000007ef95153 <+3639>:	41 c7 86 58 01 00 00 04 00 00 00	movl   $0x4,0x158(%r14)
+   0x000000007ef9515e <+3650>:	49 bc 03 00 00 00 00 00 00 80	movabs $0x8000000000000003,%r12
+   0x000000007ef95168 <+3660>:	e9 d6 00 00 00	jmp    0x7ef95243 <CoreLoadImageCommon.constprop.0+3879>
+   0x000000007ef9516d <+3665>:	31 c0	xor    %eax,%eax
+   0x000000007ef9516f <+3667>:	41 f7 c0 ff 0f 00 00	test   $0xfff,%r8d
+   0x000000007ef95176 <+3674>:	0f 95 c0	setne  %al
+   0x000000007ef95179 <+3677>:	49 c1 e8 0c	shr    $0xc,%r8
+   0x000000007ef9517d <+3681>:	49 01 c0	add    %rax,%r8
+   0x000000007ef95180 <+3684>:	49 81 be f0 00 00 00 ff ff 0f 00	cmpq   $0xfffff,0xf0(%r14)
+   0x000000007ef9518b <+3695>:	4d 89 86 90 00 00 00	mov    %r8,0x90(%r14)
+   0x000000007ef95192 <+3702>:	77 2f	ja     0x7ef951c3 <CoreLoadImageCommon.constprop.0+3751>
+   0x000000007ef95194 <+3704>:	41 80 be 6c 01 00 00 00	cmpb   $0x0,0x16c(%r14)
+   0x000000007ef9519c <+3712>:	75 25	jne    0x7ef951c3 <CoreLoadImageCommon.constprop.0+3751>
+   0x000000007ef9519e <+3714>:	41 8b 96 50 01 00 00	mov    0x150(%r14),%edx
+   0x000000007ef951a5 <+3721>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef951a9 <+3725>:	49 89 e9	mov    %rbp,%r9
+   0x000000007ef951ac <+3728>:	31 c9	xor    %ecx,%ecx
+   0x000000007ef951ae <+3730>:	4d 8b 86 90 00 00 00	mov    0x90(%r14),%r8
+   0x000000007ef951b5 <+3737>:	e8 56 31 ff ff	call   0x7ef88310 <CoreAllocatePages>
+   0x000000007ef951ba <+3742>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef951be <+3746>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef951c1 <+3749>:	eb 2e	jmp    0x7ef951f1 <CoreLoadImageCommon.constprop.0+3797>
+   0x000000007ef951c3 <+3751>:	41 8b 96 50 01 00 00	mov    0x150(%r14),%edx
+   0x000000007ef951ca <+3758>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef951ce <+3762>:	49 89 e9	mov    %rbp,%r9
+   0x000000007ef951d1 <+3765>:	b9 02 00 00 00	mov    $0x2,%ecx
+   0x000000007ef951d6 <+3770>:	e8 35 31 ff ff	call   0x7ef88310 <CoreAllocatePages>
+   0x000000007ef951db <+3775>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef951df <+3779>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef951e2 <+3782>:	48 85 c0	test   %rax,%rax
+   0x000000007ef951e5 <+3785>:	79 0f	jns    0x7ef951f6 <CoreLoadImageCommon.constprop.0+3802>
+   0x000000007ef951e7 <+3787>:	41 80 be 6c 01 00 00 00	cmpb   $0x0,0x16c(%r14)
+   0x000000007ef951ef <+3795>:	74 ad	je     0x7ef9519e <CoreLoadImageCommon.constprop.0+3714>
+   0x000000007ef951f1 <+3797>:	4d 85 e4	test   %r12,%r12
+   0x000000007ef951f4 <+3800>:	78 4d	js     0x7ef95243 <CoreLoadImageCommon.constprop.0+3879>
+   0x000000007ef951f6 <+3802>:	49 8b 96 f0 00 00 00	mov    0xf0(%r14),%rdx
+   0x000000007ef951fd <+3809>:	41 80 be 6d 01 00 00 00	cmpb   $0x0,0x16d(%r14)
+   0x000000007ef95205 <+3817>:	49 89 96 88 00 00 00	mov    %rdx,0x88(%r14)
+   0x000000007ef9520c <+3824>:	0f 85 ac 00 00 00	jne    0x7ef952be <CoreLoadImageCommon.constprop.0+4002>
+   0x000000007ef95212 <+3830>:	41 8b 86 28 01 00 00	mov    0x128(%r14),%eax
+   0x000000007ef95219 <+3837>:	48 8d 54 02 ff	lea    -0x1(%rdx,%rax,1),%rdx
+   0x000000007ef9521e <+3842>:	48 f7 d8	neg    %rax
+   0x000000007ef95221 <+3845>:	48 21 d0	and    %rdx,%rax
+   0x000000007ef95224 <+3848>:	49 89 86 f0 00 00 00	mov    %rax,0xf0(%r14)
+   0x000000007ef9522b <+3855>:	e9 8e 00 00 00	jmp    0x7ef952be <CoreLoadImageCommon.constprop.0+4002>
+   0x000000007ef95230 <+3860>:	48 c7 44 24 08 00 00 00 00	movq   $0x0,0x8(%rsp)
+   0x000000007ef95239 <+3869>:	eb 05	jmp    0x7ef95240 <CoreLoadImageCommon.constprop.0+3876>
+   0x000000007ef9523b <+3871>:	4c 8b 64 24 08	mov    0x8(%rsp),%r12
+   0x000000007ef95240 <+3876>:	45 31 f6	xor    %r14d,%r14d
+   0x000000007ef95243 <+3879>:	80 bc 24 c8 00 00 00 00	cmpb   $0x0,0xc8(%rsp)
+   0x000000007ef9524b <+3887>:	74 15	je     0x7ef95262 <CoreLoadImageCommon.constprop.0+3910>
+   0x000000007ef9524d <+3889>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95251 <+3893>:	48 8b 8c 24 f0 00 00 00	mov    0xf0(%rsp),%rcx
+   0x000000007ef95259 <+3901>:	e8 7f a4 fe ff	call   0x7ef7f6dd <CoreFreePool>
+   0x000000007ef9525e <+3906>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95262 <+3910>:	48 8b 3c 24	mov    (%rsp),%rdi
+   0x000000007ef95266 <+3914>:	48 39 7c 24 10	cmp    %rdi,0x10(%rsp)
+   0x000000007ef9526b <+3919>:	74 10	je     0x7ef9527d <CoreLoadImageCommon.constprop.0+3937>
+   0x000000007ef9526d <+3921>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95271 <+3925>:	48 89 f9	mov    %rdi,%rcx
+   0x000000007ef95274 <+3928>:	e8 64 a4 fe ff	call   0x7ef7f6dd <CoreFreePool>
+   0x000000007ef95279 <+3933>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef9527d <+3937>:	4d 85 e4	test   %r12,%r12
+   0x000000007ef95280 <+3940>:	79 1b	jns    0x7ef9529d <CoreLoadImageCommon.constprop.0+3969>
+   0x000000007ef95282 <+3942>:	4d 85 f6	test   %r14,%r14
+   0x000000007ef95285 <+3945>:	0f 84 33 12 00 00	je     0x7ef964be <CoreLoadImageCommon.constprop.0+8610>
+   0x000000007ef9528b <+3951>:	be 01 00 00 00	mov    $0x1,%esi
+   0x000000007ef95290 <+3956>:	4c 89 f7	mov    %r14,%rdi
+   0x000000007ef95293 <+3959>:	e8 7b cc fe ff	call   0x7ef81f13 <CoreUnloadAndCloseImage>
+   0x000000007ef95298 <+3964>:	e9 21 12 00 00	jmp    0x7ef964be <CoreLoadImageCommon.constprop.0+8610>
+   0x000000007ef9529d <+3969>:	48 83 7c 24 08 00	cmpq   $0x0,0x8(%rsp)
+   0x000000007ef952a3 <+3975>:	4c 0f 48 64 24 08	cmovs  0x8(%rsp),%r12
+   0x000000007ef952a9 <+3981>:	4d 85 f6	test   %r14,%r14
+   0x000000007ef952ac <+3984>:	0f 84 0c 12 00 00	je     0x7ef964be <CoreLoadImageCommon.constprop.0+8610>
+   0x000000007ef952b2 <+3990>:	4d 89 a6 80 01 00 00	mov    %r12,0x180(%r14)
+   0x000000007ef952b9 <+3997>:	e9 00 12 00 00	jmp    0x7ef964be <CoreLoadImageCommon.constprop.0+8610>
+   0x000000007ef952be <+4002>:	41 c7 86 58 01 00 00 00 00 00 00	movl   $0x0,0x158(%r14)
+   0x000000007ef952c9 <+4013>:	4c 8d a4 24 e0 00 00 00	lea    0xe0(%rsp),%r12
+   0x000000007ef952d1 <+4021>:	41 b8 90 00 00 00	mov    $0x90,%r8d
+   0x000000007ef952d7 <+4027>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef952db <+4031>:	4c 89 e1	mov    %r12,%rcx
+   0x000000007ef952de <+4034>:	48 89 ea	mov    %rbp,%rdx
+   0x000000007ef952e1 <+4037>:	e8 bc 8e ff ff	call   0x7ef8e1a2 <CopyMem>
+   0x000000007ef952e6 <+4042>:	4c 89 e1	mov    %r12,%rcx
+   0x000000007ef952e9 <+4045>:	e8 c1 5d ff ff	call   0x7ef8b0af <PeCoffLoaderGetImageInfo>
+   0x000000007ef952ee <+4050>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef952f2 <+4054>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef952f5 <+4057>:	48 85 c0	test   %rax,%rax
+   0x000000007ef952f8 <+4060>:	0f 88 e6 07 00 00	js     0x7ef95ae4 <CoreLoadImageCommon.constprop.0+6088>
+   0x000000007ef952fe <+4066>:	48 8b 84 24 e8 00 00 00	mov    0xe8(%rsp),%rax
+   0x000000007ef95306 <+4074>:	49 39 86 f8 00 00 00	cmp    %rax,0xf8(%r14)
+   0x000000007ef9530d <+4081>:	73 1a	jae    0x7ef95329 <CoreLoadImageCommon.constprop.0+4109>
+   0x000000007ef9530f <+4083>:	41 c7 86 58 01 00 00 06 00 00 00	movl   $0x6,0x158(%r14)
+   0x000000007ef9531a <+4094>:	49 bc 05 00 00 00 00 00 00 80	movabs $0x8000000000000005,%r12
+   0x000000007ef95324 <+4104>:	e9 bb 07 00 00	jmp    0x7ef95ae4 <CoreLoadImageCommon.constprop.0+6088>
+   0x000000007ef95329 <+4109>:	4d 8b 8e f0 00 00 00	mov    0xf0(%r14),%r9
+   0x000000007ef95330 <+4116>:	4d 85 c9	test   %r9,%r9
+   0x000000007ef95333 <+4119>:	74 2f	je     0x7ef95364 <CoreLoadImageCommon.constprop.0+4168>
+   0x000000007ef95335 <+4121>:	80 bc 24 5c 01 00 00 00	cmpb   $0x0,0x15c(%rsp)
+   0x000000007ef9533d <+4129>:	74 32	je     0x7ef95371 <CoreLoadImageCommon.constprop.0+4181>
+   0x000000007ef9533f <+4131>:	66 83 bc 24 5a 01 00 00 0c	cmpw   $0xc,0x15a(%rsp)
+   0x000000007ef95348 <+4140>:	75 10	jne    0x7ef9535a <CoreLoadImageCommon.constprop.0+4158>
+   0x000000007ef9534a <+4142>:	41 c7 86 58 01 00 00 04 00 00 00	movl   $0x4,0x158(%r14)
+   0x000000007ef95355 <+4153>:	e9 cf 05 00 00	jmp    0x7ef95929 <CoreLoadImageCommon.constprop.0+5645>
+   0x000000007ef9535a <+4158>:	4c 3b 8c 24 e0 00 00 00	cmp    0xe0(%rsp),%r9
+   0x000000007ef95362 <+4166>:	74 0d	je     0x7ef95371 <CoreLoadImageCommon.constprop.0+4181>
+   0x000000007ef95364 <+4168>:	41 c7 86 58 01 00 00 05 00 00 00	movl   $0x5,0x158(%r14)
+   0x000000007ef9536f <+4179>:	eb 23	jmp    0x7ef95394 <CoreLoadImageCommon.constprop.0+4216>
+   0x000000007ef95371 <+4181>:	41 80 be 6d 01 00 00 00	cmpb   $0x0,0x16d(%r14)
+   0x000000007ef95379 <+4189>:	75 6f	jne    0x7ef953ea <CoreLoadImageCommon.constprop.0+4302>
+   0x000000007ef9537b <+4191>:	8b 84 24 18 01 00 00	mov    0x118(%rsp),%eax
+   0x000000007ef95382 <+4198>:	ff c8	dec    %eax
+   0x000000007ef95384 <+4200>:	4c 85 c8	test   %r9,%rax
+   0x000000007ef95387 <+4203>:	74 1a	je     0x7ef953a3 <CoreLoadImageCommon.constprop.0+4231>
+   0x000000007ef95389 <+4205>:	41 c7 86 58 01 00 00 07 00 00 00	movl   $0x7,0x158(%r14)
+   0x000000007ef95394 <+4216>:	49 bc 02 00 00 00 00 00 00 80	movabs $0x8000000000000002,%r12
+   0x000000007ef9539e <+4226>:	e9 41 07 00 00	jmp    0x7ef95ae4 <CoreLoadImageCommon.constprop.0+6088>
+   0x000000007ef953a3 <+4231>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef953a7 <+4235>:	49 8b 8e 18 01 00 00	mov    0x118(%r14),%rcx
+   0x000000007ef953ae <+4242>:	4d 8d 86 48 01 00 00	lea    0x148(%r14),%r8
+   0x000000007ef953b5 <+4249>:	31 d2	xor    %edx,%edx
+   0x000000007ef953b7 <+4251>:	41 ff 96 10 01 00 00	call   *0x110(%r14)
+   0x000000007ef953be <+4258>:	41 8b 9e 2c 01 00 00	mov    0x12c(%r14),%ebx
+   0x000000007ef953c5 <+4265>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef953c9 <+4269>:	49 03 9e f0 00 00 00	add    0xf0(%r14),%rbx
+   0x000000007ef953d0 <+4276>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef953d3 <+4279>:	0f b7 43 14	movzwl 0x14(%rbx),%eax
+   0x000000007ef953d7 <+4283>:	c7 44 24 18 00 00 00 00	movl   $0x0,0x18(%rsp)
+   0x000000007ef953df <+4291>:	4c 8d 6c 03 18	lea    0x18(%rbx,%rax,1),%r13
+   0x000000007ef953e4 <+4296>:	0f b7 43 06	movzwl 0x6(%rbx),%eax
+   0x000000007ef953e8 <+4300>:	eb 3c	jmp    0x7ef95426 <CoreLoadImageCommon.constprop.0+4362>
+   0x000000007ef953ea <+4302>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef953ee <+4306>:	31 d2	xor    %edx,%edx
+   0x000000007ef953f0 <+4308>:	49 8b 8e 18 01 00 00	mov    0x118(%r14),%rcx
+   0x000000007ef953f7 <+4315>:	4d 8d 86 48 01 00 00	lea    0x148(%r14),%r8
+   0x000000007ef953fe <+4322>:	41 ff 96 10 01 00 00	call   *0x110(%r14)
+   0x000000007ef95405 <+4329>:	49 8b 9e f0 00 00 00	mov    0xf0(%r14),%rbx
+   0x000000007ef9540c <+4336>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef9540f <+4339>:	0f b7 53 06	movzwl 0x6(%rbx),%edx
+   0x000000007ef95413 <+4343>:	0f b6 43 04	movzbl 0x4(%rbx),%eax
+   0x000000007ef95417 <+4347>:	4c 8d 6b 28	lea    0x28(%rbx),%r13
+   0x000000007ef9541b <+4351>:	8d 7a d8	lea    -0x28(%rdx),%edi
+   0x000000007ef9541e <+4354>:	89 7c 24 38	mov    %edi,0x38(%rsp)
+   0x000000007ef95422 <+4358>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95426 <+4362>:	4d 85 e4	test   %r12,%r12
+   0x000000007ef95429 <+4365>:	0f 88 53 02 00 00	js     0x7ef95682 <CoreLoadImageCommon.constprop.0+4966>
+   0x000000007ef9542f <+4371>:	48 6b c0 28	imul   $0x28,%rax,%rax
+   0x000000007ef95433 <+4375>:	44 8b 7c 24 18	mov    0x18(%rsp),%r15d
+   0x000000007ef95438 <+4380>:	4c 01 e8	add    %r13,%rax
+   0x000000007ef9543b <+4383>:	48 89 44 24 30	mov    %rax,0x30(%rsp)
+   0x000000007ef95440 <+4388>:	48 8d 84 24 b8 00 00 00	lea    0xb8(%rsp),%rax
+   0x000000007ef95448 <+4396>:	48 89 44 24 40	mov    %rax,0x40(%rsp)
+   0x000000007ef9544d <+4401>:	4c 3b 6c 24 30	cmp    0x30(%rsp),%r13
+   0x000000007ef95452 <+4406>:	0f 84 e2 00 00 00	je     0x7ef9553a <CoreLoadImageCommon.constprop.0+4638>
+   0x000000007ef95458 <+4412>:	41 8b 45 08	mov    0x8(%r13),%eax
+   0x000000007ef9545c <+4416>:	48 89 84 24 b8 00 00 00	mov    %rax,0xb8(%rsp)
+   0x000000007ef95464 <+4424>:	41 8b 55 10	mov    0x10(%r13),%edx
+   0x000000007ef95468 <+4428>:	48 85 c0	test   %rax,%rax
+   0x000000007ef9546b <+4431>:	74 05	je     0x7ef95472 <CoreLoadImageCommon.constprop.0+4438>
+   0x000000007ef9546d <+4433>:	48 39 c2	cmp    %rax,%rdx
+   0x000000007ef95470 <+4436>:	73 08	jae    0x7ef9547a <CoreLoadImageCommon.constprop.0+4446>
+   0x000000007ef95472 <+4438>:	48 89 94 24 b8 00 00 00	mov    %rdx,0xb8(%rsp)
+   0x000000007ef9547a <+4446>:	41 8b 75 0c	mov    0xc(%r13),%esi
+   0x000000007ef9547e <+4450>:	4c 89 fa	mov    %r15,%rdx
+   0x000000007ef95481 <+4453>:	48 89 ef	mov    %rbp,%rdi
+   0x000000007ef95484 <+4456>:	e8 ba 64 ff ff	call   0x7ef8b943 <PeCoffLoaderImageAddress>
+   0x000000007ef95489 <+4461>:	49 89 c1	mov    %rax,%r9
+   0x000000007ef9548c <+4464>:	41 8b 45 08	mov    0x8(%r13),%eax
+   0x000000007ef95490 <+4468>:	41 03 45 0c	add    0xc(%r13),%eax
+   0x000000007ef95494 <+4472>:	8d 70 ff	lea    -0x1(%rax),%esi
+   0x000000007ef95497 <+4475>:	e8 a7 64 ff ff	call   0x7ef8b943 <PeCoffLoaderImageAddress>
+   0x000000007ef9549c <+4480>:	48 83 bc 24 b8 00 00 00 00	cmpq   $0x0,0xb8(%rsp)
+   0x000000007ef954a5 <+4489>:	74 1a	je     0x7ef954c1 <CoreLoadImageCommon.constprop.0+4517>
+   0x000000007ef954a7 <+4491>:	4d 85 c9	test   %r9,%r9
+   0x000000007ef954aa <+4494>:	74 05	je     0x7ef954b1 <CoreLoadImageCommon.constprop.0+4501>
+   0x000000007ef954ac <+4496>:	48 85 c0	test   %rax,%rax
+   0x000000007ef954af <+4499>:	75 10	jne    0x7ef954c1 <CoreLoadImageCommon.constprop.0+4517>
+   0x000000007ef954b1 <+4501>:	41 c7 86 58 01 00 00 08 00 00 00	movl   $0x8,0x158(%r14)
+   0x000000007ef954bc <+4512>:	e9 68 04 00 00	jmp    0x7ef95929 <CoreLoadImageCommon.constprop.0+5645>
+   0x000000007ef954c1 <+4517>:	41 83 7d 10 00	cmpl   $0x0,0x10(%r13)
+   0x000000007ef954c6 <+4522>:	74 45	je     0x7ef9550d <CoreLoadImageCommon.constprop.0+4593>
+   0x000000007ef954c8 <+4524>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef954cc <+4528>:	41 8b 55 14	mov    0x14(%r13),%edx
+   0x000000007ef954d0 <+4532>:	49 8b 8e 18 01 00 00	mov    0x118(%r14),%rcx
+   0x000000007ef954d7 <+4539>:	2b 54 24 38	sub    0x38(%rsp),%edx
+   0x000000007ef954db <+4543>:	4c 8b 44 24 60	mov    0x60(%rsp),%r8
+   0x000000007ef954e0 <+4548>:	4c 89 4c 24 68	mov    %r9,0x68(%rsp)
+   0x000000007ef954e5 <+4553>:	41 ff 96 10 01 00 00	call   *0x110(%r14)
+   0x000000007ef954ec <+4560>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef954f0 <+4564>:	4c 8b 4c 24 48	mov    0x48(%rsp),%r9
+   0x000000007ef954f5 <+4569>:	48 85 c0	test   %rax,%rax
+   0x000000007ef954f8 <+4572>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef954fb <+4575>:	79 10	jns    0x7ef9550d <CoreLoadImageCommon.constprop.0+4593>
+   0x000000007ef954fd <+4577>:	41 c7 86 58 01 00 00 01 00 00 00	movl   $0x1,0x158(%r14)
+   0x000000007ef95508 <+4588>:	e9 40 03 00 00	jmp    0x7ef9584d <CoreLoadImageCommon.constprop.0+5425>
+   0x000000007ef9550d <+4593>:	41 8b 55 08	mov    0x8(%r13),%edx
+   0x000000007ef95511 <+4597>:	48 8b 8c 24 b8 00 00 00	mov    0xb8(%rsp),%rcx
+   0x000000007ef95519 <+4605>:	48 39 ca	cmp    %rcx,%rdx
+   0x000000007ef9551c <+4608>:	76 13	jbe    0x7ef95531 <CoreLoadImageCommon.constprop.0+4629>
+   0x000000007ef9551e <+4610>:	48 29 ca	sub    %rcx,%rdx
+   0x000000007ef95521 <+4613>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95525 <+4617>:	4c 01 c9	add    %r9,%rcx
+   0x000000007ef95528 <+4620>:	e8 86 89 ff ff	call   0x7ef8deb3 <ZeroMem>
+   0x000000007ef9552d <+4625>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95531 <+4629>:	49 83 c5 28	add    $0x28,%r13
+   0x000000007ef95535 <+4633>:	e9 13 ff ff ff	jmp    0x7ef9544d <CoreLoadImageCommon.constprop.0+4401>
+   0x000000007ef9553a <+4638>:	41 80 be 6d 01 00 00 00	cmpb   $0x0,0x16d(%r14)
+   0x000000007ef95542 <+4646>:	75 07	jne    0x7ef9554b <CoreLoadImageCommon.constprop.0+4655>
+   0x000000007ef95544 <+4648>:	8b 73 28	mov    0x28(%rbx),%esi
+   0x000000007ef95547 <+4651>:	31 d2	xor    %edx,%edx
+   0x000000007ef95549 <+4653>:	eb 07	jmp    0x7ef95552 <CoreLoadImageCommon.constprop.0+4662>
+   0x000000007ef9554b <+4655>:	8b 54 24 18	mov    0x18(%rsp),%edx
+   0x000000007ef9554f <+4659>:	8b 73 08	mov    0x8(%rbx),%esi
+   0x000000007ef95552 <+4662>:	48 89 ef	mov    %rbp,%rdi
+   0x000000007ef95555 <+4665>:	e8 e9 63 ff ff	call   0x7ef8b943 <PeCoffLoaderImageAddress>
+   0x000000007ef9555a <+4670>:	41 80 be 6d 01 00 00 00	cmpb   $0x0,0x16d(%r14)
+   0x000000007ef95562 <+4678>:	49 89 86 08 01 00 00	mov    %rax,0x108(%r14)
+   0x000000007ef95569 <+4685>:	75 38	jne    0x7ef955a3 <CoreLoadImageCommon.constprop.0+4743>
+   0x000000007ef9556b <+4687>:	66 81 7b 18 0b 01	cmpw   $0x10b,0x18(%rbx)
+   0x000000007ef95571 <+4693>:	75 0c	jne    0x7ef9557f <CoreLoadImageCommon.constprop.0+4707>
+   0x000000007ef95573 <+4695>:	8b 53 74	mov    0x74(%rbx),%edx
+   0x000000007ef95576 <+4698>:	48 8d 83 a0 00 00 00	lea    0xa0(%rbx),%rax
+   0x000000007ef9557d <+4705>:	eb 0d	jmp    0x7ef9558c <CoreLoadImageCommon.constprop.0+4720>
+   0x000000007ef9557f <+4707>:	8b 93 84 00 00 00	mov    0x84(%rbx),%edx
+   0x000000007ef95585 <+4713>:	48 8d 83 b0 00 00 00	lea    0xb0(%rbx),%rax
+   0x000000007ef9558c <+4720>:	83 fa 05	cmp    $0x5,%edx
+   0x000000007ef9558f <+4723>:	76 05	jbe    0x7ef95596 <CoreLoadImageCommon.constprop.0+4730>
+   0x000000007ef95591 <+4725>:	8b 40 04	mov    0x4(%rax),%eax
+   0x000000007ef95594 <+4728>:	eb 10	jmp    0x7ef955a6 <CoreLoadImageCommon.constprop.0+4746>
+   0x000000007ef95596 <+4730>:	49 c7 86 60 01 00 00 00 00 00 00	movq   $0x0,0x160(%r14)
+   0x000000007ef955a1 <+4741>:	eb 10	jmp    0x7ef955b3 <CoreLoadImageCommon.constprop.0+4759>
+   0x000000007ef955a3 <+4743>:	8b 43 1c	mov    0x1c(%rbx),%eax
+   0x000000007ef955a6 <+4746>:	d1 e8	shr    %eax
+   0x000000007ef955a8 <+4748>:	48 c1 e0 03	shl    $0x3,%rax
+   0x000000007ef955ac <+4752>:	49 89 86 60 01 00 00	mov    %rax,0x160(%r14)
+   0x000000007ef955b3 <+4759>:	41 8b b6 30 01 00 00	mov    0x130(%r14),%esi
+   0x000000007ef955ba <+4766>:	49 c7 86 20 01 00 00 00 00 00 00	movq   $0x0,0x120(%r14)
+   0x000000007ef955c5 <+4777>:	85 f6	test   %esi,%esi
+   0x000000007ef955c7 <+4779>:	0f 84 20 01 00 00	je     0x7ef956ed <CoreLoadImageCommon.constprop.0+5073>
+   0x000000007ef955cd <+4785>:	8b 54 24 18	mov    0x18(%rsp),%edx
+   0x000000007ef955d1 <+4789>:	48 89 ef	mov    %rbp,%rdi
+   0x000000007ef955d4 <+4792>:	e8 6a 63 ff ff	call   0x7ef8b943 <PeCoffLoaderImageAddress>
+   0x000000007ef955d9 <+4797>:	49 89 c7	mov    %rax,%r15
+   0x000000007ef955dc <+4800>:	48 85 c0	test   %rax,%rax
+   0x000000007ef955df <+4803>:	0f 84 39 03 00 00	je     0x7ef9591e <CoreLoadImageCommon.constprop.0+5634>
+   0x000000007ef955e5 <+4809>:	44 8b 58 14	mov    0x14(%rax),%r11d
+   0x000000007ef955e9 <+4813>:	45 85 db	test   %r11d,%r11d
+   0x000000007ef955ec <+4816>:	75 2b	jne    0x7ef95619 <CoreLoadImageCommon.constprop.0+4861>
+   0x000000007ef955ee <+4818>:	83 78 18 00	cmpl   $0x0,0x18(%rax)
+   0x000000007ef955f2 <+4822>:	0f 84 f5 00 00 00	je     0x7ef956ed <CoreLoadImageCommon.constprop.0+5073>
+   0x000000007ef955f8 <+4828>:	41 8b 75 e8	mov    -0x18(%r13),%esi
+   0x000000007ef955fc <+4832>:	41 8b 45 e4	mov    -0x1c(%r13),%eax
+   0x000000007ef95600 <+4836>:	41 8b 4d e0	mov    -0x20(%r13),%ecx
+   0x000000007ef95604 <+4840>:	44 8d 1c 06	lea    (%rsi,%rax,1),%r11d
+   0x000000007ef95608 <+4844>:	39 ce	cmp    %ecx,%esi
+   0x000000007ef9560a <+4846>:	73 04	jae    0x7ef95610 <CoreLoadImageCommon.constprop.0+4852>
+   0x000000007ef9560c <+4848>:	44 8d 1c 01	lea    (%rcx,%rax,1),%r11d
+   0x000000007ef95610 <+4852>:	45 85 db	test   %r11d,%r11d
+   0x000000007ef95613 <+4855>:	0f 84 d4 00 00 00	je     0x7ef956ed <CoreLoadImageCommon.constprop.0+5073>
+   0x000000007ef95619 <+4861>:	44 89 de	mov    %r11d,%esi
+   0x000000007ef9561c <+4864>:	48 89 ef	mov    %rbp,%rdi
+   0x000000007ef9561f <+4867>:	e8 1f 63 ff ff	call   0x7ef8b943 <PeCoffLoaderImageAddress>
+   0x000000007ef95624 <+4872>:	49 89 86 38 01 00 00	mov    %rax,0x138(%r14)
+   0x000000007ef9562b <+4879>:	49 89 c1	mov    %rax,%r9
+   0x000000007ef9562e <+4882>:	48 85 c0	test   %rax,%rax
+   0x000000007ef95631 <+4885>:	0f 84 e7 02 00 00	je     0x7ef9591e <CoreLoadImageCommon.constprop.0+5634>
+   0x000000007ef95637 <+4891>:	41 83 7f 14 00	cmpl   $0x0,0x14(%r15)
+   0x000000007ef9563c <+4896>:	44 89 5c 24 30	mov    %r11d,0x30(%rsp)
+   0x000000007ef95641 <+4901>:	75 53	jne    0x7ef95696 <CoreLoadImageCommon.constprop.0+4986>
+   0x000000007ef95643 <+4903>:	41 8b 47 10	mov    0x10(%r15),%eax
+   0x000000007ef95647 <+4907>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef9564b <+4911>:	48 89 84 24 d8 00 00 00	mov    %rax,0xd8(%rsp)
+   0x000000007ef95653 <+4919>:	41 8b 57 18	mov    0x18(%r15),%edx
+   0x000000007ef95657 <+4923>:	49 8b 8e 18 01 00 00	mov    0x118(%r14),%rcx
+   0x000000007ef9565e <+4930>:	2b 54 24 38	sub    0x38(%rsp),%edx
+   0x000000007ef95662 <+4934>:	4c 8d 84 24 d8 00 00 00	lea    0xd8(%rsp),%r8
+   0x000000007ef9566a <+4942>:	41 ff 96 10 01 00 00	call   *0x110(%r14)
+   0x000000007ef95671 <+4949>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95675 <+4953>:	44 8b 5c 24 30	mov    0x30(%rsp),%r11d
+   0x000000007ef9567a <+4958>:	48 85 c0	test   %rax,%rax
+   0x000000007ef9567d <+4961>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef95680 <+4964>:	79 10	jns    0x7ef95692 <CoreLoadImageCommon.constprop.0+4982>
+   0x000000007ef95682 <+4966>:	41 c7 86 58 01 00 00 01 00 00 00	movl   $0x1,0x158(%r14)
+   0x000000007ef9568d <+4977>:	e9 97 02 00 00	jmp    0x7ef95929 <CoreLoadImageCommon.constprop.0+5645>
+   0x000000007ef95692 <+4982>:	45 89 5f 14	mov    %r11d,0x14(%r15)
+   0x000000007ef95696 <+4986>:	49 8b 86 38 01 00 00	mov    0x138(%r14),%rax
+   0x000000007ef9569d <+4993>:	8b 10	mov    (%rax),%edx
+   0x000000007ef9569f <+4995>:	81 fa 4d 54 4f 43	cmp    $0x434f544d,%edx
+   0x000000007ef956a5 <+5001>:	74 30	je     0x7ef956d7 <CoreLoadImageCommon.constprop.0+5051>
+   0x000000007ef956a7 <+5003>:	81 fa 52 53 44 53	cmp    $0x53445352,%edx
+   0x000000007ef956ad <+5009>:	74 18	je     0x7ef956c7 <CoreLoadImageCommon.constprop.0+5035>
+   0x000000007ef956af <+5011>:	81 fa 4e 42 31 30	cmp    $0x3031424e,%edx
+   0x000000007ef956b5 <+5017>:	75 36	jne    0x7ef956ed <CoreLoadImageCommon.constprop.0+5073>
+   0x000000007ef956b7 <+5019>:	48 83 c0 10	add    $0x10,%rax
+   0x000000007ef956bb <+5023>:	41 83 7f 10 0f	cmpl   $0xf,0x10(%r15)
+   0x000000007ef956c0 <+5028>:	77 24	ja     0x7ef956e6 <CoreLoadImageCommon.constprop.0+5066>
+   0x000000007ef956c2 <+5030>:	e9 dc 00 00 00	jmp    0x7ef957a3 <CoreLoadImageCommon.constprop.0+5255>
+   0x000000007ef956c7 <+5035>:	48 83 c0 18	add    $0x18,%rax
+   0x000000007ef956cb <+5039>:	41 83 7f 10 17	cmpl   $0x17,0x10(%r15)
+   0x000000007ef956d0 <+5044>:	77 14	ja     0x7ef956e6 <CoreLoadImageCommon.constprop.0+5066>
+   0x000000007ef956d2 <+5046>:	e9 cc 00 00 00	jmp    0x7ef957a3 <CoreLoadImageCommon.constprop.0+5255>
+   0x000000007ef956d7 <+5051>:	48 83 c0 14	add    $0x14,%rax
+   0x000000007ef956db <+5055>:	41 83 7f 10 13	cmpl   $0x13,0x10(%r15)
+   0x000000007ef956e0 <+5060>:	0f 86 bd 00 00 00	jbe    0x7ef957a3 <CoreLoadImageCommon.constprop.0+5255>
+   0x000000007ef956e6 <+5066>:	49 89 86 40 01 00 00	mov    %rax,0x140(%r14)
+   0x000000007ef956ed <+5073>:	41 80 be 6d 01 00 00 00	cmpb   $0x0,0x16d(%r14)
+   0x000000007ef956f5 <+5081>:	49 c7 86 70 01 00 00 00 00 00 00	movq   $0x0,0x170(%r14)
+   0x000000007ef95700 <+5092>:	0f 85 47 01 00 00	jne    0x7ef9584d <CoreLoadImageCommon.constprop.0+5425>
+   0x000000007ef95706 <+5098>:	66 81 7b 18 0b 01	cmpw   $0x10b,0x18(%rbx)
+   0x000000007ef9570c <+5104>:	75 0c	jne    0x7ef9571a <CoreLoadImageCommon.constprop.0+5118>
+   0x000000007ef9570e <+5106>:	8b 43 74	mov    0x74(%rbx),%eax
+   0x000000007ef95711 <+5109>:	48 81 c3 88 00 00 00	add    $0x88,%rbx
+   0x000000007ef95718 <+5116>:	eb 0d	jmp    0x7ef95727 <CoreLoadImageCommon.constprop.0+5131>
+   0x000000007ef9571a <+5118>:	8b 83 84 00 00 00	mov    0x84(%rbx),%eax
+   0x000000007ef95720 <+5124>:	48 81 c3 98 00 00 00	add    $0x98,%rbx
+   0x000000007ef95727 <+5131>:	83 f8 02	cmp    $0x2,%eax
+   0x000000007ef9572a <+5134>:	0f 86 1d 01 00 00	jbe    0x7ef9584d <CoreLoadImageCommon.constprop.0+5425>
+   0x000000007ef95730 <+5140>:	83 7b 04 00	cmpl   $0x0,0x4(%rbx)
+   0x000000007ef95734 <+5144>:	0f 84 13 01 00 00	je     0x7ef9584d <CoreLoadImageCommon.constprop.0+5425>
+   0x000000007ef9573a <+5150>:	8b 33	mov    (%rbx),%esi
+   0x000000007ef9573c <+5152>:	31 d2	xor    %edx,%edx
+   0x000000007ef9573e <+5154>:	48 89 ef	mov    %rbp,%rdi
+   0x000000007ef95741 <+5157>:	e8 fd 61 ff ff	call   0x7ef8b943 <PeCoffLoaderImageAddress>
+   0x000000007ef95746 <+5162>:	48 89 c2	mov    %rax,%rdx
+   0x000000007ef95749 <+5165>:	48 85 c0	test   %rax,%rax
+   0x000000007ef9574c <+5168>:	0f 84 fb 00 00 00	je     0x7ef9584d <CoreLoadImageCommon.constprop.0+5425>
+   0x000000007ef95752 <+5174>:	0f b7 48 0c	movzwl 0xc(%rax),%ecx
+   0x000000007ef95756 <+5178>:	0f b7 40 0e	movzwl 0xe(%rax),%eax
+   0x000000007ef9575a <+5182>:	8b 7b 04	mov    0x4(%rbx),%edi
+   0x000000007ef9575d <+5185>:	8d 44 01 02	lea    0x2(%rcx,%rax,1),%eax
+   0x000000007ef95761 <+5189>:	c1 e0 03	shl    $0x3,%eax
+   0x000000007ef95764 <+5192>:	39 f8	cmp    %edi,%eax
+   0x000000007ef95766 <+5194>:	77 3b	ja     0x7ef957a3 <CoreLoadImageCommon.constprop.0+5255>
+   0x000000007ef95768 <+5196>:	48 8d 72 10	lea    0x10(%rdx),%rsi
+   0x000000007ef9576c <+5200>:	48 89 d0	mov    %rdx,%rax
+   0x000000007ef9576f <+5203>:	45 31 c0	xor    %r8d,%r8d
+   0x000000007ef95772 <+5206>:	eb 10	jmp    0x7ef95784 <CoreLoadImageCommon.constprop.0+5224>
+   0x000000007ef95774 <+5208>:	48 01 d1	add    %rdx,%rcx
+   0x000000007ef95777 <+5211>:	66 83 39 03	cmpw   $0x3,(%rcx)
+   0x000000007ef9577b <+5215>:	74 36	je     0x7ef957b3 <CoreLoadImageCommon.constprop.0+5271>
+   0x000000007ef9577d <+5217>:	48 83 c6 08	add    $0x8,%rsi
+   0x000000007ef95781 <+5221>:	49 ff c0	inc    %r8
+   0x000000007ef95784 <+5224>:	0f b7 48 0c	movzwl 0xc(%rax),%ecx
+   0x000000007ef95788 <+5228>:	49 39 c8	cmp    %rcx,%r8
+   0x000000007ef9578b <+5231>:	0f 83 bc 00 00 00	jae    0x7ef9584d <CoreLoadImageCommon.constprop.0+5425>
+   0x000000007ef95791 <+5237>:	80 7e 03 00	cmpb   $0x0,0x3(%rsi)
+   0x000000007ef95795 <+5241>:	79 e6	jns    0x7ef9577d <CoreLoadImageCommon.constprop.0+5217>
+   0x000000007ef95797 <+5243>:	8b 0e	mov    (%rsi),%ecx
+   0x000000007ef95799 <+5245>:	81 e1 ff ff ff 7f	and    $0x7fffffff,%ecx
+   0x000000007ef9579f <+5251>:	39 cf	cmp    %ecx,%edi
+   0x000000007ef957a1 <+5253>:	77 d1	ja     0x7ef95774 <CoreLoadImageCommon.constprop.0+5208>
+   0x000000007ef957a3 <+5255>:	41 c7 86 58 01 00 00 0b 00 00 00	movl   $0xb,0x158(%r14)
+   0x000000007ef957ae <+5266>:	e9 48 02 00 00	jmp    0x7ef959fb <CoreLoadImageCommon.constprop.0+5855>
+   0x000000007ef957b3 <+5271>:	66 83 79 02 48	cmpw   $0x48,0x2(%rcx)
+   0x000000007ef957b8 <+5276>:	75 c3	jne    0x7ef9577d <CoreLoadImageCommon.constprop.0+5217>
+   0x000000007ef957ba <+5278>:	66 83 79 04 49	cmpw   $0x49,0x4(%rcx)
+   0x000000007ef957bf <+5283>:	75 bc	jne    0x7ef9577d <CoreLoadImageCommon.constprop.0+5217>
+   0x000000007ef957c1 <+5285>:	66 83 79 06 49	cmpw   $0x49,0x6(%rcx)
+   0x000000007ef957c6 <+5290>:	75 b5	jne    0x7ef9577d <CoreLoadImageCommon.constprop.0+5217>
+   0x000000007ef957c8 <+5292>:	80 7e 07 00	cmpb   $0x0,0x7(%rsi)
+   0x000000007ef957cc <+5296>:	79 56	jns    0x7ef95824 <CoreLoadImageCommon.constprop.0+5384>
+   0x000000007ef957ce <+5298>:	8b 4e 04	mov    0x4(%rsi),%ecx
+   0x000000007ef957d1 <+5301>:	81 e1 ff ff ff 7f	and    $0x7fffffff,%ecx
+   0x000000007ef957d7 <+5307>:	39 cf	cmp    %ecx,%edi
+   0x000000007ef957d9 <+5309>:	76 c8	jbe    0x7ef957a3 <CoreLoadImageCommon.constprop.0+5255>
+   0x000000007ef957db <+5311>:	89 c8	mov    %ecx,%eax
+   0x000000007ef957dd <+5313>:	48 01 d0	add    %rdx,%rax
+   0x000000007ef957e0 <+5316>:	0f b7 70 0c	movzwl 0xc(%rax),%esi
+   0x000000007ef957e4 <+5320>:	44 0f b7 48 0e	movzwl 0xe(%rax),%r9d
+   0x000000007ef957e9 <+5325>:	44 01 ce	add    %r9d,%esi
+   0x000000007ef957ec <+5328>:	8d 4c f1 10	lea    0x10(%rcx,%rsi,8),%ecx
+   0x000000007ef957f0 <+5332>:	39 cf	cmp    %ecx,%edi
+   0x000000007ef957f2 <+5334>:	72 af	jb     0x7ef957a3 <CoreLoadImageCommon.constprop.0+5255>
+   0x000000007ef957f4 <+5336>:	80 78 17 00	cmpb   $0x0,0x17(%rax)
+   0x000000007ef957f8 <+5340>:	79 26	jns    0x7ef95820 <CoreLoadImageCommon.constprop.0+5380>
+   0x000000007ef957fa <+5342>:	8b 48 14	mov    0x14(%rax),%ecx
+   0x000000007ef957fd <+5345>:	81 e1 ff ff ff 7f	and    $0x7fffffff,%ecx
+   0x000000007ef95803 <+5351>:	39 cf	cmp    %ecx,%edi
+   0x000000007ef95805 <+5353>:	76 9c	jbe    0x7ef957a3 <CoreLoadImageCommon.constprop.0+5255>
+   0x000000007ef95807 <+5355>:	89 c8	mov    %ecx,%eax
+   0x000000007ef95809 <+5357>:	48 01 d0	add    %rdx,%rax
+   0x000000007ef9580c <+5360>:	0f b7 70 0c	movzwl 0xc(%rax),%esi
+   0x000000007ef95810 <+5364>:	44 0f b7 48 0e	movzwl 0xe(%rax),%r9d
+   0x000000007ef95815 <+5369>:	44 01 ce	add    %r9d,%esi
+   0x000000007ef95818 <+5372>:	8d 4c f1 10	lea    0x10(%rcx,%rsi,8),%ecx
+   0x000000007ef9581c <+5376>:	39 cf	cmp    %ecx,%edi
+   0x000000007ef9581e <+5378>:	72 83	jb     0x7ef957a3 <CoreLoadImageCommon.constprop.0+5255>
+   0x000000007ef95820 <+5380>:	48 8d 70 10	lea    0x10(%rax),%rsi
+   0x000000007ef95824 <+5384>:	80 7e 07 00	cmpb   $0x0,0x7(%rsi)
+   0x000000007ef95828 <+5388>:	0f 88 4f ff ff ff	js     0x7ef9577d <CoreLoadImageCommon.constprop.0+5217>
+   0x000000007ef9582e <+5394>:	8b 46 04	mov    0x4(%rsi),%eax
+   0x000000007ef95831 <+5397>:	39 c7	cmp    %eax,%edi
+   0x000000007ef95833 <+5399>:	0f 86 6a ff ff ff	jbe    0x7ef957a3 <CoreLoadImageCommon.constprop.0+5255>
+   0x000000007ef95839 <+5405>:	8b 34 02	mov    (%rdx,%rax,1),%esi
+   0x000000007ef9583c <+5408>:	48 89 ef	mov    %rbp,%rdi
+   0x000000007ef9583f <+5411>:	31 d2	xor    %edx,%edx
+   0x000000007ef95841 <+5413>:	e8 fd 60 ff ff	call   0x7ef8b943 <PeCoffLoaderImageAddress>
+   0x000000007ef95846 <+5418>:	49 89 86 70 01 00 00	mov    %rax,0x170(%r14)
+   0x000000007ef9584d <+5425>:	4d 85 e4	test   %r12,%r12
+   0x000000007ef95850 <+5428>:	0f 88 8e 02 00 00	js     0x7ef95ae4 <CoreLoadImageCommon.constprop.0+6088>
+   0x000000007ef95856 <+5434>:	66 41 83 be 6a 01 00 00 0c	cmpw   $0xc,0x16a(%r14)
+   0x000000007ef9585f <+5443>:	75 2c	jne    0x7ef9588d <CoreLoadImageCommon.constprop.0+5489>
+   0x000000007ef95861 <+5445>:	49 8b b6 60 01 00 00	mov    0x160(%r14),%rsi
+   0x000000007ef95868 <+5452>:	bf 06 00 00 00	mov    $0x6,%edi
+   0x000000007ef9586d <+5457>:	e8 95 74 ff ff	call   0x7ef8cd07 <InternalAllocatePool>
+   0x000000007ef95872 <+5462>:	49 89 86 20 01 00 00	mov    %rax,0x120(%r14)
+   0x000000007ef95879 <+5469>:	48 85 c0	test   %rax,%rax
+   0x000000007ef9587c <+5472>:	75 0f	jne    0x7ef9588d <CoreLoadImageCommon.constprop.0+5489>
+   0x000000007ef9587e <+5474>:	49 bc 09 00 00 00 00 00 00 80	movabs $0x8000000000000009,%r12
+   0x000000007ef95888 <+5484>:	e9 57 02 00 00	jmp    0x7ef95ae4 <CoreLoadImageCommon.constprop.0+6088>
+   0x000000007ef9588d <+5489>:	41 80 be 6c 01 00 00 00	cmpb   $0x0,0x16c(%r14)
+   0x000000007ef95895 <+5497>:	41 c7 86 58 01 00 00 00 00 00 00	movl   $0x0,0x158(%r14)
+   0x000000007ef958a0 <+5508>:	0f 85 b8 01 00 00	jne    0x7ef95a5e <CoreLoadImageCommon.constprop.0+5954>
+   0x000000007ef958a6 <+5514>:	49 8b 86 00 01 00 00	mov    0x100(%r14),%rax
+   0x000000007ef958ad <+5521>:	49 8b 96 f0 00 00 00	mov    0xf0(%r14),%rdx
+   0x000000007ef958b4 <+5528>:	48 85 c0	test   %rax,%rax
+   0x000000007ef958b7 <+5531>:	48 0f 44 c2	cmove  %rdx,%rax
+   0x000000007ef958bb <+5535>:	41 80 be 6d 01 00 00 00	cmpb   $0x0,0x16d(%r14)
+   0x000000007ef958c3 <+5543>:	0f 84 4d 03 00 00	je     0x7ef95c16 <CoreLoadImageCommon.constprop.0+6394>
+   0x000000007ef958c9 <+5549>:	44 0f b7 6a 06	movzwl 0x6(%rdx),%r13d
+   0x000000007ef958ce <+5554>:	48 8b 72 10	mov    0x10(%rdx),%rsi
+   0x000000007ef958d2 <+5558>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef958d5 <+5561>:	41 8d 4d d8	lea    -0x28(%r13),%ecx
+   0x000000007ef958d9 <+5565>:	48 01 ce	add    %rcx,%rsi
+   0x000000007ef958dc <+5568>:	49 89 cd	mov    %rcx,%r13
+   0x000000007ef958df <+5571>:	49 29 f4	sub    %rsi,%r12
+   0x000000007ef958e2 <+5574>:	74 07	je     0x7ef958eb <CoreLoadImageCommon.constprop.0+5583>
+   0x000000007ef958e4 <+5576>:	48 29 c8	sub    %rcx,%rax
+   0x000000007ef958e7 <+5579>:	48 89 42 10	mov    %rax,0x10(%rdx)
+   0x000000007ef958eb <+5583>:	48 8d 4a 18	lea    0x18(%rdx),%rcx
+   0x000000007ef958ef <+5587>:	83 79 04 00	cmpl   $0x0,0x4(%rcx)
+   0x000000007ef958f3 <+5591>:	0f 84 71 03 00 00	je     0x7ef95c6a <CoreLoadImageCommon.constprop.0+6478>
+   0x000000007ef958f9 <+5597>:	8b 31	mov    (%rcx),%esi
+   0x000000007ef958fb <+5599>:	44 89 ea	mov    %r13d,%edx
+   0x000000007ef958fe <+5602>:	48 89 ef	mov    %rbp,%rdi
+   0x000000007ef95901 <+5605>:	e8 3d 60 ff ff	call   0x7ef8b943 <PeCoffLoaderImageAddress>
+   0x000000007ef95906 <+5610>:	49 89 c1	mov    %rax,%r9
+   0x000000007ef95909 <+5613>:	8b 41 04	mov    0x4(%rcx),%eax
+   0x000000007ef9590c <+5616>:	03 01	add    (%rcx),%eax
+   0x000000007ef9590e <+5618>:	8d 70 ff	lea    -0x1(%rax),%esi
+   0x000000007ef95911 <+5621>:	e8 2d 60 ff ff	call   0x7ef8b943 <PeCoffLoaderImageAddress>
+   0x000000007ef95916 <+5626>:	48 89 c3	mov    %rax,%rbx
+   0x000000007ef95919 <+5629>:	4d 85 c9	test   %r9,%r9
+   0x000000007ef9591c <+5632>:	75 1a	jne    0x7ef95938 <CoreLoadImageCommon.constprop.0+5660>
+   0x000000007ef9591e <+5634>:	41 c7 86 58 01 00 00 09 00 00 00	movl   $0x9,0x158(%r14)
+   0x000000007ef95929 <+5645>:	49 bc 01 00 00 00 00 00 00 80	movabs $0x8000000000000001,%r12
+   0x000000007ef95933 <+5655>:	e9 ac 01 00 00	jmp    0x7ef95ae4 <CoreLoadImageCommon.constprop.0+6088>
+   0x000000007ef95938 <+5660>:	48 85 c0	test   %rax,%rax
+   0x000000007ef9593b <+5663>:	74 e1	je     0x7ef9591e <CoreLoadImageCommon.constprop.0+5634>
+   0x000000007ef9593d <+5665>:	4c 39 c8	cmp    %r9,%rax
+   0x000000007ef95940 <+5668>:	72 dc	jb     0x7ef9591e <CoreLoadImageCommon.constprop.0+5634>
+   0x000000007ef95942 <+5670>:	4d 85 e4	test   %r12,%r12
+   0x000000007ef95945 <+5673>:	0f 84 13 01 00 00	je     0x7ef95a5e <CoreLoadImageCommon.constprop.0+5954>
+   0x000000007ef9594b <+5679>:	44 89 e0	mov    %r12d,%eax
+   0x000000007ef9594e <+5682>:	44 89 64 24 18	mov    %r12d,0x18(%rsp)
+   0x000000007ef95953 <+5687>:	4d 89 cb	mov    %r9,%r11
+   0x000000007ef95956 <+5690>:	44 89 ea	mov    %r13d,%edx
+   0x000000007ef95959 <+5693>:	c1 e8 10	shr    $0x10,%eax
+   0x000000007ef9595c <+5696>:	4d 8b 86 20 01 00 00	mov    0x120(%r14),%r8
+   0x000000007ef95963 <+5703>:	4c 8d 15 46 96 00 00	lea    0x9646(%rip),%r10        # 0x7ef9efb0
+   0x000000007ef9596a <+5710>:	66 89 44 24 30	mov    %ax,0x30(%rsp)
+   0x000000007ef9596f <+5715>:	4c 39 db	cmp    %r11,%rbx
+   0x000000007ef95972 <+5718>:	0f 86 92 00 00 00	jbe    0x7ef95a0a <CoreLoadImageCommon.constprop.0+5870>
+   0x000000007ef95978 <+5724>:	45 8b 7b 04	mov    0x4(%r11),%r15d
+   0x000000007ef9597c <+5728>:	4d 8d 6b 08	lea    0x8(%r11),%r13
+   0x000000007ef95980 <+5732>:	45 85 ff	test   %r15d,%r15d
+   0x000000007ef95983 <+5735>:	74 99	je     0x7ef9591e <CoreLoadImageCommon.constprop.0+5634>
+   0x000000007ef95985 <+5737>:	4c 89 f8	mov    %r15,%rax
+   0x000000007ef95988 <+5740>:	48 f7 d0	not    %rax
+   0x000000007ef9598b <+5743>:	4c 39 d8	cmp    %r11,%rax
+   0x000000007ef9598e <+5746>:	72 8e	jb     0x7ef9591e <CoreLoadImageCommon.constprop.0+5634>
+   0x000000007ef95990 <+5748>:	8b 41 04	mov    0x4(%rcx),%eax
+   0x000000007ef95993 <+5751>:	4d 01 df	add    %r11,%r15
+   0x000000007ef95996 <+5754>:	4c 01 c8	add    %r9,%rax
+   0x000000007ef95999 <+5757>:	4c 39 f8	cmp    %r15,%rax
+   0x000000007ef9599c <+5760>:	72 80	jb     0x7ef9591e <CoreLoadImageCommon.constprop.0+5634>
+   0x000000007ef9599e <+5762>:	41 8b 33	mov    (%r11),%esi
+   0x000000007ef959a1 <+5765>:	48 89 ef	mov    %rbp,%rdi
+   0x000000007ef959a4 <+5768>:	e8 9a 5f ff ff	call   0x7ef8b943 <PeCoffLoaderImageAddress>
+   0x000000007ef959a9 <+5773>:	48 85 c0	test   %rax,%rax
+   0x000000007ef959ac <+5776>:	0f 84 6c ff ff ff	je     0x7ef9591e <CoreLoadImageCommon.constprop.0+5634>
+   0x000000007ef959b2 <+5782>:	4d 39 fd	cmp    %r15,%r13
+   0x000000007ef959b5 <+5785>:	0f 83 34 03 00 00	jae    0x7ef95cef <CoreLoadImageCommon.constprop.0+6611>
+   0x000000007ef959bb <+5791>:	66 41 8b 75 00	mov    0x0(%r13),%si
+   0x000000007ef959c0 <+5796>:	48 89 ef	mov    %rbp,%rdi
+   0x000000007ef959c3 <+5799>:	81 e6 ff 0f 00 00	and    $0xfff,%esi
+   0x000000007ef959c9 <+5805>:	41 03 33	add    (%r11),%esi
+   0x000000007ef959cc <+5808>:	e8 72 5f ff ff	call   0x7ef8b943 <PeCoffLoaderImageAddress>
+   0x000000007ef959d1 <+5813>:	48 85 c0	test   %rax,%rax
+   0x000000007ef959d4 <+5816>:	0f 84 44 ff ff ff	je     0x7ef9591e <CoreLoadImageCommon.constprop.0+5634>
+   0x000000007ef959da <+5822>:	66 41 8b 7d 00	mov    0x0(%r13),%di
+   0x000000007ef959df <+5827>:	89 fe	mov    %edi,%esi
+   0x000000007ef959e1 <+5829>:	66 c1 ee 0c	shr    $0xc,%si
+   0x000000007ef959e5 <+5833>:	66 81 ff ff af	cmp    $0xafff,%di
+   0x000000007ef959ea <+5838>:	0f 86 84 02 00 00	jbe    0x7ef95c74 <CoreLoadImageCommon.constprop.0+6488>
+   0x000000007ef959f0 <+5844>:	41 c7 86 58 01 00 00 09 00 00 00	movl   $0x9,0x158(%r14)
+   0x000000007ef959fb <+5855>:	49 bc 03 00 00 00 00 00 00 80	movabs $0x8000000000000003,%r12
+   0x000000007ef95a05 <+5865>:	e9 da 00 00 00	jmp    0x7ef95ae4 <CoreLoadImageCommon.constprop.0+6088>
+   0x000000007ef95a0a <+5870>:	49 8b 86 60 01 00 00	mov    0x160(%r14),%rax
+   0x000000007ef95a11 <+5877>:	49 03 86 20 01 00 00	add    0x120(%r14),%rax
+   0x000000007ef95a18 <+5884>:	49 39 c0	cmp    %rax,%r8
+   0x000000007ef95a1b <+5887>:	76 20	jbe    0x7ef95a3d <CoreLoadImageCommon.constprop.0+5921>
+   0x000000007ef95a1d <+5889>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95a21 <+5893>:	4c 8d 05 5d 93 00 00	lea    0x935d(%rip),%r8        # 0x7ef9ed85
+   0x000000007ef95a28 <+5900>:	ba 81 04 00 00	mov    $0x481,%edx
+   0x000000007ef95a2d <+5905>:	48 8d 0d cb 7b 00 00	lea    0x7bcb(%rip),%rcx        # 0x7ef9d5ff
+   0x000000007ef95a34 <+5912>:	e8 8d 73 ff ff	call   0x7ef8cdc6 <DebugAssert>
+   0x000000007ef95a39 <+5917>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95a3d <+5921>:	49 8b 86 00 01 00 00	mov    0x100(%r14),%rax
+   0x000000007ef95a44 <+5928>:	48 85 c0	test   %rax,%rax
+   0x000000007ef95a47 <+5931>:	74 15	je     0x7ef95a5e <CoreLoadImageCommon.constprop.0+5954>
+   0x000000007ef95a49 <+5933>:	49 03 86 08 01 00 00	add    0x108(%r14),%rax
+   0x000000007ef95a50 <+5940>:	49 2b 86 f0 00 00 00	sub    0xf0(%r14),%rax
+   0x000000007ef95a57 <+5947>:	49 89 86 08 01 00 00	mov    %rax,0x108(%r14)
+   0x000000007ef95a5e <+5954>:	49 8b 86 f8 00 00 00	mov    0xf8(%r14),%rax
+   0x000000007ef95a65 <+5961>:	45 31 e4	xor    %r12d,%r12d
+   0x000000007ef95a68 <+5964>:	48 85 c0	test   %rax,%rax
+   0x000000007ef95a6b <+5967>:	0f 85 86 02 00 00	jne    0x7ef95cf7 <CoreLoadImageCommon.constprop.0+6619>
+   0x000000007ef95a71 <+5973>:	41 8b 86 68 01 00 00	mov    0x168(%r14),%eax
+   0x000000007ef95a78 <+5980>:	41 0f b7 96 6a 01 00 00	movzwl 0x16a(%r14),%edx
+   0x000000007ef95a80 <+5988>:	66 41 89 86 d0 00 00 00	mov    %ax,0xd0(%r14)
+   0x000000007ef95a88 <+5996>:	49 8b 86 08 01 00 00	mov    0x108(%r14),%rax
+   0x000000007ef95a8f <+6003>:	49 89 56 10	mov    %rdx,0x10(%r14)
+   0x000000007ef95a93 <+6007>:	49 89 46 20	mov    %rax,0x20(%r14)
+   0x000000007ef95a97 <+6011>:	48 89 d0	mov    %rdx,%rax
+   0x000000007ef95a9a <+6014>:	49 8b 96 f0 00 00 00	mov    0xf0(%r14),%rdx
+   0x000000007ef95aa1 <+6021>:	49 89 56 68	mov    %rdx,0x68(%r14)
+   0x000000007ef95aa5 <+6025>:	49 8b 96 f8 00 00 00	mov    0xf8(%r14),%rdx
+   0x000000007ef95aac <+6032>:	49 89 56 70	mov    %rdx,0x70(%r14)
+   0x000000007ef95ab0 <+6036>:	49 8b 96 50 01 00 00	mov    0x150(%r14),%rdx
+   0x000000007ef95ab7 <+6043>:	49 89 56 78	mov    %rdx,0x78(%r14)
+   0x000000007ef95abb <+6047>:	66 83 f8 0c	cmp    $0xc,%ax
+   0x000000007ef95abf <+6051>:	0f 85 d1 08 00 00	jne    0x7ef96396 <CoreLoadImageCommon.constprop.0+8314>
+   0x000000007ef95ac5 <+6057>:	be 30 00 00 00	mov    $0x30,%esi
+   0x000000007ef95aca <+6062>:	bf 06 00 00 00	mov    $0x6,%edi
+   0x000000007ef95acf <+6067>:	e8 33 72 ff ff	call   0x7ef8cd07 <InternalAllocatePool>
+   0x000000007ef95ad4 <+6072>:	49 89 86 e0 00 00 00	mov    %rax,0xe0(%r14)
+   0x000000007ef95adb <+6079>:	48 85 c0	test   %rax,%rax
+   0x000000007ef95ade <+6082>:	0f 85 4e 02 00 00	jne    0x7ef95d32 <CoreLoadImageCommon.constprop.0+6678>
+   0x000000007ef95ae4 <+6088>:	49 8b 8e f0 00 00 00	mov    0xf0(%r14),%rcx
+   0x000000007ef95aeb <+6095>:	49 8b 96 90 00 00 00	mov    0x90(%r14),%rdx
+   0x000000007ef95af2 <+6102>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95af6 <+6106>:	e8 7c 35 ff ff	call   0x7ef89077 <CoreFreePages>
+   0x000000007ef95afb <+6111>:	49 8b 8e 20 01 00 00	mov    0x120(%r14),%rcx
+   0x000000007ef95b02 <+6118>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95b06 <+6122>:	49 c7 86 f0 00 00 00 00 00 00 00	movq   $0x0,0xf0(%r14)
+   0x000000007ef95b11 <+6133>:	49 c7 86 88 00 00 00 00 00 00 00	movq   $0x0,0x88(%r14)
+   0x000000007ef95b1c <+6144>:	48 85 c9	test   %rcx,%rcx
+   0x000000007ef95b1f <+6147>:	74 0d	je     0x7ef95b2e <CoreLoadImageCommon.constprop.0+6162>
+   0x000000007ef95b21 <+6149>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95b25 <+6153>:	e8 b3 9b fe ff	call   0x7ef7f6dd <CoreFreePool>
+   0x000000007ef95b2a <+6158>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95b2e <+6162>:	4d 85 e4	test   %r12,%r12
+   0x000000007ef95b31 <+6165>:	0f 88 0c f7 ff ff	js     0x7ef95243 <CoreLoadImageCommon.constprop.0+3879>
+   0x000000007ef95b37 <+6171>:	48 8b 7c 24 20	mov    0x20(%rsp),%rdi
+   0x000000007ef95b3c <+6176>:	49 8b 76 08	mov    0x8(%r14),%rsi
+   0x000000007ef95b40 <+6180>:	e8 87 0b 00 00	call   0x7ef966cc <CoreNewDebugImageInfoEntry.constprop.0>
+   0x000000007ef95b45 <+6185>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95b49 <+6189>:	49 8b 4e 08	mov    0x8(%r14),%rcx
+   0x000000007ef95b4d <+6193>:	48 8d 15 fc a2 00 00	lea    0xa2fc(%rip),%rdx        # 0x7ef9fe50
+   0x000000007ef95b54 <+6200>:	4c 8b 4c 24 40	mov    0x40(%rsp),%r9
+   0x000000007ef95b59 <+6205>:	4d 89 c8	mov    %r9,%r8
+   0x000000007ef95b5c <+6208>:	e8 aa c0 fe ff	call   0x7ef81c0b <CoreReinstallProtocolInterface>
+   0x000000007ef95b61 <+6213>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95b65 <+6217>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef95b68 <+6220>:	48 85 c0	test   %rax,%rax
+   0x000000007ef95b6b <+6223>:	0f 88 d2 f6 ff ff	js     0x7ef95243 <CoreLoadImageCommon.constprop.0+3879>
+   0x000000007ef95b71 <+6229>:	48 83 3c 24 00	cmpq   $0x0,(%rsp)
+   0x000000007ef95b76 <+6234>:	74 19	je     0x7ef95b91 <CoreLoadImageCommon.constprop.0+6261>
+   0x000000007ef95b78 <+6236>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95b7c <+6240>:	48 8b 4c 24 20	mov    0x20(%rsp),%rcx
+   0x000000007ef95b81 <+6245>:	e8 ee b0 ff ff	call   0x7ef90c74 <UefiDevicePathLibDuplicateDevicePath>
+   0x000000007ef95b86 <+6250>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95b8a <+6254>:	49 89 86 e8 00 00 00	mov    %rax,0xe8(%r14)
+   0x000000007ef95b91 <+6261>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95b95 <+6265>:	4d 8b 8e e8 00 00 00	mov    0xe8(%r14),%r9
+   0x000000007ef95b9c <+6272>:	45 31 c0	xor    %r8d,%r8d
+   0x000000007ef95b9f <+6275>:	48 8d 15 9a a2 00 00	lea    0xa29a(%rip),%rdx        # 0x7ef9fe40
+   0x000000007ef95ba6 <+6282>:	48 8b 4c 24 48	mov    0x48(%rsp),%rcx
+   0x000000007ef95bab <+6287>:	e8 3b cc fe ff	call   0x7ef827eb <CoreInstallProtocolInterface>
+   0x000000007ef95bb0 <+6292>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95bb4 <+6296>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef95bb7 <+6299>:	48 85 c0	test   %rax,%rax
+   0x000000007ef95bba <+6302>:	0f 88 83 f6 ff ff	js     0x7ef95243 <CoreLoadImageCommon.constprop.0+3879>
+   0x000000007ef95bc0 <+6308>:	4d 8b 8e 70 01 00 00	mov    0x170(%r14),%r9
+   0x000000007ef95bc7 <+6315>:	4d 85 c9	test   %r9,%r9
+   0x000000007ef95bca <+6318>:	74 28	je     0x7ef95bf4 <CoreLoadImageCommon.constprop.0+6360>
+   0x000000007ef95bcc <+6320>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95bd0 <+6324>:	45 31 c0	xor    %r8d,%r8d
+   0x000000007ef95bd3 <+6327>:	48 8d 15 56 a2 00 00	lea    0xa256(%rip),%rdx        # 0x7ef9fe30
+   0x000000007ef95bda <+6334>:	48 8b 4c 24 48	mov    0x48(%rsp),%rcx
+   0x000000007ef95bdf <+6339>:	e8 07 cc fe ff	call   0x7ef827eb <CoreInstallProtocolInterface>
+   0x000000007ef95be4 <+6344>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95be8 <+6348>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef95beb <+6351>:	48 85 c0	test   %rax,%rax
+   0x000000007ef95bee <+6354>:	0f 88 4f f6 ff ff	js     0x7ef95243 <CoreLoadImageCommon.constprop.0+3879>
+   0x000000007ef95bf4 <+6360>:	48 8b 7c 24 20	mov    0x20(%rsp),%rdi
+   0x000000007ef95bf9 <+6365>:	49 8b b6 e8 00 00 00	mov    0xe8(%r14),%rsi
+   0x000000007ef95c00 <+6372>:	e8 20 85 fe ff	call   0x7ef7e125 <ProtectUefiImage>
+   0x000000007ef95c05 <+6377>:	49 8b 46 08	mov    0x8(%r14),%rax
+   0x000000007ef95c09 <+6381>:	48 8b 7c 24 38	mov    0x38(%rsp),%rdi
+   0x000000007ef95c0e <+6386>:	48 89 07	mov    %rax,(%rdi)
+   0x000000007ef95c11 <+6389>:	e9 2d f6 ff ff	jmp    0x7ef95243 <CoreLoadImageCommon.constprop.0+3879>
+   0x000000007ef95c16 <+6394>:	41 8b 8e 2c 01 00 00	mov    0x12c(%r14),%ecx
+   0x000000007ef95c1d <+6401>:	48 01 d1	add    %rdx,%rcx
+   0x000000007ef95c20 <+6404>:	66 81 79 18 0b 01	cmpw   $0x10b,0x18(%rcx)
+   0x000000007ef95c26 <+6410>:	75 1a	jne    0x7ef95c42 <CoreLoadImageCommon.constprop.0+6438>
+   0x000000007ef95c28 <+6412>:	8b 51 34	mov    0x34(%rcx),%edx
+   0x000000007ef95c2b <+6415>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef95c2e <+6418>:	49 29 d4	sub    %rdx,%r12
+   0x000000007ef95c31 <+6421>:	74 03	je     0x7ef95c36 <CoreLoadImageCommon.constprop.0+6426>
+   0x000000007ef95c33 <+6423>:	89 41 34	mov    %eax,0x34(%rcx)
+   0x000000007ef95c36 <+6426>:	8b 41 74	mov    0x74(%rcx),%eax
+   0x000000007ef95c39 <+6429>:	48 81 c1 a0 00 00 00	add    $0xa0,%rcx
+   0x000000007ef95c40 <+6436>:	eb 1a	jmp    0x7ef95c5c <CoreLoadImageCommon.constprop.0+6464>
+   0x000000007ef95c42 <+6438>:	49 89 c4	mov    %rax,%r12
+   0x000000007ef95c45 <+6441>:	4c 2b 61 30	sub    0x30(%rcx),%r12
+   0x000000007ef95c49 <+6445>:	74 04	je     0x7ef95c4f <CoreLoadImageCommon.constprop.0+6451>
+   0x000000007ef95c4b <+6447>:	48 89 41 30	mov    %rax,0x30(%rcx)
+   0x000000007ef95c4f <+6451>:	8b 81 84 00 00 00	mov    0x84(%rcx),%eax
+   0x000000007ef95c55 <+6457>:	48 81 c1 b0 00 00 00	add    $0xb0,%rcx
+   0x000000007ef95c5c <+6464>:	45 31 ed	xor    %r13d,%r13d
+   0x000000007ef95c5f <+6467>:	83 f8 04	cmp    $0x4,%eax
+   0x000000007ef95c62 <+6470>:	0f 87 87 fc ff ff	ja     0x7ef958ef <CoreLoadImageCommon.constprop.0+5587>
+   0x000000007ef95c68 <+6476>:	31 c9	xor    %ecx,%ecx
+   0x000000007ef95c6a <+6478>:	31 db	xor    %ebx,%ebx
+   0x000000007ef95c6c <+6480>:	45 31 c9	xor    %r9d,%r9d
+   0x000000007ef95c6f <+6483>:	e9 ce fc ff ff	jmp    0x7ef95942 <CoreLoadImageCommon.constprop.0+5670>
+   0x000000007ef95c74 <+6488>:	0f b7 f6	movzwl %si,%esi
+   0x000000007ef95c77 <+6491>:	49 63 34 b2	movslq (%r10,%rsi,4),%rsi
+   0x000000007ef95c7b <+6495>:	4c 01 d6	add    %r10,%rsi
+   0x000000007ef95c7e <+6498>:	ff e6	jmp    *%rsi
+   0x000000007ef95c80 <+6500>:	8b 74 24 30	mov    0x30(%rsp),%esi
+   0x000000007ef95c84 <+6504>:	66 03 30	add    (%rax),%si
+   0x000000007ef95c87 <+6507>:	66 89 30	mov    %si,(%rax)
+   0x000000007ef95c8a <+6510>:	4d 85 c0	test   %r8,%r8
+   0x000000007ef95c8d <+6513>:	75 0a	jne    0x7ef95c99 <CoreLoadImageCommon.constprop.0+6525>
+   0x000000007ef95c8f <+6515>:	45 31 c0	xor    %r8d,%r8d
+   0x000000007ef95c92 <+6518>:	eb 52	jmp    0x7ef95ce6 <CoreLoadImageCommon.constprop.0+6602>
+   0x000000007ef95c94 <+6520>:	44 89 e6	mov    %r12d,%esi
+   0x000000007ef95c97 <+6523>:	eb eb	jmp    0x7ef95c84 <CoreLoadImageCommon.constprop.0+6504>
+   0x000000007ef95c99 <+6525>:	66 41 89 30	mov    %si,(%r8)
+   0x000000007ef95c9d <+6529>:	49 83 c0 02	add    $0x2,%r8
+   0x000000007ef95ca1 <+6533>:	eb 43	jmp    0x7ef95ce6 <CoreLoadImageCommon.constprop.0+6602>
+   0x000000007ef95ca3 <+6535>:	8b 74 24 18	mov    0x18(%rsp),%esi
+   0x000000007ef95ca7 <+6539>:	03 30	add    (%rax),%esi
+   0x000000007ef95ca9 <+6541>:	89 30	mov    %esi,(%rax)
+   0x000000007ef95cab <+6543>:	4d 85 c0	test   %r8,%r8
+   0x000000007ef95cae <+6546>:	74 df	je     0x7ef95c8f <CoreLoadImageCommon.constprop.0+6515>
+   0x000000007ef95cb0 <+6548>:	4c 89 c0	mov    %r8,%rax
+   0x000000007ef95cb3 <+6551>:	48 f7 d8	neg    %rax
+   0x000000007ef95cb6 <+6554>:	83 e0 03	and    $0x3,%eax
+   0x000000007ef95cb9 <+6557>:	49 01 c0	add    %rax,%r8
+   0x000000007ef95cbc <+6560>:	41 89 30	mov    %esi,(%r8)
+   0x000000007ef95cbf <+6563>:	49 83 c0 04	add    $0x4,%r8
+   0x000000007ef95cc3 <+6567>:	eb 21	jmp    0x7ef95ce6 <CoreLoadImageCommon.constprop.0+6602>
+   0x000000007ef95cc5 <+6569>:	48 8b 30	mov    (%rax),%rsi
+   0x000000007ef95cc8 <+6572>:	4c 01 e6	add    %r12,%rsi
+   0x000000007ef95ccb <+6575>:	48 89 30	mov    %rsi,(%rax)
+   0x000000007ef95cce <+6578>:	4d 85 c0	test   %r8,%r8
+   0x000000007ef95cd1 <+6581>:	74 bc	je     0x7ef95c8f <CoreLoadImageCommon.constprop.0+6515>
+   0x000000007ef95cd3 <+6583>:	4c 89 c0	mov    %r8,%rax
+   0x000000007ef95cd6 <+6586>:	48 f7 d8	neg    %rax
+   0x000000007ef95cd9 <+6589>:	83 e0 07	and    $0x7,%eax
+   0x000000007ef95cdc <+6592>:	49 01 c0	add    %rax,%r8
+   0x000000007ef95cdf <+6595>:	49 89 30	mov    %rsi,(%r8)
+   0x000000007ef95ce2 <+6598>:	49 83 c0 08	add    $0x8,%r8
+   0x000000007ef95ce6 <+6602>:	49 83 c5 02	add    $0x2,%r13
+   0x000000007ef95cea <+6606>:	e9 c3 fc ff ff	jmp    0x7ef959b2 <CoreLoadImageCommon.constprop.0+5782>
+   0x000000007ef95cef <+6611>:	4d 89 fb	mov    %r15,%r11
+   0x000000007ef95cf2 <+6614>:	e9 78 fc ff ff	jmp    0x7ef9596f <CoreLoadImageCommon.constprop.0+5715>
+   0x000000007ef95cf7 <+6619>:	49 8b 96 f0 00 00 00	mov    0xf0(%r14),%rdx
+   0x000000007ef95cfe <+6626>:	48 ff c8	dec    %rax
+   0x000000007ef95d01 <+6629>:	48 f7 d2	not    %rdx
+   0x000000007ef95d04 <+6632>:	48 39 d0	cmp    %rdx,%rax
+   0x000000007ef95d07 <+6635>:	0f 86 64 fd ff ff	jbe    0x7ef95a71 <CoreLoadImageCommon.constprop.0+5973>
+   0x000000007ef95d0d <+6641>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95d11 <+6645>:	4c 8d 05 be 90 00 00	lea    0x90be(%rip),%r8        # 0x7ef9edd6
+   0x000000007ef95d18 <+6652>:	ba 3f 00 00 00	mov    $0x3f,%edx
+   0x000000007ef95d1d <+6657>:	48 8d 0d eb 90 00 00	lea    0x90eb(%rip),%rcx        # 0x7ef9ee0f
+   0x000000007ef95d24 <+6664>:	e8 9d 70 ff ff	call   0x7ef8cdc6 <DebugAssert>
+   0x000000007ef95d29 <+6669>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95d2d <+6673>:	e9 3f fd ff ff	jmp    0x7ef95a71 <CoreLoadImageCommon.constprop.0+5973>
+   0x000000007ef95d32 <+6678>:	49 8b 56 68	mov    0x68(%r14),%rdx
+   0x000000007ef95d36 <+6682>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95d3a <+6686>:	48 89 10	mov    %rdx,(%rax)
+   0x000000007ef95d3d <+6689>:	49 8b 86 e0 00 00 00	mov    0xe0(%r14),%rax
+   0x000000007ef95d44 <+6696>:	49 8b 56 70	mov    0x70(%r14),%rdx
+   0x000000007ef95d48 <+6700>:	48 8b 0d 99 a8 00 00	mov    0xa899(%rip),%rcx        # 0x7efa05e8
+   0x000000007ef95d4f <+6707>:	48 89 50 08	mov    %rdx,0x8(%rax)
+   0x000000007ef95d53 <+6711>:	49 8b 86 e0 00 00 00	mov    0xe0(%r14),%rax
+   0x000000007ef95d5a <+6718>:	49 8b 96 20 01 00 00	mov    0x120(%r14),%rdx
+   0x000000007ef95d61 <+6725>:	48 89 50 10	mov    %rdx,0x10(%rax)
+   0x000000007ef95d65 <+6729>:	49 8b 86 e0 00 00 00	mov    0xe0(%r14),%rax
+   0x000000007ef95d6c <+6736>:	49 8b 56 08	mov    0x8(%r14),%rdx
+   0x000000007ef95d70 <+6740>:	48 89 50 18	mov    %rdx,0x18(%rax)
+   0x000000007ef95d74 <+6744>:	49 8b 86 e0 00 00 00	mov    0xe0(%r14),%rax
+   0x000000007ef95d7b <+6751>:	48 8d 50 20	lea    0x20(%rax),%rdx
+   0x000000007ef95d7f <+6755>:	e8 34 7d ff ff	call   0x7ef8dab8 <InsertTailList>
+   0x000000007ef95d84 <+6760>:	49 8b 9e e0 00 00 00	mov    0xe0(%r14),%rbx
+   0x000000007ef95d8b <+6767>:	e8 19 a1 ff ff	call   0x7ef8fea9 <DebugPrintEnabled>
+   0x000000007ef95d90 <+6772>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95d94 <+6776>:	41 89 c4	mov    %eax,%r12d
+   0x000000007ef95d97 <+6779>:	84 c0	test   %al,%al
+   0x000000007ef95d99 <+6781>:	74 34	je     0x7ef95dcf <CoreLoadImageCommon.constprop.0+6835>
+   0x000000007ef95d9b <+6783>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95d9f <+6787>:	49 89 d8	mov    %rbx,%r8
+   0x000000007ef95da2 <+6790>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef95da7 <+6795>:	48 8d 15 bb 90 00 00	lea    0x90bb(%rip),%rdx        # 0x7ef9ee69
+   0x000000007ef95dae <+6802>:	e8 92 93 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef95db3 <+6807>:	4c 8b 4b 08	mov    0x8(%rbx),%r9
+   0x000000007ef95db7 <+6811>:	4c 8b 03	mov    (%rbx),%r8
+   0x000000007ef95dba <+6814>:	48 8d 15 c2 90 00 00	lea    0x90c2(%rip),%rdx        # 0x7ef9ee83
+   0x000000007ef95dc1 <+6821>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef95dc6 <+6826>:	e8 7a 93 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef95dcb <+6831>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95dcf <+6835>:	80 3d 0a c3 00 00 00	cmpb   $0x0,0xc30a(%rip)        # 0x7efa20e0
+   0x000000007ef95dd6 <+6842>:	74 1e	je     0x7ef95df6 <CoreLoadImageCommon.constprop.0+6874>
+   0x000000007ef95dd8 <+6844>:	45 84 e4	test   %r12b,%r12b
+   0x000000007ef95ddb <+6847>:	0f 84 b5 05 00 00	je     0x7ef96396 <CoreLoadImageCommon.constprop.0+8314>
+   0x000000007ef95de1 <+6853>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95de5 <+6857>:	48 8d 15 c0 90 00 00	lea    0x90c0(%rip),%rdx        # 0x7ef9eeac
+   0x000000007ef95dec <+6864>:	b9 40 00 00 00	mov    $0x40,%ecx
+   0x000000007ef95df1 <+6869>:	e9 e8 03 00 00	jmp    0x7ef961de <CoreLoadImageCommon.constprop.0+7874>
+   0x000000007ef95df6 <+6874>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95dfa <+6878>:	b9 40 00 00 00	mov    $0x40,%ecx
+   0x000000007ef95dff <+6883>:	e8 3b 6f ff ff	call   0x7ef8cd3f <AllocatePool>
+   0x000000007ef95e04 <+6888>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95e08 <+6892>:	48 89 c5	mov    %rax,%rbp
+   0x000000007ef95e0b <+6895>:	48 85 c0	test   %rax,%rax
+   0x000000007ef95e0e <+6898>:	0f 84 82 05 00 00	je     0x7ef96396 <CoreLoadImageCommon.constprop.0+8314>
+   0x000000007ef95e14 <+6904>:	c7 00 49 50 52 44	movl   $0x44525049,(%rax)
+   0x000000007ef95e1a <+6910>:	45 84 e4	test   %r12b,%r12b
+   0x000000007ef95e1d <+6913>:	74 20	je     0x7ef95e3f <CoreLoadImageCommon.constprop.0+6947>
+   0x000000007ef95e1f <+6915>:	4c 8b 05 e2 9f 00 00	mov    0x9fe2(%rip),%r8        # 0x7ef9fe08
+   0x000000007ef95e26 <+6922>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95e2a <+6926>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef95e2f <+6931>:	48 8d 15 a9 90 00 00	lea    0x90a9(%rip),%rdx        # 0x7ef9eedf
+   0x000000007ef95e36 <+6938>:	e8 0a 93 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef95e3b <+6943>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95e3f <+6947>:	48 8b 03	mov    (%rbx),%rax
+   0x000000007ef95e42 <+6950>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95e46 <+6954>:	48 89 45 18	mov    %rax,0x18(%rbp)
+   0x000000007ef95e4a <+6958>:	48 8b 43 08	mov    0x8(%rbx),%rax
+   0x000000007ef95e4e <+6962>:	48 89 45 20	mov    %rax,0x20(%rbp)
+   0x000000007ef95e52 <+6966>:	4c 8b 2b	mov    (%rbx),%r13
+   0x000000007ef95e55 <+6969>:	4c 89 e9	mov    %r13,%rcx
+   0x000000007ef95e58 <+6972>:	e8 4f b1 ff ff	call   0x7ef90fac <PeCoffLoaderGetPdbPointer>
+   0x000000007ef95e5d <+6977>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95e61 <+6981>:	45 84 e4	test   %r12b,%r12b
+   0x000000007ef95e64 <+6984>:	49 89 c0	mov    %rax,%r8
+   0x000000007ef95e67 <+6987>:	0f 95 44 24 18	setne  0x18(%rsp)
+   0x000000007ef95e6c <+6992>:	48 85 c0	test   %rax,%rax
+   0x000000007ef95e6f <+6995>:	74 20	je     0x7ef95e91 <CoreLoadImageCommon.constprop.0+7029>
+   0x000000007ef95e71 <+6997>:	80 7c 24 18 00	cmpb   $0x0,0x18(%rsp)
+   0x000000007ef95e76 <+7002>:	74 19	je     0x7ef95e91 <CoreLoadImageCommon.constprop.0+7029>
+   0x000000007ef95e78 <+7004>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95e7c <+7008>:	48 8d 15 be 4a 00 00	lea    0x4abe(%rip),%rdx        # 0x7ef9a941 <AsmVectorNumFixup+3001>
+   0x000000007ef95e83 <+7015>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef95e88 <+7020>:	e8 b8 92 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef95e8d <+7025>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95e91 <+7029>:	31 db	xor    %ebx,%ebx
+   0x000000007ef95e93 <+7031>:	66 41 81 7d 00 4d 5a	cmpw   $0x5a4d,0x0(%r13)
+   0x000000007ef95e9a <+7038>:	75 04	jne    0x7ef95ea0 <CoreLoadImageCommon.constprop.0+7044>
+   0x000000007ef95e9c <+7040>:	41 8b 5d 3c	mov    0x3c(%r13),%ebx
+   0x000000007ef95ea0 <+7044>:	4d 8d 7c 1d 00	lea    0x0(%r13,%rbx,1),%r15
+   0x000000007ef95ea5 <+7049>:	45 8b 07	mov    (%r15),%r8d
+   0x000000007ef95ea8 <+7052>:	41 81 f8 50 45 00 00	cmp    $0x4550,%r8d
+   0x000000007ef95eaf <+7059>:	74 23	je     0x7ef95ed4 <CoreLoadImageCommon.constprop.0+7096>
+   0x000000007ef95eb1 <+7061>:	45 84 e4	test   %r12b,%r12b
+   0x000000007ef95eb4 <+7064>:	0f 84 dc 04 00 00	je     0x7ef96396 <CoreLoadImageCommon.constprop.0+8314>
+   0x000000007ef95eba <+7070>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95ebe <+7074>:	48 8d 15 8a 4a 00 00	lea    0x4a8a(%rip),%rdx        # 0x7ef9a94f <AsmVectorNumFixup+3015>
+   0x000000007ef95ec5 <+7081>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef95eca <+7086>:	e8 76 92 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef95ecf <+7091>:	e9 d4 02 00 00	jmp    0x7ef961a8 <CoreLoadImageCommon.constprop.0+7820>
+   0x000000007ef95ed4 <+7096>:	45 8b 47 38	mov    0x38(%r15),%r8d
+   0x000000007ef95ed8 <+7100>:	44 89 c7	mov    %r8d,%edi
+   0x000000007ef95edb <+7103>:	44 89 44 24 30	mov    %r8d,0x30(%rsp)
+   0x000000007ef95ee0 <+7108>:	e8 45 67 fe ff	call   0x7ef7c62a <SetMemoryAttributesTableSectionAlignment>
+   0x000000007ef95ee5 <+7113>:	44 8b 44 24 30	mov    0x30(%rsp),%r8d
+   0x000000007ef95eea <+7118>:	41 f7 c0 ff 0f 00 00	test   $0xfff,%r8d
+   0x000000007ef95ef1 <+7125>:	74 60	je     0x7ef95f53 <CoreLoadImageCommon.constprop.0+7223>
+   0x000000007ef95ef3 <+7127>:	45 84 e4	test   %r12b,%r12b
+   0x000000007ef95ef6 <+7130>:	74 1f	je     0x7ef95f17 <CoreLoadImageCommon.constprop.0+7163>
+   0x000000007ef95ef8 <+7132>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95efc <+7136>:	41 b9 04 00 00 00	mov    $0x4,%r9d
+   0x000000007ef95f02 <+7142>:	b9 02 00 00 00	mov    $0x2,%ecx
+   0x000000007ef95f07 <+7147>:	48 8d 15 ea 8f 00 00	lea    0x8fea(%rip),%rdx        # 0x7ef9eef8
+   0x000000007ef95f0e <+7154>:	e8 32 92 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef95f13 <+7159>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95f17 <+7163>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95f1b <+7167>:	4c 89 e9	mov    %r13,%rcx
+   0x000000007ef95f1e <+7170>:	e8 89 b0 ff ff	call   0x7ef90fac <PeCoffLoaderGetPdbPointer>
+   0x000000007ef95f23 <+7175>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95f27 <+7179>:	49 89 c0	mov    %rax,%r8
+   0x000000007ef95f2a <+7182>:	48 85 c0	test   %rax,%rax
+   0x000000007ef95f2d <+7185>:	0f 84 63 04 00 00	je     0x7ef96396 <CoreLoadImageCommon.constprop.0+8314>
+   0x000000007ef95f33 <+7191>:	80 7c 24 18 00	cmpb   $0x0,0x18(%rsp)
+   0x000000007ef95f38 <+7196>:	0f 84 58 04 00 00	je     0x7ef96396 <CoreLoadImageCommon.constprop.0+8314>
+   0x000000007ef95f3e <+7202>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95f42 <+7206>:	48 8d 15 8f 4a 00 00	lea    0x4a8f(%rip),%rdx        # 0x7ef9a9d8 <AsmVectorNumFixup+3152>
+   0x000000007ef95f49 <+7213>:	b9 02 00 00 00	mov    $0x2,%ecx
+   0x000000007ef95f4e <+7218>:	e9 50 02 00 00	jmp    0x7ef961a3 <CoreLoadImageCommon.constprop.0+7815>
+   0x000000007ef95f53 <+7223>:	41 0f b7 47 14	movzwl 0x14(%r15),%eax
+   0x000000007ef95f58 <+7228>:	48 c7 45 28 00 00 00 00	movq   $0x0,0x28(%rbp)
+   0x000000007ef95f60 <+7236>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95f64 <+7240>:	48 8d 5c 03 18	lea    0x18(%rbx,%rax,1),%rbx
+   0x000000007ef95f69 <+7245>:	48 8d 45 30	lea    0x30(%rbp),%rax
+   0x000000007ef95f6d <+7249>:	48 89 44 24 60	mov    %rax,0x60(%rsp)
+   0x000000007ef95f72 <+7254>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef95f75 <+7257>:	4c 01 eb	add    %r13,%rbx
+   0x000000007ef95f78 <+7260>:	e8 b6 7a ff ff	call   0x7ef8da33 <InitializeListHead>
+   0x000000007ef95f7d <+7265>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef95f81 <+7269>:	48 c7 44 24 30 00 00 00 00	movq   $0x0,0x30(%rsp)
+   0x000000007ef95f8a <+7278>:	41 0f b7 47 06	movzwl 0x6(%r15),%eax
+   0x000000007ef95f8f <+7283>:	48 39 44 24 30	cmp    %rax,0x30(%rsp)
+   0x000000007ef95f94 <+7288>:	0f 83 a3 01 00 00	jae    0x7ef9613d <CoreLoadImageCommon.constprop.0+7713>
+   0x000000007ef95f9a <+7294>:	45 84 e4	test   %r12b,%r12b
+   0x000000007ef95f9d <+7297>:	74 40	je     0x7ef95fdf <CoreLoadImageCommon.constprop.0+7363>
+   0x000000007ef95f9f <+7299>:	0f b6 43 07	movzbl 0x7(%rbx),%eax
+   0x000000007ef95fa3 <+7303>:	44 0f b6 03	movzbl (%rbx),%r8d
+   0x000000007ef95fa7 <+7307>:	48 8d 15 4a 4a 00 00	lea    0x4a4a(%rip),%rdx        # 0x7ef9a9f8 <AsmVectorNumFixup+3184>
+   0x000000007ef95fae <+7314>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef95fb3 <+7319>:	44 0f b6 4b 01	movzbl 0x1(%rbx),%r9d
+   0x000000007ef95fb8 <+7324>:	50	push   %rax
+   0x000000007ef95fb9 <+7325>:	0f b6 43 06	movzbl 0x6(%rbx),%eax
+   0x000000007ef95fbd <+7329>:	50	push   %rax
+   0x000000007ef95fbe <+7330>:	0f b6 43 05	movzbl 0x5(%rbx),%eax
+   0x000000007ef95fc2 <+7334>:	50	push   %rax
+   0x000000007ef95fc3 <+7335>:	0f b6 43 04	movzbl 0x4(%rbx),%eax
+   0x000000007ef95fc7 <+7339>:	50	push   %rax
+   0x000000007ef95fc8 <+7340>:	0f b6 43 03	movzbl 0x3(%rbx),%eax
+   0x000000007ef95fcc <+7344>:	50	push   %rax
+   0x000000007ef95fcd <+7345>:	0f b6 43 02	movzbl 0x2(%rbx),%eax
+   0x000000007ef95fd1 <+7349>:	50	push   %rax
+   0x000000007ef95fd2 <+7350>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95fd6 <+7354>:	e8 6a 91 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef95fdb <+7359>:	48 83 c4 50	add    $0x50,%rsp
+   0x000000007ef95fdf <+7363>:	f6 43 24 20	testb  $0x20,0x24(%rbx)
+   0x000000007ef95fe3 <+7367>:	0f 84 46 01 00 00	je     0x7ef9612f <CoreLoadImageCommon.constprop.0+7699>
+   0x000000007ef95fe9 <+7373>:	45 84 e4	test   %r12b,%r12b
+   0x000000007ef95fec <+7376>:	0f 84 c7 00 00 00	je     0x7ef960b9 <CoreLoadImageCommon.constprop.0+7581>
+   0x000000007ef95ff2 <+7382>:	44 8b 43 08	mov    0x8(%rbx),%r8d
+   0x000000007ef95ff6 <+7386>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef95ffa <+7390>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef95fff <+7395>:	48 8d 15 12 4a 00 00	lea    0x4a12(%rip),%rdx        # 0x7ef9aa18 <AsmVectorNumFixup+3216>
+   0x000000007ef96006 <+7402>:	e8 3a 91 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef9600b <+7407>:	44 8b 43 0c	mov    0xc(%rbx),%r8d
+   0x000000007ef9600f <+7411>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef96014 <+7416>:	48 8d 15 1e 4a 00 00	lea    0x4a1e(%rip),%rdx        # 0x7ef9aa39 <AsmVectorNumFixup+3249>
+   0x000000007ef9601b <+7423>:	e8 25 91 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef96020 <+7428>:	44 8b 43 10	mov    0x10(%rbx),%r8d
+   0x000000007ef96024 <+7432>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef96029 <+7437>:	48 8d 15 2a 4a 00 00	lea    0x4a2a(%rip),%rdx        # 0x7ef9aa5a <AsmVectorNumFixup+3282>
+   0x000000007ef96030 <+7444>:	e8 10 91 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef96035 <+7449>:	44 8b 43 14	mov    0x14(%rbx),%r8d
+   0x000000007ef96039 <+7453>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef9603e <+7458>:	48 8d 15 36 4a 00 00	lea    0x4a36(%rip),%rdx        # 0x7ef9aa7b <AsmVectorNumFixup+3315>
+   0x000000007ef96045 <+7465>:	e8 fb 90 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef9604a <+7470>:	44 8b 43 18	mov    0x18(%rbx),%r8d
+   0x000000007ef9604e <+7474>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef96053 <+7479>:	48 8d 15 42 4a 00 00	lea    0x4a42(%rip),%rdx        # 0x7ef9aa9c <AsmVectorNumFixup+3348>
+   0x000000007ef9605a <+7486>:	e8 e6 90 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef9605f <+7491>:	44 8b 43 1c	mov    0x1c(%rbx),%r8d
+   0x000000007ef96063 <+7495>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef96068 <+7500>:	48 8d 15 4e 4a 00 00	lea    0x4a4e(%rip),%rdx        # 0x7ef9aabd <AsmVectorNumFixup+3381>
+   0x000000007ef9606f <+7507>:	e8 d1 90 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef96074 <+7512>:	44 0f b7 43 20	movzwl 0x20(%rbx),%r8d
+   0x000000007ef96079 <+7517>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef9607e <+7522>:	48 8d 15 59 4a 00 00	lea    0x4a59(%rip),%rdx        # 0x7ef9aade <AsmVectorNumFixup+3414>
+   0x000000007ef96085 <+7529>:	e8 bb 90 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef9608a <+7534>:	44 0f b7 43 22	movzwl 0x22(%rbx),%r8d
+   0x000000007ef9608f <+7539>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef96094 <+7544>:	48 8d 15 64 4a 00 00	lea    0x4a64(%rip),%rdx        # 0x7ef9aaff <AsmVectorNumFixup+3447>
+   0x000000007ef9609b <+7551>:	e8 a5 90 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef960a0 <+7556>:	44 8b 43 24	mov    0x24(%rbx),%r8d
+   0x000000007ef960a4 <+7560>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef960a9 <+7565>:	48 8d 15 70 4a 00 00	lea    0x4a70(%rip),%rdx        # 0x7ef9ab20 <AsmVectorNumFixup+3480>
+   0x000000007ef960b0 <+7572>:	e8 90 90 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef960b5 <+7577>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef960b9 <+7581>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef960bd <+7585>:	b9 28 00 00 00	mov    $0x28,%ecx
+   0x000000007ef960c2 <+7590>:	e8 78 6c ff ff	call   0x7ef8cd3f <AllocatePool>
+   0x000000007ef960c7 <+7595>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef960cb <+7599>:	48 85 c0	test   %rax,%rax
+   0x000000007ef960ce <+7602>:	0f 84 c2 02 00 00	je     0x7ef96396 <CoreLoadImageCommon.constprop.0+8314>
+   0x000000007ef960d4 <+7608>:	c7 00 49 50 52 43	movl   $0x43525049,(%rax)
+   0x000000007ef960da <+7614>:	44 8b 43 0c	mov    0xc(%rbx),%r8d
+   0x000000007ef960de <+7618>:	4d 01 e8	add    %r13,%r8
+   0x000000007ef960e1 <+7621>:	4c 89 40 18	mov    %r8,0x18(%rax)
+   0x000000007ef960e5 <+7625>:	44 8b 4b 10	mov    0x10(%rbx),%r9d
+   0x000000007ef960e9 <+7629>:	4c 89 48 20	mov    %r9,0x20(%rax)
+   0x000000007ef960ed <+7633>:	45 84 e4	test   %r12b,%r12b
+   0x000000007ef960f0 <+7636>:	74 23	je     0x7ef96115 <CoreLoadImageCommon.constprop.0+7673>
+   0x000000007ef960f2 <+7638>:	48 89 44 24 48	mov    %rax,0x48(%rsp)
+   0x000000007ef960f7 <+7643>:	48 8d 15 43 4a 00 00	lea    0x4a43(%rip),%rdx        # 0x7ef9ab41 <AsmVectorNumFixup+3513>
+   0x000000007ef960fe <+7650>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef96102 <+7654>:	b9 00 00 40 00	mov    $0x400000,%ecx
+   0x000000007ef96107 <+7659>:	e8 39 90 ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef9610c <+7664>:	48 8b 44 24 68	mov    0x68(%rsp),%rax
+   0x000000007ef96111 <+7669>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef96115 <+7673>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef96119 <+7677>:	48 8d 50 08	lea    0x8(%rax),%rdx
+   0x000000007ef9611d <+7681>:	48 8b 4c 24 60	mov    0x60(%rsp),%rcx
+   0x000000007ef96122 <+7686>:	e8 91 79 ff ff	call   0x7ef8dab8 <InsertTailList>
+   0x000000007ef96127 <+7691>:	48 ff 45 28	incq   0x28(%rbp)
+   0x000000007ef9612b <+7695>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef9612f <+7699>:	48 ff 44 24 30	incq   0x30(%rsp)
+   0x000000007ef96134 <+7704>:	48 83 c3 28	add    $0x28,%rbx
+   0x000000007ef96138 <+7708>:	e9 4d fe ff ff	jmp    0x7ef95f8a <CoreLoadImageCommon.constprop.0+7278>
+   0x000000007ef9613d <+7713>:	48 83 7d 28 00	cmpq   $0x0,0x28(%rbp)
+   0x000000007ef96142 <+7718>:	75 6d	jne    0x7ef961b1 <CoreLoadImageCommon.constprop.0+7829>
+   0x000000007ef96144 <+7720>:	bf 01 00 00 00	mov    $0x1,%edi
+   0x000000007ef96149 <+7725>:	e8 dc 64 fe ff	call   0x7ef7c62a <SetMemoryAttributesTableSectionAlignment>
+   0x000000007ef9614e <+7730>:	45 84 e4	test   %r12b,%r12b
+   0x000000007ef96151 <+7733>:	74 19	je     0x7ef9616c <CoreLoadImageCommon.constprop.0+7760>
+   0x000000007ef96153 <+7735>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef96157 <+7739>:	48 8d 15 e6 8d 00 00	lea    0x8de6(%rip),%rdx        # 0x7ef9ef44
+   0x000000007ef9615e <+7746>:	b9 00 00 00 80	mov    $0x80000000,%ecx
+   0x000000007ef96163 <+7751>:	e8 dd 8f ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef96168 <+7756>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef9616c <+7760>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef96170 <+7764>:	4c 89 e9	mov    %r13,%rcx
+   0x000000007ef96173 <+7767>:	e8 34 ae ff ff	call   0x7ef90fac <PeCoffLoaderGetPdbPointer>
+   0x000000007ef96178 <+7772>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef9617c <+7776>:	49 89 c0	mov    %rax,%r8
+   0x000000007ef9617f <+7779>:	48 85 c0	test   %rax,%rax
+   0x000000007ef96182 <+7782>:	0f 84 0e 02 00 00	je     0x7ef96396 <CoreLoadImageCommon.constprop.0+8314>
+   0x000000007ef96188 <+7788>:	80 7c 24 18 00	cmpb   $0x0,0x18(%rsp)
+   0x000000007ef9618d <+7793>:	0f 84 03 02 00 00	je     0x7ef96396 <CoreLoadImageCommon.constprop.0+8314>
+   0x000000007ef96193 <+7799>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef96197 <+7803>:	48 8d 15 3a 48 00 00	lea    0x483a(%rip),%rdx        # 0x7ef9a9d8 <AsmVectorNumFixup+3152>
+   0x000000007ef9619e <+7810>:	b9 00 00 00 80	mov    $0x80000000,%ecx
+   0x000000007ef961a3 <+7815>:	e8 9d 8f ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef961a8 <+7820>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef961ac <+7824>:	e9 e5 01 00 00	jmp    0x7ef96396 <CoreLoadImageCommon.constprop.0+8314>
+   0x000000007ef961b1 <+7829>:	48 89 ef	mov    %rbp,%rdi
+   0x000000007ef961b4 <+7832>:	e8 b6 64 fe ff	call   0x7ef7c66f <SortImageRecordCodeSection>
+   0x000000007ef961b9 <+7837>:	48 89 ef	mov    %rbp,%rdi
+   0x000000007ef961bc <+7840>:	e8 76 65 fe ff	call   0x7ef7c737 <IsImageRecordCodeSectionValid>
+   0x000000007ef961c1 <+7845>:	84 c0	test   %al,%al
+   0x000000007ef961c3 <+7847>:	75 20	jne    0x7ef961e5 <CoreLoadImageCommon.constprop.0+7881>
+   0x000000007ef961c5 <+7849>:	45 84 e4	test   %r12b,%r12b
+   0x000000007ef961c8 <+7852>:	0f 84 c8 01 00 00	je     0x7ef96396 <CoreLoadImageCommon.constprop.0+8314>
+   0x000000007ef961ce <+7858>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef961d2 <+7862>:	48 8d 15 cc 49 00 00	lea    0x49cc(%rip),%rdx        # 0x7ef9aba5 <AsmVectorNumFixup+3613>
+   0x000000007ef961d9 <+7869>:	b9 00 00 00 80	mov    $0x80000000,%ecx
+   0x000000007ef961de <+7874>:	e8 62 8f ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef961e3 <+7879>:	eb c3	jmp    0x7ef961a8 <CoreLoadImageCommon.constprop.0+7820>
+   0x000000007ef961e5 <+7881>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef961e9 <+7885>:	48 8d 55 08	lea    0x8(%rbp),%rdx
+   0x000000007ef961ed <+7889>:	48 8d 0d 24 9c 00 00	lea    0x9c24(%rip),%rcx        # 0x7ef9fe18
+   0x000000007ef961f4 <+7896>:	e8 bf 78 ff ff	call   0x7ef8dab8 <InsertTailList>
+   0x000000007ef961f9 <+7901>:	48 ff 05 08 9c 00 00	incq   0x9c08(%rip)        # 0x7ef9fe08
+   0x000000007ef96200 <+7908>:	48 8b 45 28	mov    0x28(%rbp),%rax
+   0x000000007ef96204 <+7912>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef96208 <+7916>:	48 39 05 01 9c 00 00	cmp    %rax,0x9c01(%rip)        # 0x7ef9fe10
+   0x000000007ef9620f <+7923>:	73 07	jae    0x7ef96218 <CoreLoadImageCommon.constprop.0+7932>
+   0x000000007ef96211 <+7925>:	48 89 05 f8 9b 00 00	mov    %rax,0x9bf8(%rip)        # 0x7ef9fe10
+   0x000000007ef96218 <+7932>:	48 8b 1d f9 9b 00 00	mov    0x9bf9(%rip),%rbx        # 0x7ef9fe18
+   0x000000007ef9621f <+7939>:	48 8d 05 f2 9b 00 00	lea    0x9bf2(%rip),%rax        # 0x7ef9fe18
+   0x000000007ef96226 <+7946>:	4c 8b 2b	mov    (%rbx),%r13
+   0x000000007ef96229 <+7949>:	48 39 c3	cmp    %rax,%rbx
+   0x000000007ef9622c <+7952>:	0f 84 64 01 00 00	je     0x7ef96396 <CoreLoadImageCommon.constprop.0+8314>
+   0x000000007ef96232 <+7958>:	81 7b f8 49 50 52 44	cmpl   $0x44525049,-0x8(%rbx)
+   0x000000007ef96239 <+7965>:	48 8d 6b f8	lea    -0x8(%rbx),%rbp
+   0x000000007ef9623d <+7969>:	74 23	je     0x7ef96262 <CoreLoadImageCommon.constprop.0+8006>
+   0x000000007ef9623f <+7971>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef96243 <+7975>:	ba e2 04 00 00	mov    $0x4e2,%edx
+   0x000000007ef96248 <+7980>:	48 89 dd	mov    %rbx,%rbp
+   0x000000007ef9624b <+7983>:	4c 8d 05 d3 3b 00 00	lea    0x3bd3(%rip),%r8        # 0x7ef99e25 <AsmVectorNumFixup+157>
+   0x000000007ef96252 <+7990>:	48 8d 0d e1 3b 00 00	lea    0x3be1(%rip),%rcx        # 0x7ef99e3a <AsmVectorNumFixup+178>
+   0x000000007ef96259 <+7997>:	e8 68 6b ff ff	call   0x7ef8cdc6 <DebugAssert>
+   0x000000007ef9625e <+8002>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef96262 <+8006>:	4c 8d 7d 30	lea    0x30(%rbp),%r15
+   0x000000007ef96266 <+8010>:	48 8d 05 ab 9b 00 00	lea    0x9bab(%rip),%rax        # 0x7ef9fe18
+   0x000000007ef9626d <+8017>:	49 39 c5	cmp    %rax,%r13
+   0x000000007ef96270 <+8020>:	0f 84 18 01 00 00	je     0x7ef9638e <CoreLoadImageCommon.constprop.0+8306>
+   0x000000007ef96276 <+8026>:	41 81 7d f8 49 50 52 44	cmpl   $0x44525049,-0x8(%r13)
+   0x000000007ef9627e <+8034>:	4d 8d 65 f8	lea    -0x8(%r13),%r12
+   0x000000007ef96282 <+8038>:	74 23	je     0x7ef962a7 <CoreLoadImageCommon.constprop.0+8075>
+   0x000000007ef96284 <+8040>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef96288 <+8044>:	ba e9 04 00 00	mov    $0x4e9,%edx
+   0x000000007ef9628d <+8049>:	4d 89 ec	mov    %r13,%r12
+   0x000000007ef96290 <+8052>:	4c 8d 05 8e 3b 00 00	lea    0x3b8e(%rip),%r8        # 0x7ef99e25 <AsmVectorNumFixup+157>
+   0x000000007ef96297 <+8059>:	48 8d 0d 9c 3b 00 00	lea    0x3b9c(%rip),%rcx        # 0x7ef99e3a <AsmVectorNumFixup+178>
+   0x000000007ef9629e <+8066>:	e8 23 6b ff ff	call   0x7ef8cdc6 <DebugAssert>
+   0x000000007ef962a3 <+8071>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef962a7 <+8075>:	48 8b 45 18	mov    0x18(%rbp),%rax
+   0x000000007ef962ab <+8079>:	49 8b 54 24 18	mov    0x18(%r12),%rdx
+   0x000000007ef962b0 <+8084>:	48 39 d0	cmp    %rdx,%rax
+   0x000000007ef962b3 <+8087>:	0f 86 cc 00 00 00	jbe    0x7ef96385 <CoreLoadImageCommon.constprop.0+8297>
+   0x000000007ef962b9 <+8093>:	48 8b 75 20	mov    0x20(%rbp),%rsi
+   0x000000007ef962bd <+8097>:	48 8b 4d 28	mov    0x28(%rbp),%rcx
+   0x000000007ef962c1 <+8101>:	48 89 55 18	mov    %rdx,0x18(%rbp)
+   0x000000007ef962c5 <+8105>:	49 83 c4 30	add    $0x30,%r12
+   0x000000007ef962c9 <+8109>:	49 8b 54 24 f0	mov    -0x10(%r12),%rdx
+   0x000000007ef962ce <+8114>:	48 89 55 20	mov    %rdx,0x20(%rbp)
+   0x000000007ef962d2 <+8118>:	49 8b 54 24 f8	mov    -0x8(%r12),%rdx
+   0x000000007ef962d7 <+8123>:	48 89 55 28	mov    %rdx,0x28(%rbp)
+   0x000000007ef962db <+8127>:	49 89 44 24 e8	mov    %rax,-0x18(%r12)
+   0x000000007ef962e0 <+8132>:	49 89 74 24 f0	mov    %rsi,-0x10(%r12)
+   0x000000007ef962e5 <+8137>:	49 89 4c 24 f8	mov    %rcx,-0x8(%r12)
+   0x000000007ef962ea <+8142>:	4d 39 fc	cmp    %r15,%r12
+   0x000000007ef962ed <+8145>:	0f 84 92 00 00 00	je     0x7ef96385 <CoreLoadImageCommon.constprop.0+8297>
+   0x000000007ef962f3 <+8151>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef962f7 <+8155>:	4c 89 f9	mov    %r15,%rcx
+   0x000000007ef962fa <+8158>:	e8 ca 76 ff ff	call   0x7ef8d9c9 <InternalBaseLibIsListValid>
+   0x000000007ef962ff <+8163>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef96303 <+8167>:	84 c0	test   %al,%al
+   0x000000007ef96305 <+8169>:	75 20	jne    0x7ef96327 <CoreLoadImageCommon.constprop.0+8203>
+   0x000000007ef96307 <+8171>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef9630b <+8175>:	4c 8d 05 b0 6d 00 00	lea    0x6db0(%rip),%r8        # 0x7ef9d0c2
+   0x000000007ef96312 <+8182>:	ba 18 02 00 00	mov    $0x218,%edx
+   0x000000007ef96317 <+8187>:	48 8d 0d 17 6d 00 00	lea    0x6d17(%rip),%rcx        # 0x7ef9d035
+   0x000000007ef9631e <+8194>:	e8 a3 6a ff ff	call   0x7ef8cdc6 <DebugAssert>
+   0x000000007ef96323 <+8199>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef96327 <+8203>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef9632b <+8207>:	4c 89 f9	mov    %r15,%rcx
+   0x000000007ef9632e <+8210>:	e8 f7 78 ff ff	call   0x7ef8dc2a <RemoveEntryList>
+   0x000000007ef96333 <+8215>:	48 89 44 24 38	mov    %rax,0x38(%rsp)
+   0x000000007ef96338 <+8220>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef9633c <+8224>:	4c 3b 60 08	cmp    0x8(%rax),%r12
+   0x000000007ef96340 <+8228>:	75 0c	jne    0x7ef9634e <CoreLoadImageCommon.constprop.0+8242>
+   0x000000007ef96342 <+8230>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef96346 <+8234>:	4c 89 fa	mov    %r15,%rdx
+   0x000000007ef96349 <+8237>:	4c 89 e1	mov    %r12,%rcx
+   0x000000007ef9634c <+8240>:	eb 2e	jmp    0x7ef9637c <CoreLoadImageCommon.constprop.0+8288>
+   0x000000007ef9634e <+8242>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef96352 <+8246>:	4c 89 fa	mov    %r15,%rdx
+   0x000000007ef96355 <+8249>:	4c 89 e1	mov    %r12,%rcx
+   0x000000007ef96358 <+8252>:	e8 0f 77 ff ff	call   0x7ef8da6c <InsertHeadList>
+   0x000000007ef9635d <+8257>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef96361 <+8261>:	48 39 44 24 18	cmp    %rax,0x18(%rsp)
+   0x000000007ef96366 <+8266>:	74 1d	je     0x7ef96385 <CoreLoadImageCommon.constprop.0+8297>
+   0x000000007ef96368 <+8268>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef9636c <+8272>:	4c 89 e1	mov    %r12,%rcx
+   0x000000007ef9636f <+8275>:	e8 b6 78 ff ff	call   0x7ef8dc2a <RemoveEntryList>
+   0x000000007ef96374 <+8280>:	48 8b 4c 24 38	mov    0x38(%rsp),%rcx
+   0x000000007ef96379 <+8285>:	4c 89 e2	mov    %r12,%rdx
+   0x000000007ef9637c <+8288>:	e8 37 77 ff ff	call   0x7ef8dab8 <InsertTailList>
+   0x000000007ef96381 <+8293>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef96385 <+8297>:	4d 8b 6d 00	mov    0x0(%r13),%r13
+   0x000000007ef96389 <+8301>:	e9 d8 fe ff ff	jmp    0x7ef96266 <CoreLoadImageCommon.constprop.0+8010>
+   0x000000007ef9638e <+8306>:	48 8b 1b	mov    (%rbx),%rbx
+   0x000000007ef96391 <+8309>:	e9 89 fe ff ff	jmp    0x7ef9621f <CoreLoadImageCommon.constprop.0+7939>
+   0x000000007ef96396 <+8314>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef9639a <+8318>:	e8 b0 a6 ff ff	call   0x7ef90a4f <DebugCodeEnabled>
+   0x000000007ef9639f <+8323>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef963a3 <+8327>:	84 c0	test   %al,%al
+   0x000000007ef963a5 <+8329>:	0f 84 8c f7 ff ff	je     0x7ef95b37 <CoreLoadImageCommon.constprop.0+6171>
+   0x000000007ef963ab <+8335>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef963af <+8339>:	e8 f5 9a ff ff	call   0x7ef8fea9 <DebugPrintEnabled>
+   0x000000007ef963b4 <+8344>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef963b8 <+8348>:	89 c3	mov    %eax,%ebx
+   0x000000007ef963ba <+8350>:	84 c0	test   %al,%al
+   0x000000007ef963bc <+8352>:	74 27	je     0x7ef963e5 <CoreLoadImageCommon.constprop.0+8393>
+   0x000000007ef963be <+8354>:	4d 8b 8e 08 01 00 00	mov    0x108(%r14),%r9
+   0x000000007ef963c5 <+8361>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef963c9 <+8365>:	4d 8b 86 f0 00 00 00	mov    0xf0(%r14),%r8
+   0x000000007ef963d0 <+8372>:	48 8d 15 ac 8b 00 00	lea    0x8bac(%rip),%rdx        # 0x7ef9ef83
+   0x000000007ef963d7 <+8379>:	b9 44 00 00 00	mov    $0x44,%ecx
+   0x000000007ef963dc <+8384>:	e8 64 8d ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef963e1 <+8389>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef963e5 <+8393>:	49 8b 96 40 01 00 00	mov    0x140(%r14),%rdx
+   0x000000007ef963ec <+8400>:	48 85 d2	test   %rdx,%rdx
+   0x000000007ef963ef <+8403>:	0f 84 a3 00 00 00	je     0x7ef96498 <CoreLoadImageCommon.constprop.0+8572>
+   0x000000007ef963f5 <+8409>:	31 f6	xor    %esi,%esi
+   0x000000007ef963f7 <+8411>:	31 c0	xor    %eax,%eax
+   0x000000007ef963f9 <+8413>:	8a 0c 02	mov    (%rdx,%rax,1),%cl
+   0x000000007ef963fc <+8416>:	84 c9	test   %cl,%cl
+   0x000000007ef963fe <+8418>:	74 12	je     0x7ef96412 <CoreLoadImageCommon.constprop.0+8438>
+   0x000000007ef96400 <+8420>:	48 ff c0	inc    %rax
+   0x000000007ef96403 <+8423>:	80 f9 5c	cmp    $0x5c,%cl
+   0x000000007ef96406 <+8426>:	74 05	je     0x7ef9640d <CoreLoadImageCommon.constprop.0+8433>
+   0x000000007ef96408 <+8428>:	80 f9 2f	cmp    $0x2f,%cl
+   0x000000007ef9640b <+8431>:	75 ec	jne    0x7ef963f9 <CoreLoadImageCommon.constprop.0+8413>
+   0x000000007ef9640d <+8433>:	48 89 c6	mov    %rax,%rsi
+   0x000000007ef96410 <+8436>:	eb e7	jmp    0x7ef963f9 <CoreLoadImageCommon.constprop.0+8413>
+   0x000000007ef96412 <+8438>:	31 c0	xor    %eax,%eax
+   0x000000007ef96414 <+8440>:	48 01 f2	add    %rsi,%rdx
+   0x000000007ef96417 <+8443>:	4c 8d 84 24 e0 00 00 00	lea    0xe0(%rsp),%r8
+   0x000000007ef9641f <+8451>:	40 8a 34 02	mov    (%rdx,%rax,1),%sil
+   0x000000007ef96423 <+8455>:	48 89 c1	mov    %rax,%rcx
+   0x000000007ef96426 <+8458>:	48 ff c0	inc    %rax
+   0x000000007ef96429 <+8461>:	42 88 74 00 ff	mov    %sil,-0x1(%rax,%r8,1)
+   0x000000007ef9642e <+8466>:	40 84 f6	test   %sil,%sil
+   0x000000007ef96431 <+8469>:	75 0a	jne    0x7ef9643d <CoreLoadImageCommon.constprop.0+8481>
+   0x000000007ef96433 <+8471>:	c6 84 0c e0 00 00 00 2e	movb   $0x2e,0xe0(%rsp,%rcx,1)
+   0x000000007ef9643b <+8479>:	eb 06	jmp    0x7ef96443 <CoreLoadImageCommon.constprop.0+8487>
+   0x000000007ef9643d <+8481>:	40 80 fe 2e	cmp    $0x2e,%sil
+   0x000000007ef96441 <+8485>:	75 22	jne    0x7ef96465 <CoreLoadImageCommon.constprop.0+8521>
+   0x000000007ef96443 <+8487>:	c6 84 04 e0 00 00 00 65	movb   $0x65,0xe0(%rsp,%rax,1)
+   0x000000007ef9644b <+8495>:	c6 84 0c e2 00 00 00 66	movb   $0x66,0xe2(%rsp,%rcx,1)
+   0x000000007ef96453 <+8503>:	c6 84 0c e3 00 00 00 69	movb   $0x69,0xe3(%rsp,%rcx,1)
+   0x000000007ef9645b <+8511>:	c6 84 0c e4 00 00 00 00	movb   $0x0,0xe4(%rsp,%rcx,1)
+   0x000000007ef96463 <+8519>:	eb 10	jmp    0x7ef96475 <CoreLoadImageCommon.constprop.0+8537>
+   0x000000007ef96465 <+8521>:	48 3d fc 00 00 00	cmp    $0xfc,%rax
+   0x000000007ef9646b <+8527>:	75 b2	jne    0x7ef9641f <CoreLoadImageCommon.constprop.0+8451>
+   0x000000007ef9646d <+8529>:	c6 84 24 dc 01 00 00 00	movb   $0x0,0x1dc(%rsp)
+   0x000000007ef96475 <+8537>:	84 db	test   %bl,%bl
+   0x000000007ef96477 <+8539>:	0f 84 ba f6 ff ff	je     0x7ef95b37 <CoreLoadImageCommon.constprop.0+6171>
+   0x000000007ef9647d <+8545>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef96481 <+8549>:	48 8d 15 19 78 00 00	lea    0x7819(%rip),%rdx        # 0x7ef9dca1
+   0x000000007ef96488 <+8556>:	b9 44 00 00 00	mov    $0x44,%ecx
+   0x000000007ef9648d <+8561>:	e8 b3 8c ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef96492 <+8566>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef96496 <+8570>:	eb 08	jmp    0x7ef964a0 <CoreLoadImageCommon.constprop.0+8580>
+   0x000000007ef96498 <+8572>:	84 db	test   %bl,%bl
+   0x000000007ef9649a <+8574>:	0f 84 97 f6 ff ff	je     0x7ef95b37 <CoreLoadImageCommon.constprop.0+6171>
+   0x000000007ef964a0 <+8580>:	48 83 ec 20	sub    $0x20,%rsp
+   0x000000007ef964a4 <+8584>:	48 8d 15 4b 62 00 00	lea    0x624b(%rip),%rdx        # 0x7ef9c6f6
+   0x000000007ef964ab <+8591>:	b9 44 00 00 00	mov    $0x44,%ecx
+   0x000000007ef964b0 <+8596>:	e8 90 8c ff ff	call   0x7ef8f145 <DebugPrint>
+   0x000000007ef964b5 <+8601>:	48 83 c4 20	add    $0x20,%rsp
+   0x000000007ef964b9 <+8605>:	e9 79 f6 ff ff	jmp    0x7ef95b37 <CoreLoadImageCommon.constprop.0+6171>
+   0x000000007ef964be <+8610>:	48 81 c4 e8 01 00 00	add    $0x1e8,%rsp
+   0x000000007ef964c5 <+8617>:	4c 89 e0	mov    %r12,%rax
+   0x000000007ef964c8 <+8620>:	5b	pop    %rbx
+   0x000000007ef964c9 <+8621>:	5d	pop    %rbp
+   0x000000007ef964ca <+8622>:	41 5c	pop    %r12
+   0x000000007ef964cc <+8624>:	41 5d	pop    %r13
+   0x000000007ef964ce <+8626>:	41 5e	pop    %r14
+   0x000000007ef964d0 <+8628>:	41 5f	pop    %r15
+   0x000000007ef964d2 <+8630>:	c3	ret
+End of assembler dump.
+Detaching from program: , process 1
+Ending remote debugging.
+[Inferior 1 (process 1) detached]

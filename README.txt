@@ -79,6 +79,32 @@ is unknown to the chainloader, ramiel creates a variable called "guids" storing
 the guids of all chunk variables. the guid of the "guids" variable is fixed at
 compile time.
 
+example NVRAM layout:
+
+            ┌──guids───89547266-0460-43b3-9dfc-e4d627e6629────┐
+    ┌───────┤0eb06226-a02e-49be-bd56-866b328b44a3             │
+    │       │                                                 │
+    │  ┌────┤c62104c3-0b2a-4c5a-9b1d-17780ebeaf9f             │
+    │  │    │                                                 │
+    │  │ ┌──┤b0d0f31d-88e0-4cbf-a589-ccc35e4569ab             │
+    │  │ │  └─────────────────────────────────────────────────┘
+    │  │ │
+    │  │ │
+    │  │ │
+    │  │ │  ┌──c62104c3-0b2a-4c5a-9b1d-17780ebeaf9f──┐
+    └──┼─┼─►│<max var size chunk 1 of driver>        │
+       │ │  └────────────────────────────────────────┘
+       │ │
+       │ │
+       │ │  ┌──0eb06226-a02e-49be-bd56-866b328b44a3──┐
+       └─┼─►│<max var size chunk 2 of driver>        │
+         │  └────────────────────────────────────────┘
+         │
+         │
+         │  ┌──b0d0f31d-88e0-4cbf-a589-ccc35e4569ab──┐
+         └─►│<max var size chunk 3 of driver>        │
+            └────────────────────────────────────────┘
+
 runtime.c excerpt:
 ``
     struct stat stat;
@@ -97,26 +123,6 @@ runtime.c excerpt:
         return -1;
     }
 ``
-
-dropper excerpt:
-``
-    guids = []
-    with open(sys.argv[1], "rb") as f:
-        chunk = f.read(MAXVARSIZE)
-        while chunk:
-            with open("chunk", "wb") as f_:
-                f_.write(chunk)
-                guid = uuid.uuid4()
-                guids.append(guid)
-                os.system(f"./runtime {str(guid)} {str(guid).upper()} chunk")
-            chunk = f.read(MAXVARSIZE)
-
-    with open("guids", "w", encoding="utf-16-le") as f:
-        for guid in guids:
-            f.write(str(guid).upper())
-        os.system(f"./runtime bfb35f7e-fc44-41ae-7cd9-68a80102b9d0 guids guids")
-``
-
 
 to write the variables to NVRAM, ramiel uses the libefivar library and its wrapper
 for the UEFI runtime service SetVariable:

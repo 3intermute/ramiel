@@ -92,12 +92,12 @@ guid of guids (89547266-0460-43b3-9dfc-e4d627e6629) is known by the chainloader
     │  │ │
     │  │ │
     │  │ │
-    │  │ │  ┌──c62104c3-0b2a-4c5a-9b1d-17780ebeaf9f──┐
+    │  │ │  ┌──0eb06226-a02e-49be-bd56-866b328b44a3──┐
     └──┼─┼─►│<max var size chunk 1 of driver>        │
        │ │  └────────────────────────────────────────┘
        │ │
        │ │
-       │ │  ┌──0eb06226-a02e-49be-bd56-866b328b44a3──┐
+       │ │  ┌──c62104c3-0b2a-4c5a-9b1d-17780ebeaf9f──┐
        └─┼─►│<max var size chunk 2 of driver>        │
          │  └────────────────────────────────────────┘
          │

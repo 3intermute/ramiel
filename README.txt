@@ -80,6 +80,7 @@ the guids of all chunk variables. the guid of the "guids" variable is fixed at
 compile time.
 
 example NVRAM layout:
+guid of guids (89547266-0460-43b3-9dfc-e4d627e6629) is known by the chainloader
 
             ┌──guids───89547266-0460-43b3-9dfc-e4d627e6629────┐
     ┌───────┤0eb06226-a02e-49be-bd56-866b328b44a3             │

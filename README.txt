@@ -48,7 +48,7 @@ operations.
 2. subsequent boots:
 2.3 ramiel patches secureboot check in LoadImage to chainload unsigned malicious driver
 2.4 ramiel prevents oprom from being mapped into memory by linux kernel
-2.5 ramiel loads the malicious driver from NVRAM
+2.5 chainloader loads the malicious driver from NVRAM
 
 
 misc:

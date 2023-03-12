@@ -1,8 +1,29 @@
-RAMIEL POC WRITEUP
-0xwillow, jan 2023
+                                             #
+                                          .%%( (
+                                       /%%%%%%    *#
+                                     ,%%%%%%%%       (
+                                  %%%%%%%%%%%%         ,(
+                               *%%%%%%%%%%%%%%,           (
+                            #&%%%%%%%%%%%%%%%&@@             /
+                          #%%%%%%%%%%&@  %%%%  %%%%%%@,        &
+                       %%%%%%@.*%%%%%%%%%%%%% (%%%%%%%%%%%%%@     *
+                     *%%%%%%%%%%%%%%%%%%%%%%% &&%%%%%%%%%%%%%%%%%%%&*/
+                       /@@@@%%%%%%%%%%%%%%%%& %&%%%%%%%%%%%%%%%%%%&,
+                         ,#@@@@@@@&%%%%%%%%%&.%&%%%%%%&%%%%%%%%% (
+                             @@@@@@@@@@@@%%%& %%%%%%%%%%%%%%%,
+                               #@@@@@@@@@@&@% %%%%%%%%%%%%&/
+                                  (@@@@@@&@@@ %%%%%%%%%%,
+                                    *@@@@@@@@ %%%%%%%//
+                                        &@@@@ %%%%%/
+                                          /@@*%%*
+                                             @
+
+
+                                    RAMIEL POC WRITEUP
+                                    0xwillow, jan 2023
+
 
 uefi diskless persistence technique + OVMF secureboot bypass
-
 
 <========================================================================================>
 abstract:
@@ -56,6 +77,53 @@ misc:
     enabled
 2.2 overview of PCI device driver model
 2.6 source debugging OVMF with gdb
+
+initial infection:                                 ┌───────────────────┐
+   ┌────────────────┐ ┌►OEM firmware update tool──►│NIC PCI option ROM │
+   │dropper         ├─┘                            │                   ├──────┐
+   │                │                              │chainloader driver │      │
+   │                ├─┐                            │                   │      │
+   └────────────────┘ └►SetVariable()──────┐       └───────────────────┘      │
+                                           │                                  │
+                                           │       ┌───────────────────┐      │
+                                           └──────►│NVRAM              │      │
+                                                   │                   │      │
+                                                   │maliciious driver  │      │
+                                                   │(chunks)           ├───┐  │
+                                                   └───────────────────┘   │  │
+                                                                           │  │
+                                                                           │  │
+next reboot:         DXE dispatcher loads unsigned chainloader driver      │  │
+                     (ignores secureboot violation due to misconfiguration)│  │
+                                                                           │  │
+                                                                           │  │
+                                                                           │  │
+                                                      ┌────────────────────┼──┘
+                                                      │                    │
+                                                      │                    │
+                                                      ▼                    │
+                                            ┌────────────────┐             │
+                                            │chainloader     │             │
+                                            │                │             │
+                                            │                │             │
+                                            └─────────┬──────┘             │
+                                                      │                    │
+                                                      ▼                    │
+                     chainloader: patch secureboot check in CoreLoadImage  │
+                     chainloader: zero XROMBAR        │                    │
+                                                      │                    │
+                                                      │                    │
+                                                      │                    │
+                                                      ▼                    │
+                     chainloader: load malicious driver chunks from NVRAM  │
+                                                                           │
+                                                      ┌────────────────────┘
+                                                      ▼
+                                            ┌────────────────┐
+                                            │malicious driver│
+                                            │                │
+                                            │                │
+                                            └────────────────┘
 
 ------------------------------------------------------------------------------------------
 |                                    0.2 bare metal                                      |

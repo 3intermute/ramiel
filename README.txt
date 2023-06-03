@@ -25,6 +25,9 @@
 
 uefi diskless persistence technique + OVMF secureboot bypass
 
+https://cpl0.zip
+https://github.com/3intermute/ramiel
+
 <========================================================================================>
 abstract:
 
@@ -888,3 +891,5 @@ references:
 [14] https://edk2-docs.gitbook.io/edk-ii-uefi-driver-writer-s-guide/18_pci_driver_\
      design_guidelines/readme.3/1831_supported
 [15] https://wiki.debian.org/SecureBoot/VirtualMachine
+
+thank U to place and seer for helping me with this project ^_^

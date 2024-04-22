@@ -28,6 +28,9 @@ uefi diskless persistence technique + OVMF secureboot bypass
 https://cpl0.zip
 https://github.com/3intermute/ramiel
 
+featured on black mass vol 2 !!:
+https://twitter.com/vxunderground/status/1704194528662409444
+
 <========================================================================================>
 abstract:
 
